@@ -10,23 +10,22 @@ import * as io from "socket.io-client";
 })
 export class HomePage {
 
-public position=0;
+  public position = 0;
 
   constructor(public navCtrl: NavController, public locationTracker: LocationTracker) {
 
   }
 
-  start(){
-    var latitude=this.locationTracker.startTracking();
+  start() {
+    var latitude = this.locationTracker.startTracking();
 
-  var socket=io.connect('http://trainmate16.azurewebsites.net:80');
-
-  socket.on('connect', function () {
-       socket.emit('message',latitude);
-     });
+    var socket = io.connect('http://trainmate16.azurewebsites.net:80');
+    socket.on('connect', function() {
+      socket.emit('message', latitude);
+    });
   }
 
-  stop(){
+  stop() {
     this.locationTracker.stopTracking();
   }
 
