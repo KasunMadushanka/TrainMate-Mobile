@@ -1,14 +1,52 @@
 <ion-header>
-  <ion-navbar color="secondary">
-    <ion-title>
-      TrainMate Location Tracker
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <button ion-button menuToggle icon-only>
+          <ion-icon name='menu'></ion-icon>
+        </button>
+        <ion-title>TrainMate</ion-title>
+        <ion-nav id="nav" #content [root]="rootPage"></ion-nav>
+    </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <h3>Current Latitude: {{locationTracker.lat}}</h3>
-  <h3>Current Longitude: {{locationTracker.lng}}</h3>
-  <button ion-button full primary (click)="start()">Start Tracking</button>
-  <button ion-button full primary (click)="stop()">Stop Tracking</button>
+    <h1 style="text-align: center">Search Trains</h1>
+    <hr>
+    <ion-list>
+        <ion-item>
+            <ion-label>Start</ion-label>
+            <ion-select [(ngModel)]="gaming1">
+                <ion-option value="Ja-Ela">Ja-Ela</ion-option>
+                <ion-option value="Ragama">Ragama</ion-option>
+                <ion-option value="Maradana">Maradana</ion-option>
+                <ion-option value="Colombo">Colombo Fort</ion-option>
+                <ion-option value="Bambalapitiya">Bambalapitiya</ion-option>
+                <ion-option value="Galle">Galle</ion-option>
+                <ion-option value="Matara">Matara</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+    <hr>
+    <ion-list>
+        <ion-item>
+            <ion-label>Destination</ion-label>
+            <ion-select [(ngModel)]="gaming">
+                <ion-option value="Ja-Ela">Ja-Ela</ion-option>
+                <ion-option value="Ragama">Ragama</ion-option>
+                <ion-option value="Maradana">Maradana</ion-option>
+                <ion-option value="Colombo">Colombo Fort</ion-option>
+                <ion-option value="Bambalapitiya">Bambalapitiya</ion-option>
+                <ion-option value="Galle">Galle</ion-option>
+                <ion-option value="Matara">Matara</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+
+    <hr>
+    <br>
+
+    <ion-row center>
+        <button ion-button block color="primary" style="text-align: center" [navPush]="trains">Get Time Table</button>
+        <br><br>
+        <img src="../../assets/images/logo.png" align="center" width="100%">
+    </ion-row>
 </ion-content>
