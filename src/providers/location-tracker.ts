@@ -5,7 +5,9 @@ import * as io from "socket.io-client";
 import { BackgroundMode } from '@ionic-native/background-mode';
 import { NavController, AlertController } from 'ionic-angular';
 import { Badge } from '@ionic-native/badge';
-declare var cordova: any;
+import {AngularFire, FirebaseListObservable} from 'angularfire2';
+import { UserProvider } from './user-provider/user-provider';
+
 
 @Injectable()
 export class LocationTracker {
@@ -14,55 +16,66 @@ export class LocationTracker {
     public lat: number = 0;
     public lng: number = 0;
 
-    constructor(public zone: NgZone, private alertCtrl: AlertController, private backgroundMode: BackgroundMode,private badge: Badge) {
+
+    contributors: FirebaseListObservable<any>;
+
+    constructor(public zone: NgZone, private alertCtrl: AlertController, private backgroundMode: BackgroundMode,private badge: Badge,af: AngularFire,public up: UserProvider) {
+        this.contributors=af.database.list('/contributors');
 
     }
 
-    startTracking(con_id, username) {
 
 
+    startTracking(con_id, username,userId) {
 
+        let config = {
+            desiredAccuracy: 0,
+            stationaryRadius: 20,
+            distanceFilter: 2,
+            debug: true,
+            interval: 4000
+        };
+
+        BackgroundGeolocation.configure((location) => {
+
+            console.log('BackgroundGeolocation:  ' + location.latitude + ',' + location.longitude);
+
+            // Run update inside of Angular's zone
+            this.zone.run(() => {
+
+                this.lat = location.latitude;
+                this.lng = location.longitude;
+                this.contributors.update(userId, {
+                    id: con_id,
+                    username: username,
+                    longitude:this.lng,
+                    latitude: this.lat,
+                    number: i++
+                });
+            });
+
+        }, (err) => {
+
+            console.log(err);
+
+        }, config);
+
+        // Turn ON the background-geolocation system.
+        BackgroundGeolocation.start();
 
         let i = 0;
 
-        console.log(i++);
-
-        var socket = io.connect('http://trainmate18.azurewebsites.net:80');
-
-        this.backgroundMode.moveToBackground();
-        //this.backgroundMode.setDefaults({ color: 'FF0000' });
-        this.badge.clear();
+        this.backgroundMode.enable();
 
         setInterval(() => {
-            if(this.backgroundMode.isActive()){
-                this.badge.increase(1);
-            }
-        }, 5000);
+
+            this.badge.increase(5);
 
 
-        socket.on('connect', function() {
 
-            setInterval(() => {
+        }, 3000);
 
-                navigator.geolocation.getCurrentPosition((position) => {
 
-                    var data = {
-                        id: con_id,
-                        username: username,
-                        longitude: position.coords.longitude,
-                        latitude: position.coords.latitude,
-                        number: i++
-
-                    };
-
-                    socket.emit('message', data);
-                    console.log(position.coords.latitude, position.coords.longitude);
-
-                });
-
-            }, 3000);
-
-        });
 
     }
 

@@ -1,22 +1,27 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
+import { FirebaseListObservable } from 'angularfire2';
+import { UserProvider } from '../../providers/user-provider/user-provider';
+import { ChatViewPage } from '../chat-view/chat-view';
 
-/*
-  Generated class for the Users page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
-  selector: 'page-users',
-  templateUrl: 'users.html'
+    templateUrl: 'users.html'
 })
 export class UsersPage {
+    users:FirebaseListObservable<any[]>;
+    uid:string;
+    constructor(public nav: NavController, public userProvider: UserProvider) {}
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+    ngOnInit() {
+        this.userProvider.getUid()
+        .then(uid => {
+            this.uid = uid;
+            this.users = this.userProvider.getAllUsers();
+        });
+    };
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad UsersPage');
-  }
-
+    openChat(key) {
+        let param = {uid: this.uid, interlocutor: key};
+        this.nav.push(ChatViewPage,param);
+    }
 }

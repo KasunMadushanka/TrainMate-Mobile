@@ -1,72 +1,53 @@
 import { Component } from '@angular/core';
-import { NavController,AlertController, LoadingController, Loading } from 'ionic-angular';
-import {Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { AuthService } from '../../providers/auth-service';
-import {Http, Response} from '@angular/http';
-import { HomePage } from '../home/home';
+import { NavController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 import { TabsPage } from '../tabs/tabs';
-import { RegisterPage } from '../register/register';
-import { SignupPage } from '../signup/signup';
+import { ContributePage } from '../contribute/contribute';
+import { Validators, FormGroup, FormControl } from '@angular/forms';
+import { validateEmail } from '../../validators/email';
+import { AuthProvider } from '../../providers/auth-provider/auth-provider';
+import { UserProvider } from '../../providers/user-provider/user-provider';
+import { UtilProvider } from '../../providers/utils';
 
 @Component({
-    selector: 'page-login',
     templateUrl: 'login.html'
-
 })
-
 export class LoginPage {
+    loginForm:any;
+    constructor(public nav:NavController,
+        public auth: AuthProvider,
+        public userProvider: UserProvider,
+        public util: UtilProvider,
+        public storage:Storage) {
+        }
 
-    loading: Loading;
-    registerCredentials = {email: '', password: ''};
+        ngOnInit() {
+            this.loginForm = new FormGroup({
+                email: new FormControl("",[Validators.required, validateEmail]),
+                password: new FormControl("",Validators.required)
+            });
+        }
 
-    private login_form: FormGroup;
+        signin() {
+            this.auth.signin(this.loginForm.value)
+            .then((data) => {
+                this.storage.set('uid', data.uid);
+                this.nav.push(ContributePage);
+            }, (error) => {
+                let alert = this.util.doAlert("Error",error.message,"Ok");
+                alert.present();
+            });
+        };
 
-    constructor(public navCtrl: NavController,private auth: AuthService, private alertCtrl: AlertController, private loadingCtrl: LoadingController,private formBuilder: FormBuilder, private http: Http) {
-
+        createAccount() {
+            let credentials = this.loginForm.value;
+            this.auth.createAccount(credentials)
+            .then((data) => {
+                this.storage.set('uid', data.uid);
+                this.userProvider.createUser(credentials, data.uid);
+            }, (error) => {
+                let alert = this.util.doAlert("Error",error.message,"Ok");
+                alert.present();
+            });
+        };
     }
-
-    login(){
-;
-        this.showLoading()
-        this.auth.login(this.registerCredentials).subscribe(allowed => {
-            if (allowed) {
-                setTimeout(() => {
-                    this.loading.dismiss();
-                    this.navCtrl.setRoot(TabsPage)
-                });
-            } else {
-                this.showError("Access Denied");
-            }
-        },
-        error => {
-            this.showError(error);
-        });
-    }
-
-    showLoading() {
-        this.loading = this.loadingCtrl.create({
-            content: 'Please wait...'
-        });
-        this.loading.present();
-    }
-
-    showError(text) {
-        setTimeout(() => {
-            this.loading.dismiss();
-        });
-
-        let alert = this.alertCtrl.create({
-            title: 'Fail',
-            subTitle: text,
-            buttons: ['OK']
-        });
-        alert.present(prompt);
-    }
-
-    createAccount(){
-
-        this.navCtrl.push(RegisterPage);
-
-    }
-
-}
