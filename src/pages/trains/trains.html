@@ -14,52 +14,13 @@
 
 
 <ion-content padding>
+
     <ion-list>
-        <ion-item>
+        <ion-item *ngFor="let train of trains  | async" (click)="getDetails(trains.$key)">
             <ion-icon name="train" item-left></ion-icon>
-            <h3>Colombo Fort - Slow</h3>
-            <p>Arriving at - 07:26 </p>
-            <button ion-button clear item-right>More</button>
-        </ion-item>
-    </ion-list>
-    <ion-list>
-        <ion-item>
-            <ion-icon name="train" item-left></ion-icon>
-            <h3>Panadura - Express</h3>
+            <h3>{{train.name}}</h3>
             <p>Arriving at - 07:32</p>
             <button ion-button clear item-right [navPush]="trainDetails">More</button>
-        </ion-item>
-    </ion-list>
-    <ion-list>
-        <ion-item>
-            <ion-icon name="train" item-left></ion-icon>
-            <h3>Colombo Fort - Express</h3>
-            <p>Arriving at - 07:55</p>
-            <button ion-button clear item-right>More</button>
-        </ion-item>
-    </ion-list>
-    <ion-list>
-        <ion-item>
-            <ion-icon name="train" item-left></ion-icon>
-            <h3>Colombo Fort - Slow</h3>
-            <p>Arriving at - 08:06</p>
-            <button ion-button clear item-right>More</button>
-        </ion-item>
-    </ion-list>
-    <ion-list>
-        <ion-item>
-            <ion-icon name="train" item-left></ion-icon>
-            <h3>Colombo Fort - Slow</h3>
-            <p>Arriving at - 08:45</p>
-            <button ion-button clear item-right>More</button>
-        </ion-item>
-    </ion-list>
-    <ion-list>
-        <ion-item>
-            <ion-icon name="train" item-left></ion-icon>
-            <h3>Kalutara South - Slow</h3>
-            <p>Arriving at - 09:35</p>
-            <button ion-button clear item-right>More</button>
         </ion-item>
     </ion-list>
 

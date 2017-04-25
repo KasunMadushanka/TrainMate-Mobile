@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 import { HomePage } from '../home/home';
 import { ContributePage } from '../contribute/contribute';
 import { LoginPage } from '../login/login';
-import { UsersPage } from '../users/users';
+import { ForumTopicsPage } from '../forum-topics/forum-topics';
+import { MapPage } from '../map/map';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -13,7 +14,7 @@ export class TabsPage {
   // should be each tab's root Page
   tab1Root: any = HomePage;
   tab2Root: any = LoginPage;
-  tab3Root: any = UsersPage;
+  tab3Root: any = ForumTopicsPage;
 
   constructor() {
 

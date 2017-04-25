@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {MapPage} from '../map/map';
+import {AngularFire, FirebaseListObservable} from 'angularfire2';
 
 /*
   Generated class for the Details page.
@@ -13,10 +15,19 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class DetailsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+    schedule: FirebaseListObservable<any>;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,af: AngularFire) {
+      this.schedule=af.database.list('/trains/');
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsPage');
+  }
+
+  showOnMap(){
+
+      this.navCtrl.push(MapPage);
   }
 
 }

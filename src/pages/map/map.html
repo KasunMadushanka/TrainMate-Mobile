@@ -1,0 +1,16 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Tracking - Ruhunu Kumari
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div>
+        <ion-item *ngFor="let train of trains | async">
+            {{train.username}}
+        </ion-item>
+    </div>
+    <div id="map"></div>
+</ion-content>

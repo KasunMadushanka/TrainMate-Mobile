@@ -13,11 +13,14 @@ import { ContributePage } from '../pages/contribute/contribute';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TrainsPage } from '../pages/trains/trains';
 import { DetailsPage } from '../pages/details/details';
+import { ForumPage } from '../pages/forum/forum';
+import { ForumTopicsPage } from '../pages/forum-topics/forum-topics';
 import { SettingsPage } from '../pages/settings/settings';
 import { UsersPage } from '../pages/users/users';
 import { ChatsPage } from '../pages/chats/chats';
 import { AccountPage } from '../pages/account/account';
 import { ChatViewPage } from '../pages/chat-view/chat-view';
+import { MapPage } from '../pages/map/map';
 
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
@@ -54,11 +57,14 @@ const myFirebaseAuthConfig = {
         ContributePage,
         TrainsPage,
         DetailsPage,
+        ForumPage,
+        ForumTopicsPage,
         UsersPage,
         ChatsPage,
         AccountPage,
         SettingsPage,
-        ChatViewPage
+        ChatViewPage,
+        MapPage
 
     ],
     imports: [
@@ -76,12 +82,15 @@ const myFirebaseAuthConfig = {
         ContributePage,
         TrainsPage,
         DetailsPage,
+        ForumPage,
+        ForumTopicsPage,
         UsersPage,
         ChatsPage,
         AccountPage,
         SettingsPage,
         ChatViewPage,
-        SettingsPage
+        SettingsPage,
+        MapPage
 
     ],
     providers: [LocationTracker,AuthService,BackgroundMode,Badge,AuthProvider, ChatsProvider, UserProvider, UtilProvider, Storage]

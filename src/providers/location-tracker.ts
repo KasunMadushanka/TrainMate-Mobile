@@ -30,14 +30,14 @@ export class LocationTracker {
 
         let config = {
             desiredAccuracy: 0,
-            stationaryRadius: 20,
+            stationaryRadius: 5,
             distanceFilter: 2,
             debug: true,
             interval: 4000
         };
 
         BackgroundGeolocation.configure((location) => {
-
+this.badge.set(0);
             console.log('BackgroundGeolocation:  ' + location.latitude + ',' + location.longitude);
 
             // Run update inside of Angular's zone
@@ -66,16 +66,6 @@ export class LocationTracker {
         let i = 0;
 
         this.backgroundMode.enable();
-
-        setInterval(() => {
-
-            this.badge.increase(5);
-
-
-
-        }, 3000);
-
-
 
     }
 
