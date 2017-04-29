@@ -6,8 +6,8 @@
 -->
 <ion-header>
 
-    <ion-navbar>
-        <ion-title>Trains | Ja-Ela - Maradana </ion-title>
+    <ion-navbar color="primary">
+        <ion-title>Trains | Colombo Fort - Galle </ion-title>
     </ion-navbar>
 
 </ion-header>
@@ -19,8 +19,8 @@
         <ion-item *ngFor="let train of trains  | async" (click)="getDetails(trains.$key)">
             <ion-icon name="train" item-left></ion-icon>
             <h3>{{train.name}}</h3>
-            <p>Arriving at - 07:32</p>
-            <button ion-button clear item-right [navPush]="trainDetails">More</button>
+            <p>Arriving at - {{train.time}}</p>
+            
         </ion-item>
     </ion-list>
 

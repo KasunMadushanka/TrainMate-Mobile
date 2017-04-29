@@ -25,7 +25,7 @@ export class MapPage {
 
     loadMap(){
 
-        var coords:number[]=[];    
+        var coords:number[]=[];
 
         this.trains.subscribe(
 
@@ -77,7 +77,7 @@ export class MapPage {
                     // create new marker
                     let markerOptions: GoogleMapsMarkerOptions = {
                         position: location,
-                        title: "Kasun"
+                        title: "Ruhunu Kumari"
                     };
 
                     this.map.addMarker(markerOptions)

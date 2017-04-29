@@ -1,16 +1,11 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color="primary">
         <ion-title>
-            Tracking - Ruhunu Kumari
+            Train Tracking
         </ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content>
-    <div>
-        <ion-item *ngFor="let train of trains | async">
-            {{train.username}}
-        </ion-item>
-    </div>
     <div id="map"></div>
 </ion-content>
