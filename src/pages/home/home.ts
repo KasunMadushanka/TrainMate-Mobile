@@ -18,8 +18,6 @@ export class HomePage {
     'G':['C','H'],
     'H':['G']}
 
-    result:any;
-
     constructor(public navCtrl: NavController,public navParams: NavParams,public af:AngularFire) {
 
     }
@@ -81,20 +79,20 @@ export class HomePage {
             }
         }
 
-        findTrains(array,route){
+        findTrains(arrivals,route){
 
             let data=[];
 
-            for(let i=0;i<array[0].length;i++){
+            for(let i=0;i<arrivals[0].length;i++){
 
                 let path=[];
                 let p=false;
                 let path_exists=true;
 
-                let current_train=array[0][i];
+                let current_train=arrivals[0][i];
 
-                for(let j=0;j<array[array.length-1].length;j++){
-                    if(current_train.trainId==array[array.length-1][j].trainId){
+                for(let j=0;j<arrivals[arrivals.length-1].length;j++){
+                    if(current_train.trainId==arrivals[arrivals.length-1][j].trainId){
                         p=true;
                         path.push(current_train.trainId+' is a direct train');
                         break;
@@ -103,14 +101,14 @@ export class HomePage {
 
                 if(!p){
 
-                    for(let m=1;m<array.length;m++){
+                    for(let m=1;m<arrivals.length;m++){
                         let k=false;
-                        for(let n=0;n<array[m].length;n++){
-                            if(current_train.trainId==array[m][n].trainId && current_train.dpt_time<array[m][n].ar_time){
+                        for(let n=0;n<arrivals[m].length;n++){
+                            if(current_train.trainId==arrivals[m][n].trainId && current_train.dpt_time<arrivals[m][n].ar_time){
                                 k=true;
                                 path.push(current_train.trainId+" "+route[m-1]+"->"+route[m]);
 
-                                current_train=array[m][n];
+                                current_train=arrivals[m][n];
                                 break;
 
                             }
@@ -118,13 +116,14 @@ export class HomePage {
                         }
 
                         if(!k){
+
                             let l=false;
 
-                            for(let n=0;n<array[m-1].length;n++){
+                            for(let n=0;n<arrivals[m-1].length;n++){
 
-                                if(current_train.trainId!=array[m-1][n].trainId && current_train.ar_time<array[m-1][n].dpt_time){
+                                if(current_train.trainId!=arrivals[m-1][n].trainId && current_train.ar_time<arrivals[m-1][n].dpt_time){
                                     l=true;
-                                    current_train=array[m-1][n];
+                                    current_train=arrivals[m-1][n];
                                     m-=1;
                                     break;
                                 }
