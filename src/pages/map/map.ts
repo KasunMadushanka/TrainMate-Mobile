@@ -3,7 +3,8 @@ import {NavController, Platform} from 'ionic-angular';
 import {GoogleMap, GoogleMapsAnimation, GoogleMapsEvent, GoogleMapsLatLng, Geolocation, GoogleMapsMarkerOptions, GoogleMapsMarker, CameraPosition} from 'ionic-native';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFire, FirebaseListObservable,AngularFireDatabase } from 'angularfire2';
+import firebase from 'firebase';
 
 @Component({
     selector: 'page-map',
@@ -16,22 +17,26 @@ export class MapPage {
     url: any;
     trains:FirebaseListObservable<any>;
 
-    constructor(public navCtrl: NavController, private platform: Platform, public http:Http,public af : AngularFire) {
+    constructor(public navCtrl: NavController, private platform: Platform, public http:Http,public af : AngularFire,public fi:AngularFireDatabase) {
         this.trains=this.af.database.list('/contributors');
         platform.ready().then(() => {
-            this.loadMap();
+            //this.loadMap();
         });
+        let a=firebase.database().ref('/contributors').on("child_changed", function(snapshot){
+            console.log("child added");
+        });
+
     }
 
-    loadMap(){
+    /*loadMap(){
 
-        var coords:number[]=[];
+        let coords=[];
 
         this.trains.subscribe(
 
             trains => {
                 trains.map(trains =>
-                    coords=[trains.latitude,trains.longitude]
+                    coords.push({latitude:trains.latitude,longitude:trains.longitude})
 
                 )
 
@@ -39,7 +44,7 @@ export class MapPage {
 
             setTimeout(function () {
 
-                let location: GoogleMapsLatLng = new GoogleMapsLatLng(coords[0],coords[1]);
+                let location: GoogleMapsLatLng = new GoogleMapsLatLng(coords[0].latitude,coords[0].longitude);
 
                 this.map = new GoogleMap('map', {
                     'backgroundColor': 'white',
@@ -74,20 +79,27 @@ export class MapPage {
                     // move the map's camera to position
                     this.map.moveCamera(position);
 
-                    // create new marker
-                    let markerOptions: GoogleMapsMarkerOptions = {
-                        position: location,
-                        title: "Ruhunu Kumari"
-                    };
+                    for(let i=0;i<coords.length;i++){
 
-                    this.map.addMarker(markerOptions)
-                    .then((marker: GoogleMapsMarker) => {
-                        marker.showInfoWindow();
-                    });
+                        let l: GoogleMapsLatLng = new GoogleMapsLatLng(coords[i].latitude,coords[i].longitude);
+
+                        let markerOptions: GoogleMapsMarkerOptions = {
+                            position: l,
+                            title: i+""
+                        };
+
+                        let marker=this.map.addMarker(markerOptions)
+                        .then((marker: GoogleMapsMarker) => {
+                            marker.showInfoWindow();
+
+
+                        });
+
+                    }
                 });
 
             }, 5000);
 
-        }
+        }*/
 
     }

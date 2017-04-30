@@ -29,7 +29,7 @@ this.badge.clear();
         let config = {
             desiredAccuracy: 0,
             stationaryRadius: 5,
-            distanceFilter: 2,
+            distanceFilter: 5,
             debug: true,
             interval: 4000
         };
