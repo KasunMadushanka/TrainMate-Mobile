@@ -16,11 +16,9 @@ Ionic pages and navigation.
 <ion-content padding>
 
     <ion-list>
-        <ion-item *ngFor="let train of trains  | async" (click)="getDetails(trains.$key)">
+        <ion-item *ngFor="let train of trains" (click)="getDetails()">
             <ion-icon name="train" item-left></ion-icon>
-            <h3>{{train.name}}</h3>
-            <p>Arriving at - {{train.time}}</p>
-
+            <h3>{{train}}</h3>
         </ion-item>
     </ion-list>
 

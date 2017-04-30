@@ -11,6 +11,7 @@
 <ion-content>
     <h1 style="text-align: center">Search Trains</h1>
     <hr>
+    {{result}}
     <ion-list>
         <ion-item>
             <ion-label>Start</ion-label>
@@ -47,7 +48,7 @@
     <br>
 
     <ion-row center>
-        <button ion-button primary block round color="primary" style="text-align: center" (click)="search(start,end)">Get Time Table</button>
+        <button ion-button primary block round color="primary" style="text-align: center" (click)="findRoutes(start,end)">Get Time Table</button>
         <br><br>
         <img src="assets/images/logo.png" align="center" width="100%">
     </ion-row>
