@@ -20,22 +20,59 @@ import {DetailsPage} from '../details/details';
 export class TrainsPage {
 
     trainDetails = DetailsPage;
-    graph={'A':['B'],
-    'B':['C','D'],
-    'C':['B','E','F','G'],
-    'D':['B'],
-    'E':['C'],
-    'F':['C'],
-    'G':['C'],
-    'H':['G']}
+    graph={'A': ['B'],
+    'B': ['A','C', 'D'],
+    'C': ['B','E','F','G'],
+    'D': ['B'],
+    'E': ['C'],
+    'F': ['C'],
+    'G':['C','H'],
+    'H':['G'],}
 
-    route=['A','B','C','D','E','F','G','H'];
+    route=[];
+    path_queue=[];
 
     trains: FirebaseListObservable<any>;
 
     constructor(public navCtrl: NavController, public navParams: NavParams,public af: AngularFire,public userProvider:UserProvider) {
+        let start=navParams.get('start');
+        let end=navParams.get('end');
+        this.BFS(this.graph,start,end,this.path_queue);
+    }
 
-        this.findRoute(this.route);
+    BFS(graph,start,end,queue){
+
+        let temp_path=[start];
+
+        queue.push(temp_path);
+
+        while(queue.length!=0){
+
+            let tmp_path=queue.shift();
+            let last_node=tmp_path[tmp_path.length-1];
+
+            if(last_node==end){
+                this.findRoute(tmp_path);
+                console.log("pdath: "+tmp_path);
+
+            }
+
+            for(let i=0;i<graph[last_node].length;i++){
+                let k=0;
+
+                for(let j=0;j<tmp_path.length;j++){
+                    if(graph[last_node][i]==tmp_path[j]){
+                        k=1;
+                    }
+
+                }
+                if(k==0){
+                    let new_path=[];
+                    new_path=tmp_path+graph[last_node][i];
+                    queue.push(new_path);
+                }
+            }
+        }
     }
 
     getDetails(trainId){
@@ -56,7 +93,6 @@ export class TrainsPage {
                 train => {
                     train.map(train =>
                         array[i].push({trainId:train.trainId,ar_time:train.ar_time,dpt_time:train.dpt_time})
-
 
                     )
 
@@ -97,7 +133,6 @@ export class TrainsPage {
                                 }
 
                             }
-
 
                             if(!k){
                                 let l=false;
