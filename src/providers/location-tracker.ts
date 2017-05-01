@@ -17,15 +17,15 @@ export class LocationTracker {
     public lng: number = 0;
 
 
-    contributors: FirebaseListObservable<any>;
+    trains: FirebaseListObservable<any>;
 
     constructor(public zone: NgZone, private alertCtrl: AlertController, private backgroundMode: BackgroundMode,private badge: Badge,af: AngularFire,public up: UserProvider) {
-        this.contributors=af.database.list('/contributors');
+        this.trains=af.database.list('/trains');
 
     }
 
-    startTracking(con_id, username,userId) {
-this.badge.clear();
+    startTracking(con_id,trainId) {
+
         let config = {
             desiredAccuracy: 0,
             stationaryRadius: 5,
@@ -43,12 +43,10 @@ this.badge.clear();
 
                 this.lat = location.latitude;
                 this.lng = location.longitude;
-                this.contributors.update(userId, {
-                    id: con_id,
-                    username: username,
+                this.trains.update(trainId, {
+                    con_id: con_id,
                     longitude:this.lng,
-                    latitude: this.lat,
-                    number: i++
+                    latitude: this.lat
                 });
             });
 

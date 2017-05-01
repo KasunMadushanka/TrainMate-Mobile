@@ -4,13 +4,18 @@
     </ion-navbar>
 </ion-header>
 
-
 <ion-content>
     <br>
-    <ion-item *ngFor="let contributor of contributors | async">
-        <button ion-button full primary block round (click)="start(contributor.$key)">Start Tracking</button>
+    <ion-list>
+        <ion-item>
+            <ion-label>Select Train</ion-label>
+            <ion-select [(ngModel)]="train_select">
+                <ion-option *ngFor="let train of trains | async" value="{{train.$key}}">{{train.name}}</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+    <ion-item>
+        <button ion-button full primary block round (click)="start(train_select)">Start Tracking</button>
         <button ion-button full primary block round (click)="stop()">Stop Tracking</button>
     </ion-item>
-    <br>
-
 </ion-content>

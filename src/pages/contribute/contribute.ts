@@ -13,23 +13,17 @@ import { UserProvider } from '../../providers/user-provider/user-provider';
 })
 export class ContributePage {
 
-    contributors: FirebaseListObservable<any>;
+    trains: FirebaseListObservable<any>;
 
     constructor(public navCtrl: NavController, public locationTracker: LocationTracker,private alertCtrl: AlertController,private backgroundMode: BackgroundMode,af: AngularFire,public userProvider:UserProvider) {
-        this.contributors=af.database.list('/contributors');
-        this.contributors.push({
-            id: 1,
-            username: "kasun",
-            longitude: 0,
-            latitude: 0,
-            number: 0
-        });
+        this.trains=af.database.list('/trains');
+
     }
 
-    start(userId) {
+    start(trainId) {
+console.log(trainId)
 
-
-        this.locationTracker.startTracking(1,'kasun',userId);
+        this.locationTracker.startTracking(1,trainId);
 
 
     }

@@ -18,6 +18,7 @@ export class DetailsPage {
     schedule: FirebaseListObservable<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,af: AngularFire) {
+
       this.schedule=af.database.list('/trains/');
   }
 
