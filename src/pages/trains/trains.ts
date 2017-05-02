@@ -18,7 +18,6 @@ import {DetailsPage} from '../details/details';
     templateUrl: 'trains.html'
 })
 export class TrainsPage {
-
     trains:any;
 
     constructor(public navCtrl: NavController, public navParams: NavParams,public af: AngularFire,public userProvider:UserProvider) {
