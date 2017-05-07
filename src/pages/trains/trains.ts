@@ -2,16 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import { UserProvider } from '../../providers/user-provider/user-provider';
-
-/*
-Generated class for the Trains page.
-
-See http://ionicframework.com/docs/v2/components/#navigation for more info on
-Ionic pages and navigation.
-*/
-
 import {DetailsPage} from '../details/details';
-
 
 @Component({
     selector: 'page-trains',
@@ -26,7 +17,7 @@ export class TrainsPage {
     }
 
     getDetails(trainId){
-        this.navCtrl.push(DetailsPage);
+        this.navCtrl.push(DetailsPage,{trainId:trainId});
 
     }
 

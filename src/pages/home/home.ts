@@ -89,7 +89,7 @@ export class HomePage {
 
                 train => {
                     train.map(train =>
-                        array[i].push({trainId:train.trainId,ar_time:train.ar_time,dpt_time:train.dpt_time})
+                        array[i].push({trainId:train.trainId,ar_time:train.dynamic_ar_time,dpt_time:train.dynamic_dpt_time})
                     )
                     if(i==route.length-1){
                         callback(array);
@@ -111,9 +111,9 @@ export class HomePage {
                 let current_train=arrivals[0][i];
 
                 for(let j=0;j<arrivals[arrivals.length-1].length;j++){
-                    if(current_train.trainId==arrivals[arrivals.length-1][j].trainId){
+                    if(current_train.trainId==arrivals[arrivals.length-1][j].trainId && (current_train.dpt_time<arrivals[arrivals.length-1][j].ar_time) ){
                         p=true;
-                        path.push(current_train.trainId+' is a direct train');
+                        path.push(current_train.name);
                         break;
                     }
                 }
@@ -123,7 +123,7 @@ export class HomePage {
                     for(let m=1;m<arrivals.length;m++){
                         let k=false;
                         for(let n=0;n<arrivals[m].length;n++){
-                            if(current_train.trainId==arrivals[m][n].trainId && (current_train.dpt_time<arrivals[m][n].ar_time ||){
+                            if(current_train.trainId==arrivals[m][n].trainId && (current_train.dpt_time<arrivals[m][n].ar_time)){
                                 k=true;
                                 path.push(current_train.trainId+" "+route[m-1]+"->"+route[m]);
 
