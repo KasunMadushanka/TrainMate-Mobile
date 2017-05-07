@@ -9,14 +9,33 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
 })
 export class HomePage {
 
-    graph={'A': ['B'],
-    'B': ['A','C', 'D'],
-    'C': ['B','E','F','G'],
-    'D': ['B'],
-    'E': ['C'],
-    'F': ['C'],
-    'G':['C','H'],
-    'H':['G']}
+    graph={'MDA': ['FOT'],
+    'FOT': ['MDA','MLV'],
+    'MLV': ['FOT','RML'],
+    'RML': ['MLV','MRT'],
+    'MRT': ['RML','PND'],
+    'PND': ['MRT','WDA'],
+    'WDA': ['PND','KTN'],
+    'KTN': ['WDA','KTS'],
+    'KTS': ['KTN','PGS'],
+    'PGS': ['KTS','BRL'],
+    'BRL': ['PGS','ALT'],
+    'ALT': ['BRL','IDA'],
+    'IDA': ['ALT','KDA'],
+    'KDA': ['IDA','BPA'],
+    'BPA': ['KDA','ABA'],
+    'ABA': ['BPA','KWE'],
+    'KWE': ['ABA','HKD'],
+    'HKD': ['KWE','DNA'],
+    'DNA': ['HKD','BSH'],
+    'BSH': ['DNA','GNT'],
+    'GNT': ['BSH','GLE'],
+    'GLE': ['GNT','TLP'],
+    'TLP': ['GLE','KOG'],
+    'KOG': ['TLP','ANM'],
+    'WLM': ['KOG','WLM'],
+    'KMG': ['WLM','MTR'],
+    'MTR': ['KMG']}
 
     constructor(public navCtrl: NavController,public navParams: NavParams,public af:AngularFire) {
 
@@ -104,7 +123,7 @@ export class HomePage {
                     for(let m=1;m<arrivals.length;m++){
                         let k=false;
                         for(let n=0;n<arrivals[m].length;n++){
-                            if(current_train.trainId==arrivals[m][n].trainId && current_train.dpt_time<arrivals[m][n].ar_time){
+                            if(current_train.trainId==arrivals[m][n].trainId && (current_train.dpt_time<arrivals[m][n].ar_time ||){
                                 k=true;
                                 path.push(current_train.trainId+" "+route[m-1]+"->"+route[m]);
 
