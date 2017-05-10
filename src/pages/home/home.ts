@@ -9,51 +9,55 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
 })
 export class HomePage {
 
-    graph={'MDA': ['FOT'],
-    'FOT': ['MDA','MLV'],
-    'MLV': ['FOT','RML'],
-    'RML': ['MLV','MRT'],
-    'MRT': ['RML','PND'],
-    'PND': ['MRT','WDA'],
-    'WDA': ['PND','KTN'],
-    'KTN': ['WDA','KTS'],
-    'KTS': ['KTN','PGS'],
-    'PGS': ['KTS','BRL'],
-    'BRL': ['PGS','ALT'],
-    'ALT': ['BRL','IDA'],
-    'IDA': ['ALT','KDA'],
-    'KDA': ['IDA','BPA'],
-    'BPA': ['KDA','ABA'],
-    'ABA': ['BPA','KWE'],
-    'KWE': ['ABA','HKD'],
-    'HKD': ['KWE','DNA'],
-    'DNA': ['HKD','BSH'],
-    'BSH': ['DNA','GNT'],
-    'GNT': ['BSH','GLE'],
-    'GLE': ['GNT','TLP'],
-    'TLP': ['GLE','KOG'],
-    'KOG': ['TLP','ANM'],
-    'WLM': ['KOG','WLM'],
-    'KMG': ['WLM','MTR'],
-    'MTR': ['KMG']}
+    graph={'001': ['002'],
+    '002': ['001','003'],
+    '003': ['002','004'],
+    '004': ['003','005'],
+    '005': ['004','006'],
+    '006': ['005','007'],
+    '007': ['006','008'],
+    '008': ['007','009'],
+    '009': ['008','010'],
+    '010': ['009','011'],
+    '011': ['010','012'],
+    '012': ['011','013'],
+    '013': ['012','014'],
+    '014': ['013','015'],
+    '015': ['014','016'],
+    '016': ['015','017'],
+    '017': ['016','018'],
+    '018': ['017','019'],
+    '019': ['018','020'],
+    '020': ['019','021'],
+    '021': ['020','022'],
+    '022': ['021','023'],
+    '023': ['022','024'],
+    '024': ['023','025'],
+    '025': ['024','026'],
+    '026': ['025','027'],
+    '027': ['026','028'],
+    '028':['027']}
 
     constructor(public navCtrl: NavController,public navParams: NavParams,public af:AngularFire) {
 
     }
 
     findRoutes(start,end){
-
+        console.log(start+" "+end)
         let queue=[];
         let temp_path=[start];
 
         queue.push(temp_path);
+        //console.log(queue)
 
         while(queue.length!=0){
 
             let tmp_path=queue.shift();
+
             let last_node=tmp_path[tmp_path.length-1];
 
             if(last_node==end){
+                console.log(tmp_path)
                 this.getArrivals(tmp_path,data=>{
                     this.findTrains(data,tmp_path);
                 });
@@ -70,7 +74,8 @@ export class HomePage {
                 }
                 if(k==0){
                     let new_path=[];
-                    new_path=tmp_path+this.graph[last_node][i];
+                    tmp_path.push(this.graph[last_node][i]);
+                    new_path=tmp_path;
                     queue.push(new_path);
                 }
             }
@@ -83,7 +88,7 @@ export class HomePage {
 
         for(let i=0;i<route.length;i++){
             array[i]=[];
-            let list=this.af.database.list('/stations/'+route[i]);
+            let list=this.af.database.list('/stations/'+route[i]+'/arrivals');
 
             list.subscribe(
 
@@ -113,7 +118,8 @@ export class HomePage {
                 for(let j=0;j<arrivals[arrivals.length-1].length;j++){
                     if(current_train.trainId==arrivals[arrivals.length-1][j].trainId && (current_train.dpt_time<arrivals[arrivals.length-1][j].ar_time) ){
                         p=true;
-                        path.push(current_train.name);
+                        console.log("uyftf")
+                        path.push({trainId:current_train.trainId,start:route[0],end:route[route.length-1]});
                         break;
                     }
                 }
@@ -124,9 +130,15 @@ export class HomePage {
                         let k=false;
                         for(let n=0;n<arrivals[m].length;n++){
                             if(current_train.trainId==arrivals[m][n].trainId && (current_train.dpt_time<arrivals[m][n].ar_time)){
-                                k=true;
-                                path.push(current_train.trainId+" "+route[m-1]+"->"+route[m]);
 
+                                k=true;
+
+                                if(path.length>0 && path[path.length-1].trainId==current_train.trainId){
+                                    path[path.length-1].end=route[m];
+
+                                }else{
+                                    path.push({trainId:current_train.trainId,start:route[m-1],end:route[m]});
+                                }
                                 current_train=arrivals[m][n];
                                 break;
 

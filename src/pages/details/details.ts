@@ -10,19 +10,16 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
 export class DetailsPage {
 
     schedule: FirebaseListObservable<any>;
+    trainId:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,af: AngularFire) {
-      navParams.get('trainId');
-      this.schedule=af.database.list('/trains/');
-  }
+      this.trainId=navParams.get('trainId');
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DetailsPage');
   }
 
   showOnMap(){
 
-      this.navCtrl.push(MapPage);
+      this.navCtrl.push(MapPage,{trainId:this.trainId});
   }
 
 }

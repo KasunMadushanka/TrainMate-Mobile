@@ -17,9 +17,9 @@ Ionic pages and navigation.
 
     <ion-list>
         <br>
-        <ion-item *ngFor="let train of trains" (click)="getDetails(train.trainId)">
+        <ion-item *ngFor="let option of options" (click)="getDetails(option[0])">
             <ion-icon name="train" item-left></ion-icon>
-            <h3>{{train}}</h3>
+            <p>{{option.slice(1,3)}}</p>
         </ion-item>
     </ion-list>
 
