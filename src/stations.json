@@ -13,7 +13,7 @@
                 "dynamic_dpt_time" : "16:40"
             },
             "8086":{
-                "trainId" : "8096",
+                "trainId" : "8086",
                 "status":"stopping",
                 "static_ar_time" :"16:40",
                 "static_dpt_time" : "16:40",
@@ -29,7 +29,7 @@
         "longitude":79.85051416394049,
         "arrivals":{
             "8086":{
-                "trainId" : "8096",
+                    "trainId" : "8086",
                 "status":"stopping",
                 "static_ar_time" : "16:44",
                 "static_dpt_time" : "16:46",
@@ -45,7 +45,7 @@
         "longitude":79.86277722355658,
         "arrivals":{
             "8086":{
-                "trainId" : "8096",
+                    "trainId" : "8086",
                 "status":"passing",
                 "static_ar_time" : "17:01",
                 "static_dpt_time" : "17:01",
@@ -61,7 +61,7 @@
         "longitude":79.86689709660345,
         "arrivals":{
             "8086":{
-                "trainId" : "8096",
+                    "trainId" : "8086",
                 "status":"stopping",
                 "static_ar_time" : "17:04",
                 "static_dpt_time" : "17:05",
@@ -77,7 +77,7 @@
         "longitude":79.88195770022207,
         "arrivals":{
             "8086":{
-                "trainId" : "8096",
+                "trainId" : "8086",
                 "status":"passing",
                 "static_ar_time" : "17:11",
                 "static_dpt_time" : "17:11",
@@ -93,7 +93,7 @@
         "longitude":79.9046545529061,
         "arrivals":{
             "8086":{
-                "trainId" : "8096",
+                "trainId" : "8086",
                 "status":"stopping",
                 "static_ar_time" : "17:21",
                 "static_dpt_time" : "17:22",
@@ -105,11 +105,11 @@
     },
     "007" : {
         "name":"Wadduwa",
-        "latitude":0,
-        "longitude":0,
+        "latitude":6.662731553064251,
+        "longitude":79.92868066084043,
         "arrivals":{
-            "001":{
-                "trainId" : "8096",
+            "8086":{
+                    "trainId" : "8086",
                 "status":"passing",
                 "static_ar_time" : "17:30",
                 "static_dpt_time" : "17:30",
@@ -121,11 +121,11 @@
     },
     "008" : {
         "name":"Kalutara North",
-        "latitude":0,
-        "longitude":0,
+        "latitude":6.601176469012077,
+        "longitude":79.95427966367856,
         "arrivals":{
-            "001":{
-                "trainId" : "8096",
+            "8086":{
+                "trainId" : "8086",
                 "status":"passing",
                 "static_ar_time" : "17:38",
                 "static_dpt_time" : "17:38",
@@ -137,11 +137,11 @@
     },
     "009" : {
         "name":"Kalutara South",
-        "latitude":0,
-        "longitude":0,
+        "latitude":6.584102526291926,
+        "longitude":79.95893597852842,
         "arrivals":{
-            "001":{
-                "trainId" : "8096",
+            "8086":{
+                "trainId" : "8086",
                 "status":"stopping",
                 "static_ar_time" : "17:42",
                 "static_dpt_time" : "17:43",
@@ -153,11 +153,11 @@
     },
     "010" : {
         "name":"Payagala",
-        "latitude":0,
-        "longitude":0,
+        "latitude":6.531619396641329,
+        "longitude":79.97499704610959,
         "arrivals":{
-            "001":{
-                "trainId" : "8096",
+            "8086":{
+                    "trainId" : "8086",
                 "status":"passing",
                 "static_ar_time" : "17:49",
                 "static_dpt_time" : "17:49",
@@ -169,11 +169,11 @@
     },
     "011" : {
         "name":"Beruwala",
-        "latitude":0,
-        "longitude":0,
+        "latitude":6.476892091790291,
+        "longitude":79.9838590646948,
         "arrivals":{
-            "001":{
-                "trainId" : "8096",
+            "8086":{
+                "trainId" : "8086",
                 "status":"passing",
                 "static_ar_time" : "17:53",
                 "static_dpt_time" : "17:53",
@@ -185,11 +185,11 @@
     },
     "012" : {
         "name":"Aluthgama",
-        "latitude":0,
-        "longitude":0,
+        "latitude":6.4329055401228565,
+        "longitude":80.00018835317746,
         "arrivals":{
-            "001":{
-                "trainId" : "8096",
+            "8086":{
+                "trainId" : "8086",
                 "status":"stopping",
                 "static_ar_time" : "17:57",
                 "static_dpt_time" : "17:58",
@@ -201,11 +201,11 @@
     },
     "013" : {
         "name":"Induruwa",
-        "latitude":0,
-        "longitude":0,
+        "latitude":6.387465118861653,
+        "longitude":80.00877142202512,
         "arrivals":{
-            "001":{
-                "trainId" : "8096",
+            "8086":{
+                    "trainId" : "8086",
                 "status":"passing",
                 "static_ar_time" : "18:02",
                 "static_dpt_time" : "18:02",
@@ -217,11 +217,11 @@
     },
     "014" : {
         "name":"Kosgoda",
-        "latitude":0,
-        "longitude":0,
+        "latitude":6.338416496201347,
+        "longitude":80.02952099096433,
         "arrivals":{
-            "001":{
-                "trainId" : "8096",
+            "8086":{
+                    "trainId" : "8086",
                 "status":"passing",
                 "static_ar_time" : "18:07",
                 "static_dpt_time" : "18:07",
@@ -233,11 +233,11 @@
     },
     "015" : {
         "name":"Balapitiya",
-        "latitude":0,
-        "longitude":0,
+        "latitude":6.276587265636691,
+        "longitude":80.04346847784177,
         "arrivals":{
-            "001":{
-                "trainId" : "8096",
+            "8086":{
+                    "trainId" : "8086",
                 "status":"passing",
                 "static_ar_time" : "18:13",
                 "static_dpt_time" : "18:13",
@@ -249,11 +249,11 @@
     },
     "016" : {
         "name":"Ambalangoda",
-        "latitude":0,
-        "longitude":0,
+        "latitude":6.2352499328547015,
+        "longitude":80.05503416311399,
         "arrivals":{
-            "001":{
-                "trainId" : "8096",
+            "8086":{
+                "trainId" : "8086",
                 "status":"stopping",
                 "static_ar_time" : "18:17",
                 "static_dpt_time" : "18:18",
@@ -265,11 +265,11 @@
     },
     "017" : {
         "name":"Kahawe",
-        "latitude":0,
-        "longitude":0,
+        "latitude":6.183264360685527,
+        "longitude":80.07402420293943,
         "arrivals":{
-            "001":{
-                "trainId" : "8096",
+            "8086":{
+                    "trainId" : "8086",
                 "status":"passing",
                 "static_ar_time" : "18:23",
                 "static_dpt_time" : "18:23",
@@ -280,11 +280,11 @@
     },
     "018" : {
         "name":"Hikkaduwa",
-        "latitude":0,
-        "longitude":0,
+        "latitude":6.142197050065337,
+        "longitude":80.10013818990842,
         "arrivals":{
-            "001":{
-                "trainId" : "8096",
+            "8086":{
+                "trainId" : "8086",
                 "status":"stopping",
                 "static_ar_time" : "18:28",
                 "static_dpt_time" : "18:29",
@@ -296,11 +296,11 @@
     },
     "019" : {
         "name":"Dodanduwa",
-        "latitude":0,
-        "longitude":0,
+        "latitude":6.0982888583717125,
+        "longitude":80.13286113989011,
         "arrivals":{
-            "001":{
-                "trainId" : "8096",
+            "8086":{
+                "trainId" : "8086",
                 "status":"passing",
                 "static_ar_time" : "18:34",
                 "static_dpt_time" : "18:34",
@@ -312,11 +312,11 @@
     },
     "020" : {
         "name":"Boossa",
-        "latitude":0,
-        "longitude":0,
+        "latitude":6.073900975794997,
+        "longitude":80.16094923269407,
         "arrivals":{
-            "001":{
-                "trainId" : "8096",
+            "8086":{
+                    "trainId" : "8086",
                 "status":"stopping",
                 "static_ar_time" : "18:38",
                 "static_dpt_time" : "18:39",
@@ -328,11 +328,11 @@
     },
     "021" : {
         "name":"Ginthota",
-        "latitude":0,
-        "longitude":0,
+        "latitude":6.0606290652304144,
+        "longitude":80.17942428838865,
         "arrivals":{
-            "001":{
-                "trainId" : "8096",
+            "8086":{
+                "trainId" : "8086",
                 "status":"passing",
                 "static_ar_time" : "18:41",
                 "static_dpt_time" : "18:41",
@@ -343,11 +343,11 @@
     },
     "022" : {
         "name":"Galle",
-        "latitude":0,
-        "longitude":0,
+        "latitude":6.035668668147113,
+        "longitude":80.21408379327909,
         "arrivals":{
-            "001":{
-                "trainId" : "8096",
+            "8086":{
+                "trainId" : "8086",
                 "status":"stopping",
                 "static_ar_time" : "18:45",
                 "static_dpt_time" : "18:50",
@@ -359,11 +359,11 @@
     },
     "023" : {
         "name":"Talpe",
-        "latitude":0,
-        "longitude":0,
+        "latitude":5.998516678221995,
+        "longitude":80.2801305080618,
         "arrivals":{
-            "001": {
-                "trainId" : "8096",
+            "8086": {
+                "trainId" : "8086",
                 "status":"stopping",
                 "static_ar_time" : "19:00",
                 "static_dpt_time" : "19:01",
@@ -374,11 +374,11 @@
     },
     "024" : {
         "name":"Koggala",
-        "latitude":0,
-        "longitude":0,
+        "latitude":5.986011187795266,
+        "longitude":80.3316932941641,
         "arrivals":{
-            "001":{
-                "trainId" : "8096",
+            "8086":{
+                "trainId" : "8086",
                 "status":"passing",
                 "static_ar_time" : "19:04",
                 "static_dpt_time" : "19:04",
@@ -390,11 +390,11 @@
     },
     "025" : {
         "name":"Ahangama",
-        "latitude":0,
-        "longitude":0,
+        "latitude":5.973270658350204,
+        "longitude":80.36383688699857,
         "arrivals":{
-            "001":{
-                "trainId" : "8096",
+            "8086":{
+                "trainId" : "8086",
                 "status":"stopping",
                 "static_ar_time" : "19:09",
                 "static_dpt_time" : "19:10",
@@ -414,11 +414,11 @@
     },
     "026" : {
         "name":"Weligama",
-        "latitude":0,
-        "longitude":0,
+        "latitude":5.975639522961144,
+        "longitude":80.4296690250601,
         "arrivals":{
-            "001":{
-                "trainId" : "8076",
+            "8086":{
+                    "trainId" : "8086",
                 "status":"stopping",
                 "static_ar_time" : "19:20",
                 "static_dpt_time" : "19:21",
@@ -430,11 +430,11 @@
     },
     "027" : {
         "name":"Kamburugamuwa",
-        "latitude":0,
-        "longitude":0,
+        "latitude":5.943434892953121,
+        "longitude":80.4958230282034,
         "arrivals":{
-            "001":{
-                "trainId" : "8076",
+            "8086":{
+                "trainId" : "8086",
                 "status":"stopping",
                 "static_ar_time" : "19:28",
                 "static_dpt_time" : "19:29",
@@ -446,11 +446,11 @@
     },
     "028" : {
         "name":"Matara",
-        "latitude":0,
-        "longitude":0,
+        "latitude":5.951838370683485,
+        "longitude":80.5435502554144,
         "arrivals":{
-            "001":{
-                "trainId" : "8076",
+            "8086":{
+                "trainId" : "8086",
                 "status":"stopping",
                 "static_ar_time" : "19:35",
                 "static_dpt_time" : "19:35",

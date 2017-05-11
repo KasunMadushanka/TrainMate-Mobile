@@ -7,6 +7,7 @@ import * as io from "socket.io-client";
 import { BackgroundMode } from '@ionic-native/background-mode';
 import {AngularFire, FirebaseListObservable,FirebaseObjectObservable} from 'angularfire2';
 import { UserProvider } from '../../providers/user-provider/user-provider';
+import { UtilProvider } from '../../providers/utils';
 
 @Component({
     selector: 'page-contribute',
@@ -17,39 +18,44 @@ export class ContributePage {
     trains: FirebaseListObservable<any>;
     stations:FirebaseObjectObservable<any>;
     data: any;
+    stationId:any;
 
-    constructor(public navCtrl: NavController, public locationTracker: LocationTracker,public http:Http,private alertCtrl: AlertController,private backgroundMode: BackgroundMode,public af: AngularFire,public userProvider:UserProvider) {
+    constructor(public navCtrl: NavController, public locationTracker: LocationTracker,public util:UtilProvider,public http:Http,private alertCtrl: AlertController,private backgroundMode: BackgroundMode,public af: AngularFire,public userProvider:UserProvider) {
         this.trains=af.database.list('/trains');
-        this.getStations(8086,list=>{
+
+
+    }
+
+    checkLocation(trainId){
+        console.log(trainId)
+        this.getStations(trainId,list=>{
             this.getCoordinates(list,coords=>{
-                console.log(coords)
-                this.getDistances(coords);
+                this.getUserPosition(user_coords=>{
+                    this.getDistances(user_coords,coords)
+                });
             });
-
         });
-
     }
 
     getStations(trainId,callback){
 
         this.stations= this.af.database.object('/trains/'+trainId+'/route', { preserveSnapshot: true });
+
         this.stations.subscribe(snapshot => {
-
             callback(snapshot.val())
-
         });
 
     }
 
     getCoordinates(stations,callback){
-
+        console.log(stations.length)
         let coords=[];
 
         for(let i=0;i<stations.length;i++){
             let stations_list= this.af.database.object('/stations/'+stations[i], { preserveSnapshot: true });
             stations_list.subscribe(snapshot => {
-
-                coords.push({latitude:snapshot.val().latitude,longitude:snapshot.val().longitude});
+                let station=snapshot.val();
+                coords.push({id:station.key,name:station.name,latitude:station.latitude,longitude:station.longitude});
                 if(i==stations.length-1){
                     callback(coords);
                 }
@@ -57,28 +63,32 @@ export class ContributePage {
         }
     }
 
-    getDistances(coords){
-
-        let data = this.applyHaversine(coords);
-
-        data.sort((locationA, locationB) => {
-            console.log((locationA.distance - locationB.distance)*1609.34)
-
-            return locationA.distance - locationB.distance;
-        });
+    getUserPosition(callback){
+        callback({latitude:6.9,longitude:79.9})
+        //Geolocation.getCurrentPosition(function(position) {
+        //    callback({latitude:position.coords.latitude,longitude:position.coords.longitude})
+        //});
 
     }
 
-    applyHaversine(locations){
+    getDistances(user_coords,coords){
+        let data=this.applyHaversine(user_coords,coords);
+    }
+
+    applyHaversine(user_coords,locations){
 
         let usersLocation = {
+            //lat: user_coords.latitude,
+            //lng:user_coords.longitude
             lat: 6.929448334838397,
-            lng: 79.86510001656347
+            lng:79.86510001656347
         };
 
         locations.map((location) => {
 
             let placeLocation = {
+                id:location.id,
+                name:location.name,
                 lat: location.latitude,
                 lng: location.longitude
             };
@@ -88,9 +98,16 @@ export class ContributePage {
                 placeLocation,
                 'miles'
             ).toFixed(2);
+
+            if(location.distance==0){
+                let alert = this.util.doAlert("Confirmation","You are at "+placeLocation.name+" station","Proceed");
+                alert.present();
+                this.stationId=placeLocation.id;
+                return;
+            }
+
         });
 
-        return locations;
     }
 
     getDistanceBetweenPoints(start, end, units){
@@ -123,13 +140,9 @@ export class ContributePage {
         return x * Math.PI / 180;
     }
 
-
     start(trainId) {
-        console.log(trainId)
-
+        console.log(this.stationId)
         this.locationTracker.startTracking(1,trainId);
-
-
     }
 
     stop() {
