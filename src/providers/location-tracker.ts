@@ -5,7 +5,7 @@ import * as io from "socket.io-client";
 import { BackgroundMode } from '@ionic-native/background-mode';
 import { NavController, AlertController } from 'ionic-angular';
 import { Badge } from '@ionic-native/badge';
-import {AngularFire, FirebaseListObservable} from 'angularfire2';
+import {AngularFire, FirebaseListObservable,FirebaseObjectObservable} from 'angularfire2';
 import { UserProvider } from './user-provider/user-provider';
 import { UtilProvider } from './utils';
 
@@ -16,71 +16,99 @@ export class LocationTracker {
     public lat: number = 0;
     public lng: number = 0;
     next_station:any;
+    trainId:any;
     time:Date;
 
     trains: FirebaseListObservable<any>;
 
     constructor(public zone: NgZone, private alertCtrl: AlertController,public util:UtilProvider, private backgroundMode: BackgroundMode,private badge: Badge,public af: AngularFire,public up: UserProvider) {
+
         this.trains=af.database.list('/trains');
 
     }
 
-    startTracking(con_id,trainId,station) {
+    getUserPosition(callback){
+        navigator.geolocation.getCurrentPosition(function (position) {
+            callback({latitude:position.coords.latitude,longitude:position.coords.longitude});
+        });
+    }
 
-        console.log(station)
+    startTracking(con_id,trainId,stations) {
+
+        this.trainId=trainId;
+
+        console.log(stations)
         let config = {
             desiredAccuracy: 0,
             stationaryRadius: 5,
             distanceFilter: 10,
             debug: true,
-            interval: 4000
+            interval: 2000
         };
 
         let distance=0;
+        let current_station=stations[0];
+
         let i=0;
-        let current_station=station[i];
 
         let arrived=true;
 
         BackgroundGeolocation.configure((location) => {
 
             let usersLocation = {
-                //lat: location.latitude,
-                //lng:location.longitude
-                lat: 6.929448334838397,
-                lng:79.86510001656347
+                lat: location.latitude,
+                lng:location.longitude
+            };
+
+            let placeLocation = {
+                id:current_station.id,
+                name:current_station.name,
+                lat: current_station.latitude,
+                lng: current_station.longitude
             };
 
             location.distance = this.getDistanceBetweenPoints(
-                current_station,
+                placeLocation,
                 usersLocation,
                 'miles'
             ).toFixed(2);
 
-            if(arrived && location.distance>=500){
+            if(arrived && location.distance<100){
 
                 this.time=new Date();
+                let stat=stations[i].dpt_time.split(':');
 
-                current_station= this.af.database.object('/stations/'+station[0].id, { preserveSnapshot: true });
-                current_station.update(trainId, {
-                    prev_station:this.next_station,
-                    current_station:0,
-                    next_station:station[i+1].id,
-                    dynamic_dpt_time:this.time.getHours()+":"+this.time.getMinutes()
-                });
-                this.next_station=station[i+1];
+                let hour_diff=this.time.getHours()-stat[0];
+                let minute_diff=this.time.getMinutes()-stat[1];
+                let delay=hour_diff*60+minute_diff;
+                let alert = this.util.doAlert("Confirmation","You are at "+delay+" station","Proceed");
+                alert.present();
+
+                for(let n=i;n<stations.length;n++){
+                    let stat1=stations[n].dpt_time.split(':');
+                    let new_time=(Number(stat1[0])+Number((delay/60).toFixed(0)))+":"+(Number(stat1[1])+(delay%60));
+
+                    let cur_station:FirebaseObjectObservable<any>= this.af.database.object('/stations/'+stations[n].id+'/arrivals/'+trainId);
+                    cur_station.update({
+                        dynamic_dpt_time:new_time
+                    });
+                }
+
+                current_station=stations[i];
+
+                i++;
                 arrived=false;
 
-            }else if(!arrived && location.distance<=500){
+            }else if(!arrived && location.distance<=300){
 
                 this.time=new Date();
 
-                this.next_station= this.af.database.object('/stations/'+this.next_station.id, { preserveSnapshot: true });
-                current_station.update(trainId, {
-                    current_station:this.next_station,
-                    next_station:station[i+1].id,
-                    dynamic_ar_time:this.time.getHours()+":"+this.time.getMinutes()
-                });
+                for(let n=i;n<stations.length;n++){
+                    let cur_station:FirebaseObjectObservable<any>= this.af.database.object('/stations/'+stations[n].id+'/arrivals/'+trainId);
+                    cur_station.update({
+                        dynamic_ar_time:this.time.getHours()+":"+this.time.getMinutes()
+                    });
+                }
                 arrived=true;
 
             }
@@ -88,13 +116,10 @@ export class LocationTracker {
             // Run update inside of Angular's zone
             this.zone.run(() => {
 
-                this.lat = location.latitude;
-                this.lng = location.longitude;
-
                 this.trains.update(trainId, {
                     con_id: con_id,
-                    longitude:this.lng,
-                    latitude: this.lat,
+                    latitude:location.latitude,
+                    longitude: location.longitude,
                     distance:distance,
                     total_distance:0
                 });
@@ -112,6 +137,18 @@ export class LocationTracker {
         BackgroundGeolocation.start();
 
         this.backgroundMode.enable();
+
+    }
+
+    updateTimetable(rem_stations){
+
+        let stations= this.af.database.list('/stations');
+        for(let i=0;i<rem_stations.length;i++){
+            this.trains.update(rem_stations[i]+'/arrivals/'+this.trainId, {
+                dynamic_ar_time:2,
+                dynamic_dpt_time:2
+            });
+        }
 
     }
 
@@ -137,7 +174,7 @@ export class LocationTracker {
         let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
         let d = R * c;
 
-        return d;
+        return d*1609.34;
 
     }
 

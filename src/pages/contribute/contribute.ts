@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController,AlertController } from 'ionic-angular';
-import { Geolocation, Geoposition,GoogleMapsGroundOverlay} from 'ionic-native';
 import { LocationTracker } from '../../providers/location-tracker';
 import {Http} from '@angular/http';
 import * as io from "socket.io-client";
@@ -19,21 +18,21 @@ export class ContributePage {
     stations:FirebaseObjectObservable<any>;
     data: any;
     station:any;
+    trainId:any;
 
     constructor(public navCtrl: NavController, public locationTracker: LocationTracker,public util:UtilProvider,public http:Http,private alertCtrl: AlertController,private backgroundMode: BackgroundMode,public af: AngularFire,public userProvider:UserProvider) {
-let time=new Date();
-console.log(time.getHours()+" "+time.getMinutes());
 
         this.trains=af.database.list('/trains');
-
 
     }
 
     checkLocation(trainId){
-        console.log(trainId)
+
+        this.trainId=trainId;
+
         this.getStations(trainId,list=>{
             this.getCoordinates(list,coords=>{
-                this.getUserPosition(user_coords=>{
+                this.locationTracker.getUserPosition(user_coords=>{
                     this.getDistances(user_coords,coords)
                 });
             });
@@ -58,20 +57,12 @@ console.log(time.getHours()+" "+time.getMinutes());
             let stations_list= this.af.database.object('/stations/'+stations[i], { preserveSnapshot: true });
             stations_list.subscribe(snapshot => {
                 let station=snapshot.val();
-                coords.push({id:station.key,name:station.name,latitude:station.latitude,longitude:station.longitude});
+                coords.push({id:snapshot.key,name:station.name,latitude:station.latitude,longitude:station.longitude,ar_time:station.arrivals[this.trainId].dynamic_ar_time,dpt_time:station.arrivals[this.trainId].dynamic_dpt_time});
                 if(i==stations.length-1){
                     callback(coords);
                 }
             });
         }
-    }
-
-    getUserPosition(callback){
-        callback({latitude:6.9,longitude:79.9})
-        //Geolocation.getCurrentPosition(function(position) {
-        //    callback({latitude:position.coords.latitude,longitude:position.coords.longitude})
-        //});
-
     }
 
     getDistances(user_coords,coords){
@@ -83,10 +74,10 @@ console.log(time.getHours()+" "+time.getMinutes());
         let i=0;
 
         let usersLocation = {
-            //lat: user_coords.latitude,
-            //lng:user_coords.longitude
-            lat: 6.831672283442692,
-            lng:79.86277722355658
+            lat: user_coords.latitude,
+            lng:user_coords.longitude
+            //lat: 6.831672283442692,
+            //lng:79.86277722355658
         };
 
         locations.map((location) => {
@@ -98,13 +89,13 @@ console.log(time.getHours()+" "+time.getMinutes());
                 lng: location.longitude
             };
 
-            location.distance = this.getDistanceBetweenPoints(
+            location.distance = this.locationTracker.getDistanceBetweenPoints(
                 usersLocation,
                 placeLocation,
                 'miles'
-            ).toFixed(4);
+            ).toFixed(2);
 
-            if(location.distance==0){
+            if(location.distance<300){
                 let alert = this.util.doAlert("Confirmation","You are at "+placeLocation.name+" station","Proceed");
                 alert.present();
                 this.stations=locations.slice(i,locations.length);
@@ -118,38 +109,8 @@ console.log(time.getHours()+" "+time.getMinutes());
 
     }
 
-    getDistanceBetweenPoints(start, end, units){
-
-        let earthRadius = {
-            miles: 3958.8,
-            km: 6371
-        };
-
-        let R = earthRadius[units || 'miles'];
-        let lat1 = start.lat;
-        let lon1 = start.lng;
-        let lat2 = end.lat;
-        let lon2 = end.lng;
-
-        let dLat = this.toRad((lat2 - lat1));
-        let dLon = this.toRad((lon2 - lon1));
-        let a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-        Math.cos(this.toRad(lat1)) * Math.cos(this.toRad(lat2)) *
-        Math.sin(dLon / 2) *
-        Math.sin(dLon / 2);
-        let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-        let d = R * c;
-
-        return d*1609.34;
-
-    }
-
-    toRad(x){
-        return x * Math.PI / 180;
-    }
-
     start(trainId) {
-        this.locationTracker.startTracking(1,trainId,this.station);
+        this.locationTracker.startTracking(1,trainId,this.stations);
     }
 
     stop() {

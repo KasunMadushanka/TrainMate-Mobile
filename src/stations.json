@@ -3,6 +3,9 @@
         "name":"Maradana",
         "latitude":6.929448334838397,
         "longitude":79.86510001656347,
+        "distances":{
+            "002":1800
+        },
         "arrivals":{
             "8096":{
                 "trainId" : "8086",
@@ -27,6 +30,10 @@
         "name":"Colombo Fort",
         "latitude":6.933436917812894,
         "longitude":79.85051416394049,
+        "distances":{
+            "001":1800,
+            "003":12262
+        },
         "arrivals":{
             "8086":{
                     "trainId" : "8086",
@@ -43,6 +50,10 @@
         "name":"Mount Lavinia",
         "latitude":6.831672283442692,
         "longitude":79.86277722355658,
+        "distances":{
+            "002":12262,
+            "004":1940
+        },
         "arrivals":{
             "8086":{
                     "trainId" : "8086",
@@ -59,6 +70,10 @@
         "name":"Rathmalana",
         "latitude":6.814755559951212,
         "longitude":79.86689709660345,
+        "distances":{
+            "003":1940,
+            "005":4870
+        },
         "arrivals":{
             "8086":{
                     "trainId" : "8086",
@@ -75,6 +90,10 @@
         "name":"Moratuwa",
         "latitude":6.774341565586972,
         "longitude":79.88195770022207,
+        "distances":{
+            "003":4870,
+            "005":7380
+        },
         "arrivals":{
             "8086":{
                 "trainId" : "8086",
@@ -89,8 +108,12 @@
     },
     "006" : {
         "name":"Panadura",
-        "latitude":6.712350354683735,
-        "longitude":79.9046545529061,
+        "latitude":6.9221979,
+        "longitude":79.9389036,
+        "distances":{
+            "003":7380,
+            "005":0
+        },
         "arrivals":{
             "8086":{
                 "trainId" : "8086",
