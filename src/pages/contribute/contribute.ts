@@ -18,9 +18,12 @@ export class ContributePage {
     trains: FirebaseListObservable<any>;
     stations:FirebaseObjectObservable<any>;
     data: any;
-    stationId:any;
+    station:any;
 
     constructor(public navCtrl: NavController, public locationTracker: LocationTracker,public util:UtilProvider,public http:Http,private alertCtrl: AlertController,private backgroundMode: BackgroundMode,public af: AngularFire,public userProvider:UserProvider) {
+let time=new Date();
+console.log(time.getHours()+" "+time.getMinutes());
+
         this.trains=af.database.list('/trains');
 
 
@@ -77,11 +80,13 @@ export class ContributePage {
 
     applyHaversine(user_coords,locations){
 
+        let i=0;
+
         let usersLocation = {
             //lat: user_coords.latitude,
             //lng:user_coords.longitude
-            lat: 6.929448334838397,
-            lng:79.86510001656347
+            lat: 6.831672283442692,
+            lng:79.86277722355658
         };
 
         locations.map((location) => {
@@ -97,14 +102,17 @@ export class ContributePage {
                 usersLocation,
                 placeLocation,
                 'miles'
-            ).toFixed(2);
+            ).toFixed(4);
 
             if(location.distance==0){
                 let alert = this.util.doAlert("Confirmation","You are at "+placeLocation.name+" station","Proceed");
                 alert.present();
-                this.stationId=placeLocation.id;
+                this.stations=locations.slice(i,locations.length);
+                console.log(this.stations)
                 return;
             }
+
+            i++;
 
         });
 
@@ -132,7 +140,7 @@ export class ContributePage {
         let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
         let d = R * c;
 
-        return d;
+        return d*1609.34;
 
     }
 
@@ -141,8 +149,7 @@ export class ContributePage {
     }
 
     start(trainId) {
-        console.log(this.stationId)
-        this.locationTracker.startTracking(1,trainId);
+        this.locationTracker.startTracking(1,trainId,this.station);
     }
 
     stop() {
