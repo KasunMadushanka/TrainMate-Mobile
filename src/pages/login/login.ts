@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { TabsPage } from '../tabs/tabs';
-import { ContributePage } from '../contribute/contribute';
+import { ContributionPage } from '../contribution/contribution';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { validateEmail } from '../../validators/email';
 import { AuthProvider } from '../../providers/auth-provider/auth-provider';
@@ -32,7 +32,7 @@ export class LoginPage {
             this.auth.signin(this.loginForm.value)
             .then((data) => {
                 this.storage.set('uid', data.uid);
-                this.nav.push(ContributePage);
+                this.nav.push(ContributionPage);
             }, (error) => {
                 let alert = this.util.doAlert("Error",error.message,"Ok");
                 alert.present();

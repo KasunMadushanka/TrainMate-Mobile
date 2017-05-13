@@ -9,7 +9,10 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { HomePage } from '../pages/home/home';
 import { SignupPage } from '../pages/signup/signup';
 import { RegisterPage } from '../pages/register/register';
-import { ContributePage } from '../pages/contribute/contribute';
+import { ContributionPage } from '../pages/contribution/contribution';
+import { LeaderboardPage } from '../pages/leaderboard/leaderboard';
+import { HistoryPage } from '../pages/history/history';
+import { TrackingPage } from '../pages/tracking/tracking';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TrainsPage } from '../pages/trains/trains';
 import { DetailsPage } from '../pages/details/details';
@@ -54,7 +57,10 @@ const myFirebaseAuthConfig = {
         HomePage,
         RegisterPage,
         TabsPage,
-        ContributePage,
+        ContributionPage,
+        TrackingPage,
+        LeaderboardPage,
+        HistoryPage,
         TrainsPage,
         DetailsPage,
         ForumPage,
@@ -79,7 +85,10 @@ const myFirebaseAuthConfig = {
         HomePage,
         RegisterPage,
         TabsPage,
-        ContributePage,
+        ContributionPage,
+        TrackingPage,
+        LeaderboardPage,
+        HistoryPage,
         TrainsPage,
         DetailsPage,
         ForumPage,

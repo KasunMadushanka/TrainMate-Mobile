@@ -9,10 +9,10 @@ import { UserProvider } from '../../providers/user-provider/user-provider';
 import { UtilProvider } from '../../providers/utils';
 
 @Component({
-    selector: 'page-contribute',
-    templateUrl: 'contribute.html'
+    selector: 'page-tracking',
+    templateUrl: 'tracking.html'
 })
-export class ContributePage {
+export class TrackingPage {
 
     trains: FirebaseListObservable<any>;
     stations:FirebaseObjectObservable<any>;
