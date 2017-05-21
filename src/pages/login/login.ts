@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { TabsPage } from '../tabs/tabs';
 import { ContributionPage } from '../contribution/contribution';
+import { PostPage } from '../post/post';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { validateEmail } from '../../validators/email';
 import { AuthProvider } from '../../providers/auth-provider/auth-provider';
@@ -13,12 +14,17 @@ import { UtilProvider } from '../../providers/utils';
     templateUrl: 'login.html'
 })
 export class LoginPage {
+
     loginForm:any;
+    next:any;
+
     constructor(public nav:NavController,
         public auth: AuthProvider,
         public userProvider: UserProvider,
         public util: UtilProvider,
+        public navParams:NavParams,
         public storage:Storage) {
+            this.next=navParams.get('next');
         }
 
         ngOnInit() {
@@ -32,7 +38,11 @@ export class LoginPage {
             this.auth.signin(this.loginForm.value)
             .then((data) => {
                 this.storage.set('uid', data.uid);
-                this.nav.push(ContributionPage);
+                if(this.next=="contribution"){
+                    this.nav.push(ContributionPage);
+                }else if(this.next=="post"){
+                    this.nav.push(PostPage);
+                }
             }, (error) => {
                 let alert = this.util.doAlert("Error",error.message,"Ok");
                 alert.present();

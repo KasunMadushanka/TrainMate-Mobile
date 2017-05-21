@@ -8,21 +8,21 @@
 
 
 <ion-content>
-
-    <ion-card *ngFor="let item of cardItems">
+<button ion-button color="primary" clear small icon-left (click)="addNewPost()">New Post</button>
+    <ion-card *ngFor="let post of posts|async">
 
         <ion-item>
             <ion-avatar item-left>
-                <img [src]="item.user.avatar">
+                <img [src]="post.user.avatar">
             </ion-avatar>
-            <h2>{{item.user.name}}</h2>
-            <p>{{item.date}}</p>
+            <h2>{{post.user.name}}</h2>
+            <p>{{post.date}}</p>
         </ion-item>
 
-        <img [src]="item.image">
+        <img [src]="post.image">
 
         <ion-card-content>
-            <p>{{item.content}}</p>
+            <p>{{post.content}}</p>
         </ion-card-content>
 
         <ion-row>

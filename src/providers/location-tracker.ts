@@ -28,6 +28,7 @@ export class LocationTracker {
     }
 
     getUserPosition(callback){
+        //callback({latitude:6.9222717,longitude:79.9388373});
         navigator.geolocation.getCurrentPosition(function (position) {
             callback({latitude:position.coords.latitude,longitude:position.coords.longitude});
         });
@@ -42,7 +43,7 @@ export class LocationTracker {
             desiredAccuracy: 0,
             stationaryRadius: 5,
             distanceFilter: 10,
-            debug: true,
+            debug: false,
             interval: 2000
         };
 
@@ -53,18 +54,18 @@ export class LocationTracker {
 
         let arrived=true;
 
+        let placeLocation = {
+            id:current_station.id,
+            name:current_station.name,
+            lat: current_station.latitude,
+            lng: current_station.longitude
+        };
+
         BackgroundGeolocation.configure((location) => {
 
             let usersLocation = {
                 lat: location.latitude,
                 lng:location.longitude
-            };
-
-            let placeLocation = {
-                id:current_station.id,
-                name:current_station.name,
-                lat: current_station.latitude,
-                lng: current_station.longitude
             };
 
             location.distance = this.getDistanceBetweenPoints(
@@ -73,7 +74,10 @@ export class LocationTracker {
                 'miles'
             ).toFixed(2);
 
-            if(arrived && location.distance<100){
+
+
+            /*if(arrived && location.distance<500){
+                arrived=false;
 
                 this.time=new Date();
                 let stat=stations[i].dpt_time.split(':');
@@ -81,25 +85,27 @@ export class LocationTracker {
                 let hour_diff=this.time.getHours()-stat[0];
                 let minute_diff=this.time.getMinutes()-stat[1];
                 let delay=hour_diff*60+minute_diff;
-                let alert = this.util.doAlert("Confirmation","You are at "+delay+" station","Proceed");
-                alert.present();
+
+                let cur_station:FirebaseObjectObservable<any>;
 
                 for(let n=i;n<stations.length;n++){
+
                     let stat1=stations[n].dpt_time.split(':');
                     let new_time=(Number(stat1[0])+Number((delay/60).toFixed(0)))+":"+(Number(stat1[1])+(delay%60));
 
-                    let cur_station:FirebaseObjectObservable<any>= this.af.database.object('/stations/'+stations[n].id+'/arrivals/'+trainId);
+                    cur_station= this.af.database.object('/stations/'+stations[n].id+'/arrivals/'+trainId);
                     cur_station.update({
                         dynamic_dpt_time:new_time
                     });
                 }
+                let alert = this.util.doAlert("Confirmation","You are at "+stations.length+" station","Proceed");
+                alert.present();
+
+                i++;
 
                 current_station=stations[i];
 
-                i++;
-                arrived=false;
-
-            }else if(!arrived && location.distance<=300){
+            }else if(!arrived && location.distance<=500){
 
                 this.time=new Date();
 
@@ -111,7 +117,7 @@ export class LocationTracker {
                 }
                 arrived=true;
 
-            }
+            }*/
 
             // Run update inside of Angular's zone
             this.zone.run(() => {
@@ -121,10 +127,17 @@ export class LocationTracker {
                     latitude:location.latitude,
                     longitude: location.longitude,
                     distance:distance,
-                    total_distance:0
+                    total_distance:5000-distance
                 });
+                distance+=Number(location.distance);
 
-                distance+=10;
+                placeLocation = {
+                    id:current_station.id,
+                    name:current_station.name,
+                    lat: location.latitude,
+                    lng: location.longitude
+                };
+
             });
 
         }, (err) => {

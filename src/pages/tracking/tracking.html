@@ -5,17 +5,19 @@
 </ion-header>
 
 <ion-content>
+
     <br>
     <ion-list>
         <ion-item>
             <ion-label>Select Train</ion-label>
-            <ion-select [(ngModel)]="train_select" (ionChange)="checkLocation(train_select)">
+            <ion-select [(ngModel)]="train_select" (ionChange)="loadStations(train_select)">
                 <ion-option *ngFor="let train of trains | async" value="{{train.$key}}">{{train.name}}</ion-option>
             </ion-select>
         </ion-item>
     </ion-list>
-    <ion-item>
-        <button ion-button full primary block round (click)="start(train_select)">Start Tracking</button>
-        <button ion-button full primary block round (click)="stop()">Stop Tracking</button>
-    </ion-item>
+    <button ion-button full primary block round (click)="start(train_select)" [disabled]="startDisabled">Start Tracking</button>
+    <button ion-button full primary block round (click)="stop()"  [disabled]="stopDisabled">Stop Tracking</button>
+    <div>
+        <img *ngIf="imgDisplayed" src="assets/images/webview.gif">
+    </div>
 </ion-content>

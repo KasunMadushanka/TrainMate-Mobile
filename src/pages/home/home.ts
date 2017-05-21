@@ -118,7 +118,6 @@ export class HomePage {
                 for(let j=0;j<arrivals[arrivals.length-1].length;j++){
                     if(current_train.trainId==arrivals[arrivals.length-1][j].trainId && (current_train.dpt_time<arrivals[arrivals.length-1][j].ar_time) ){
                         p=true;
-                        console.log("uyftf")
                         path.push({trainId:current_train.trainId,start:route[0],end:route[route.length-1]});
                         break;
                     }

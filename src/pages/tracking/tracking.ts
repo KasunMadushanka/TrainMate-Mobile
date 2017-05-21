@@ -7,6 +7,7 @@ import { BackgroundMode } from '@ionic-native/background-mode';
 import {AngularFire, FirebaseListObservable,FirebaseObjectObservable} from 'angularfire2';
 import { UserProvider } from '../../providers/user-provider/user-provider';
 import { UtilProvider } from '../../providers/utils';
+import firebase from 'firebase';
 
 @Component({
     selector: 'page-tracking',
@@ -15,102 +16,156 @@ import { UtilProvider } from '../../providers/utils';
 export class TrackingPage {
 
     trains: FirebaseListObservable<any>;
-    stations:FirebaseObjectObservable<any>;
+    stations:any;
     data: any;
-    station:any;
+    start_station:any;
     trainId:any;
+    startDisabled:any;
+    stopDisabled:any;
+    imgDisplayed:any;
 
     constructor(public navCtrl: NavController, public locationTracker: LocationTracker,public util:UtilProvider,public http:Http,private alertCtrl: AlertController,private backgroundMode: BackgroundMode,public af: AngularFire,public userProvider:UserProvider) {
-
-        this.trains=af.database.list('/trains');
+        //this.trains= this.af.database.list('/trains');
+        this.checkLocation();
+        this.startDisabled=true;
+        this.stopDisabled=true;
+        this.imgDisplayed=false;
 
     }
 
-    checkLocation(trainId){
-
-        this.trainId=trainId;
-
-        this.getStations(trainId,list=>{
-            this.getCoordinates(list,coords=>{
-                this.locationTracker.getUserPosition(user_coords=>{
-                    this.getDistances(user_coords,coords)
-                });
+    checkLocation(){
+        this.getAllStations(coords=>{
+            this.locationTracker.getUserPosition(user_coords=>{
+                this.getDistances(user_coords,coords);
             });
         });
     }
 
-    getStations(trainId,callback){
+    getAllStations(callback){
 
-        this.stations= this.af.database.object('/trains/'+trainId+'/route', { preserveSnapshot: true });
+        var array=[];
 
-        this.stations.subscribe(snapshot => {
-            callback(snapshot.val())
+        //let list= this.af.database.list('/stations');
+        //list.subscribe(snapshot => {
+        //    for(let i=0;i<snapshot.length;i++){
+        //       array.push({id:snapshot[i].$key,name:snapshot[i].name,latitude:snapshot[i].latitude,longitude:snapshot[i].longitude})
+        //    }
+        //    callback(array);
+        //    console.log("scs")
+        //});
+
+        let list = firebase.database().ref('/stations');
+        list.on('child_added', function(snapshot) {
+            array.push({id:snapshot.key,name:snapshot.val().name,latitude:snapshot.val().latitude,longitude:snapshot.val().longitude});
         });
 
+        setTimeout(()=>{
+            console.log(array.length)
+            callback(array);
+        },3000);
+    }
+
+    loadStations(trainId){
+
+        this.trainId=trainId;
+
+        this.getTrainStations(trainId,list=>{
+            this.getCoordinates(list,stations=>{
+                this.stations=stations;
+                this.startDisabled=false;
+            });
+        });
+    }
+
+    getTrainStations(trainId,callback){
+
+        let stations:FirebaseObjectObservable<any>= this.af.database.object('/trains/'+trainId+'/route', { preserveSnapshot: true });
+        stations.subscribe(snapshot => {
+            let list=snapshot.val();
+            for(let i=0;i<list.length;i++){
+                if(this.start_station.id==list[i]){
+                    callback(list.slice(i,list.length));
+                }
+            }
+        });
     }
 
     getCoordinates(stations,callback){
-        console.log(stations.length)
-        let coords=[];
+
+        let list=[];
 
         for(let i=0;i<stations.length;i++){
             let stations_list= this.af.database.object('/stations/'+stations[i], { preserveSnapshot: true });
             stations_list.subscribe(snapshot => {
                 let station=snapshot.val();
-                coords.push({id:snapshot.key,name:station.name,latitude:station.latitude,longitude:station.longitude,ar_time:station.arrivals[this.trainId].dynamic_ar_time,dpt_time:station.arrivals[this.trainId].dynamic_dpt_time});
+                list.push({id:snapshot.key,name:station.name,latitude:station.latitude,longitude:station.longitude,ar_time:station.arrivals[this.trainId].dynamic_ar_time,dpt_time:station.arrivals[this.trainId].dynamic_dpt_time});
                 if(i==stations.length-1){
-                    callback(coords);
+                    callback(list);
                 }
             });
         }
     }
 
     getDistances(user_coords,coords){
-        let data=this.applyHaversine(user_coords,coords);
+        this.applyHaversine(user_coords,coords,start_station=>{
+            this.getTrains(start_station);
+        });
     }
 
-    applyHaversine(user_coords,locations){
+    getTrains(start_station){
+        this.trains= this.af.database.list('/stations/'+start_station.id+'/arrivals');
+    }
 
-        let i=0;
+    applyHaversine(user_coords,locations,callback){
+
+        let found=false;
 
         let usersLocation = {
             lat: user_coords.latitude,
             lng:user_coords.longitude
-            //lat: 6.831672283442692,
-            //lng:79.86277722355658
         };
 
-        locations.map((location) => {
+        for(let i=0;i<locations.length;i++){
 
-            let placeLocation = {
-                id:location.id,
-                name:location.name,
-                lat: location.latitude,
-                lng: location.longitude
-            };
+            if(!found){
 
-            location.distance = this.locationTracker.getDistanceBetweenPoints(
-                usersLocation,
-                placeLocation,
-                'miles'
-            ).toFixed(2);
+                let placeLocation = {
+                    id:locations[i].id,
+                    name:locations[i].name,
+                    lat: locations[i].latitude,
+                    lng: locations[i].longitude
+                };
 
-            if(location.distance<300){
-                let alert = this.util.doAlert("Confirmation","You are at "+placeLocation.name+" station","Proceed");
-                alert.present();
-                this.stations=locations.slice(i,locations.length);
-                console.log(this.stations)
-                return;
+                let distance = this.locationTracker.getDistanceBetweenPoints(
+                    usersLocation,
+                    placeLocation,
+                    'miles'
+                ).toFixed(2);
+
+                if(Number(distance)<1000){
+                    let alert = this.util.doAlert("Confirmation","You are at "+placeLocation.name+" station","Proceed");
+                    alert.present();
+                    this.start_station=placeLocation;
+                    found=true;
+                    callback(placeLocation);
+                }
+
             }
+        }
 
-            i++;
+        if(!found){
 
-        });
+            let alert = this.util.doAlert("Error","The system cannot detect what station you are at. Please make sure you are at a station before start contributing...","OK");
+            alert.present();
 
+        }
     }
 
     start(trainId) {
         this.locationTracker.startTracking(1,trainId,this.stations);
+        this.startDisabled=true;
+        this.stopDisabled=false;
+        this.imgDisplayed=true;
     }
 
     stop() {
