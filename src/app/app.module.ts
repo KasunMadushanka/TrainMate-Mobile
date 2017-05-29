@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { Storage } from '@ionic/storage';
+import { Push} from '@ionic-native/push';
 
 import { LoginPage } from '../pages/login/login';
 import { AuthService } from '../providers/auth-service';
@@ -25,6 +26,8 @@ import { ChatsPage } from '../pages/chats/chats';
 import { AccountPage } from '../pages/account/account';
 import { ChatViewPage } from '../pages/chat-view/chat-view';
 import { MapPage } from '../pages/map/map';
+import { NotificationsPage } from '../pages/notifications/notifications';
+import { ProfilePage } from '../pages/profile/profile';
 
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
@@ -72,7 +75,9 @@ const myFirebaseAuthConfig = {
         AccountPage,
         SettingsPage,
         ChatViewPage,
-        MapPage
+        MapPage,
+        NotificationsPage,
+        ProfilePage
 
     ],
     imports: [
@@ -102,9 +107,11 @@ const myFirebaseAuthConfig = {
         SettingsPage,
         ChatViewPage,
         SettingsPage,
-        MapPage
+        MapPage,
+        NotificationsPage,
+        ProfilePage
 
     ],
-    providers: [LocationTracker,AuthService,BackgroundMode,Badge,AuthProvider, ChatsProvider, UserProvider, UtilProvider, Storage]
+    providers: [LocationTracker,AuthService,BackgroundMode,Badge,AuthProvider, ChatsProvider, UserProvider, UtilProvider, Storage,Push]
 })
 export class AppModule {}

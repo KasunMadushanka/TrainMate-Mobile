@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar color="primary">
-        <button ion-button menuToggle icon-only>
-          <ion-icon name='menu'></ion-icon>
+        <button ion-button menuToggle>
+            <ion-icon name='menu'></ion-icon>
         </button>
         <ion-title>TrainMate</ion-title>
         <ion-nav id="nav" #content [root]="rootPage"></ion-nav>
@@ -17,32 +17,41 @@
             <ion-select [(ngModel)]="start">
                 <ion-option value="001">Maradana</ion-option>
                 <ion-option value="002">Colombo Fort</ion-option>
-                <ion-option value="003">Mount Lavinia</ion-option>
-                <ion-option value="004">Rathmalana</ion-option>
-                <ion-option value="005">Moratuwa</ion-option>
-                <ion-option value="006">Panadura</ion-option>
-                <ion-option value="007">Wadduwa</ion-option>
-                <ion-option value="008">Kalutara North</ion-option>
-                <ion-option value="009">Kalutara South</ion-option>
-                <ion-option value="010">Payagala</ion-option>
-                <ion-option value="011">Beruwala</ion-option>
-                <ion-option value="012">Aluthgama</ion-option>
-                <ion-option value="013">Induruwa</ion-option>
-                <ion-option value="014">Kosgoda</ion-option>
-                <ion-option value="015">Balapitiyta</ion-option>
-                <ion-option value="016">Ambalangoda</ion-option>
-                <ion-option value="017">Kahawe</ion-option>
-                <ion-option value="018">Hikkaduwa</ion-option>
-                <ion-option value="019">Dodanduwa</ion-option>
-                <ion-option value="020">Boossa</ion-option>
-                <ion-option value="021">Ginthota</ion-option>
-                <ion-option value="022">Galle</ion-option>
-                <ion-option value="023">Talpe</ion-option>
-                <ion-option value="024">Koggala</ion-option>
-                <ion-option value="025">Ahangama</ion-option>
-                <ion-option value="026">Weligama</ion-option>
-                <ion-option value="027">Kamburugamuwa</ion-option>
-                <ion-option value="028">Matara</ion-option>
+                <ion-option value="003">Secretariat Halt</ion-option>
+                <ion-option value="004">Kompannavidiya</ion-option>
+                <ion-option value="005">Kollupitiya</ion-option>
+                <ion-option value="006">Bambalapitiya</ion-option>
+                <ion-option value="007">Wellawatta</ion-option>
+                <ion-option value="008">Dehiwala</ion-option>
+                <ion-option value="009">Mount Lavinia</ion-option>
+                <ion-option value="010">Rathmalana</ion-option>
+                <ion-option value="011">Angulana</ion-option>
+                <ion-option value="012">Lunawa</ion-option>
+                <ion-option value="013">Moratuwa</ion-option>
+                <ion-option value="014">Koralawella</ion-option>
+                <ion-option value="015">Egodauyana</ion-option>
+                <ion-option value="016">Panadura</ion-option>
+                <ion-option value="017">Kalutara North</ion-option>
+                <ion-option value="018">Kalutara South</ion-option>
+                <ion-option value="019">Payagala</ion-option>
+                <ion-option value="020">Beruwala</ion-option>
+                <ion-option value="021">Aluthgama</ion-option>
+                <ion-option value="022">Induruwa</ion-option>
+                <ion-option value="023">Kosgoda</ion-option>
+                <ion-option value="024">Balapitiyta</ion-option>
+                <ion-option value="025">Ambalangoda</ion-option>
+                <ion-option value="026">Kahawe</ion-option>
+                <ion-option value="027">Hikkaduwa</ion-option>
+                <ion-option value="028">Dodanduwa</ion-option>
+                <ion-option value="029">Boossa</ion-option>
+                <ion-option value="030">Ginthota</ion-option>
+                <ion-option value="031">Galle</ion-option>
+                <ion-option value="032">Talpe</ion-option>
+                <ion-option value="033">Koggala</ion-option>
+                <ion-option value="034">Ahangama</ion-option>
+                <ion-option value="035">Weligama</ion-option>
+                <ion-option value="036">Kamburugamuwa</ion-option>
+                <ion-option value="037">Matara</ion-option>
             </ion-select>
         </ion-item>
     </ion-list>
@@ -53,32 +62,41 @@
             <ion-select [(ngModel)]="end">
                 <ion-option value="001">Maradana</ion-option>
                 <ion-option value="002">Colombo Fort</ion-option>
-                <ion-option value="003">Mount Lavinia</ion-option>
-                <ion-option value="004">Rathmalana</ion-option>
-                <ion-option value="005">Moratuwa</ion-option>
-                <ion-option value="006">Panadura</ion-option>
-                <ion-option value="007">Wadduwa</ion-option>
-                <ion-option value="008">Kalutara North</ion-option>
-                <ion-option value="009">Kalutara South</ion-option>
-                <ion-option value="010">Payagala</ion-option>
-                <ion-option value="011">Beruwala</ion-option>
-                <ion-option value="012">Aluthgama</ion-option>
-                <ion-option value="013">Induruwa</ion-option>
-                <ion-option value="014">Kosgoda</ion-option>
-                <ion-option value="015">Balapitiyta</ion-option>
-                <ion-option value="016">Ambalangoda</ion-option>
-                <ion-option value="017">Kahawe</ion-option>
-                <ion-option value="018">Hikkaduwa</ion-option>
-                <ion-option value="019">Dodanduwa</ion-option>
-                <ion-option value="020">Boossa</ion-option>
-                <ion-option value="021">Ginthota</ion-option>
-                <ion-option value="022">Galle</ion-option>
-                <ion-option value="023">Talpe</ion-option>
-                <ion-option value="024">Koggala</ion-option>
-                <ion-option value="025">Ahangama</ion-option>
-                <ion-option value="026">Weligama</ion-option>
-                <ion-option value="027">Kamburugamuwa</ion-option>
-                <ion-option value="028">Matara</ion-option>
+                <ion-option value="003">Secretariat Halt</ion-option>
+                <ion-option value="004">Kompannavidiya</ion-option>
+                <ion-option value="005">Kollupitiya</ion-option>
+                <ion-option value="006">Bambalapitiya</ion-option>
+                <ion-option value="007">Wellawatta</ion-option>
+                <ion-option value="008">Dehiwala</ion-option>
+                <ion-option value="009">Mount Lavinia</ion-option>
+                <ion-option value="010">Rathmalana</ion-option>
+                <ion-option value="011">Angulana</ion-option>
+                <ion-option value="012">Lunawa</ion-option>
+                <ion-option value="013">Moratuwa</ion-option>
+                <ion-option value="014">Koralawella</ion-option>
+                <ion-option value="015">Egodauyana</ion-option>
+                <ion-option value="016">Panadura</ion-option>
+                <ion-option value="017">Kalutara North</ion-option>
+                <ion-option value="018">Kalutara South</ion-option>
+                <ion-option value="019">Payagala</ion-option>
+                <ion-option value="020">Beruwala</ion-option>
+                <ion-option value="021">Aluthgama</ion-option>
+                <ion-option value="022">Induruwa</ion-option>
+                <ion-option value="023">Kosgoda</ion-option>
+                <ion-option value="024">Balapitiyta</ion-option>
+                <ion-option value="025">Ambalangoda</ion-option>
+                <ion-option value="026">Kahawe</ion-option>
+                <ion-option value="027">Hikkaduwa</ion-option>
+                <ion-option value="028">Dodanduwa</ion-option>
+                <ion-option value="029">Boossa</ion-option>
+                <ion-option value="030">Ginthota</ion-option>
+                <ion-option value="031">Galle</ion-option>
+                <ion-option value="032">Talpe</ion-option>
+                <ion-option value="033">Koggala</ion-option>
+                <ion-option value="034">Ahangama</ion-option>
+                <ion-option value="035">Weligama</ion-option>
+                <ion-option value="036">Kamburugamuwa</ion-option>
+                <ion-option value="037">Matara</ion-option>
             </ion-select>
         </ion-item>
     </ion-list>

@@ -1,47 +1,36 @@
-
 <ion-header>
-
-    <ion-navbar >
-        <ion-title>Details</ion-title>
+    <ion-navbar>
+        <ion-title>{{trainName}}</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="showOnMap()">View On Map</button>
+        </ion-buttons>
     </ion-navbar>
-
 </ion-header>
 
-<ion-content padding>
-    <ion-card>
+<ion-content class="list-avatar-page">
 
-        <ion-fab right top>
-            <button ion-fab>
-                <ion-icon name="pin"></ion-icon>
-            </button>
-        </ion-fab>
-
-        <ion-item>
-            <ion-icon name="home" item-left large></ion-icon>
-            <h2>Last Station: </h2>
-            <p>Maradana</p>
-        </ion-item>
-
-        <ion-item>
-            <ion-icon name="clock" item-left large ></ion-icon>
-            <h2>Destination Time : 02:05 pm </h2>
-        </ion-item>
-
-        <ion-item>
-            <ion-icon name="clock" item-left large ></ion-icon>
-            <h2>Predicted Time : 02:15 pm </h2>
-            <p>(According to the current situation)</p>
-        </ion-item>
-
-        <ion-item>
-            <span item-left><small>Arriving in:</small> <b> 05 mins </b></span>
-        </ion-item>
-
-        <ion-item>
-            <button ion-button full primary (click)="showOnMap()">Show on Map</button>
-        </ion-item>
-
-    </ion-card>
-
+    <ion-row>
+        <ion-col>
+            <strong>Station</strong>
+            <br>
+            <ion-item *ngFor="let arrival of arrivals">
+                {{arrival.station}}
+            </ion-item>
+        </ion-col>
+        <ion-col>
+            <strong>Arriving</strong>
+            <br>
+            <ion-item *ngFor="let arrival of arrivals">
+                {{arrival.ar_time}}
+            </ion-item>
+        </ion-col>
+        <ion-col>
+            <strong>Departing</strong>
+            <br>
+            <ion-item *ngFor="let arrival of arrivals">
+                {{arrival.dpt_time}}
+            </ion-item>
+        </ion-col>
+    </ion-row>
 
 </ion-content>

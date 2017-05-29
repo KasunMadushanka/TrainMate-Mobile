@@ -1,5 +1,13 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController,AlertController,NavParams } from 'ionic-angular';
+import { LocationTracker } from '../../providers/location-tracker';
+import {Http} from '@angular/http';
+import * as io from "socket.io-client";
+import { BackgroundMode } from '@ionic-native/background-mode';
+import {AngularFire, FirebaseListObservable,FirebaseObjectObservable} from 'angularfire2';
+import { UserProvider } from '../../providers/user-provider/user-provider';
+import { UtilProvider } from '../../providers/utils';
+import firebase from 'firebase';
 
 /*
   Generated class for the History page.
@@ -12,11 +20,18 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'history.html'
 })
 export class HistoryPage {
+    
+    sessions:FirebaseListObservable<any>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HistoryPage');
+  constructor(public navCtrl: NavController, public navParams: NavParams,public af:AngularFire,public userProvider:UserProvider) {
+       this.userProvider.getUid()
+         .then(uid=> {
+             this.sessions= af.database.list('/users/'+uid+'/contributions');
+             
+         });
+       
   }
+
+
 
 }

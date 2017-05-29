@@ -23,9 +23,20 @@ export class TrackingPage {
     startDisabled:any;
     stopDisabled:any;
     imgDisplayed:any;
+    
+    userId:any;
+    sessions:any;
+    sessionId:any;
 
     constructor(public navCtrl: NavController, public locationTracker: LocationTracker,public util:UtilProvider,public http:Http,private alertCtrl: AlertController,private backgroundMode: BackgroundMode,public af: AngularFire,public userProvider:UserProvider) {
-        //this.trains= this.af.database.list('/trains');
+        
+         this.userProvider.getUid()
+         .then(uid=> {
+             this.userId=uid;
+             this.sessions= firebase.database().ref('/users/'+this.userId+'/contributions');
+             
+         });
+       
         this.checkLocation();
         this.startDisabled=true;
         this.stopDisabled=true;
@@ -160,9 +171,33 @@ export class TrackingPage {
 
         }
     }
+    
+    startSession(){
+        
+        let time=new Date();
+
+        this.sessionId=this.sessions.push({
+            start_time:time.getHours()+":"+time.getMinutes(),
+            end_time:""
+        }).key;
+        
+        console.log(this.sessionId)
+        
+        
+    }
+    
+    endSession(){
+        
+        let time=new Date();
+        let session:FirebaseListObservable<any>=this.af.database.list('/users/'+this.userId+'/contributions');
+        session.update(this.sessionId,{
+            end_time:time.getHours()+":"+time.getMinutes()
+        });
+    }
 
     start(trainId) {
         this.locationTracker.startTracking(1,trainId,this.stations);
+        this.startSession();
         this.startDisabled=true;
         this.stopDisabled=false;
         this.imgDisplayed=true;
@@ -170,6 +205,8 @@ export class TrackingPage {
 
     stop() {
         this.locationTracker.stopTracking();
+        this.endSession();
+        
     }
 
 }

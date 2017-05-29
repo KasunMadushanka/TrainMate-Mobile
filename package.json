@@ -24,6 +24,7 @@
     "@ionic-native/core": "^3.4.4",
     "@ionic-native/google-maps": "^3.4.4",
     "@ionic-native/push": "^3.4.4",
+    "@ionic/cloud-angular": "^0.12.0",
     "@ionic/storage": "1.1.7",
     "angularfire2": "^2.0.0-beta.8",
     "firebase": "^3.7.6",

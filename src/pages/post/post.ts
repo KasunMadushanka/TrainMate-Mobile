@@ -37,8 +37,8 @@ console.log(this.postForm.value)
                    },
                    date: "April 8, 2017",
                    image: "assets/images/forum/3.JPG",
-                   subject:this.postForm.value.subject,
-                   content: this.postForm.value.content
+                   subject:this.postForm.subject,
+                   content: this.postForm.content
 
                });
           });

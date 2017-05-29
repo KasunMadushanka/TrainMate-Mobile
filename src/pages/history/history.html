@@ -6,13 +6,25 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>history</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>history</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
-
+    <ion-row>
+        <ion-col>
+            <strong>Start Time</strong>
+            <ion-item *ngFor="let session of sessions|async">
+                {{session.start_time}}
+            </ion-item>
+        </ion-col>
+        <ion-col>
+            <strong>End Time</strong>
+           <ion-item *ngFor="let session of sessions|async">
+                {{session.end_time}}
+            </ion-item>
+        </ion-col>
+    </ion-row>
 </ion-content>

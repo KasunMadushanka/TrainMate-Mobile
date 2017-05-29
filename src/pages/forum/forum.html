@@ -1,14 +1,14 @@
 <ion-header>
-
     <ion-navbar color="primary">
-        <ion-title>Help Forum - About Trains</ion-title>
+        <ion-title>Help Forum - Trains</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="addNewPost()">New Post</button>
+        </ion-buttons>
     </ion-navbar>
-
 </ion-header>
 
-
 <ion-content>
-<button ion-button color="primary" clear small icon-left (click)="addNewPost()">New Post</button>
+    <button ion-button color="primary" clear small icon-left (click)="addNewPost()">New Post</button>
     <ion-card *ngFor="let post of posts|async">
 
         <ion-item>

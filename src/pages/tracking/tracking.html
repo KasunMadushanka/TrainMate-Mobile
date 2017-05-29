@@ -18,6 +18,8 @@
     <button ion-button full primary block round (click)="start(train_select)" [disabled]="startDisabled">Start Tracking</button>
     <button ion-button full primary block round (click)="stop()"  [disabled]="stopDisabled">Stop Tracking</button>
     <div>
+    </div>
+    <div>
         <img *ngIf="imgDisplayed" src="assets/images/webview.gif">
     </div>
 </ion-content>

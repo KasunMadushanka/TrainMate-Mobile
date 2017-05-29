@@ -9,7 +9,9 @@ import { UsersPage } from '../users/users';
 })
 export class ForumTopicsPage {
 
-    constructor(public navCtrl: NavController, public navParams: NavParams) {}
+    constructor(public navCtrl: NavController, public navParams: NavParams) {
+       
+    }
 
     gotoForum() {
         this.navCtrl.push(ForumPage);

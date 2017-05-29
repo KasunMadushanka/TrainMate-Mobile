@@ -1,0 +1,42 @@
+{
+    "8741": {
+        "con_id": 1,
+        "distance": 0,
+        "latitude": 0,
+        "longitude": 0,
+        "name": "MDA/KTS Daily - Pass",
+        "total_distance": 6825,
+        "route": ["001", "002", "003", "004", "005"]
+
+    },
+    "8742": {
+        "con_id": 1,
+        "distance": 0,
+        "latitude": 0,
+        "longitude": 0,
+        "name": "MDA/ALT Daily - Pass",
+       "total_distance": 6825,
+        "route": ["001", "002", "003", "004", "005"]
+
+    },
+    "8346": {
+        "con_id": 1,
+        "distance": 0,
+        "latitude": 0,
+        "longitude": 0,
+        "name": "MLV/MDA Sunday & Holidays - Pass",
+        "total_distance": 6825,
+        "route": ["005", "004", "003", "002", "001"]
+
+    },
+    "8339": {
+        "con_id": 1,
+        "distance": 0,
+        "latitude": 0,
+        "longitude": 0,
+        "name": "MRT / MDA SO - Pass",
+        "total_distance": 6825,
+        "route": ["005", "004", "003", "002", "001"]
+
+    }
+}

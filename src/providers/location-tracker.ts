@@ -18,11 +18,12 @@ export class LocationTracker {
     next_station:any;
     trainId:any;
     time:Date;
+    k:number;
 
     trains: FirebaseListObservable<any>;
 
     constructor(public zone: NgZone, private alertCtrl: AlertController,public util:UtilProvider, private backgroundMode: BackgroundMode,private badge: Badge,public af: AngularFire,public up: UserProvider) {
-
+this.k=0;
         this.trains=af.database.list('/trains');
 
     }
@@ -35,7 +36,10 @@ export class LocationTracker {
     }
 
     startTracking(con_id,trainId,stations) {
-
+        
+if(this.k==0){
+    
+    this.k++;
         this.trainId=trainId;
 
         console.log(stations)
@@ -73,51 +77,50 @@ export class LocationTracker {
                 usersLocation,
                 'miles'
             ).toFixed(2);
-
-
-
-            /*if(arrived && location.distance<500){
-                arrived=false;
-
+           
+            if(arrived && location.distance>=300){
                 this.time=new Date();
                 let stat=stations[i].dpt_time.split(':');
 
                 let hour_diff=this.time.getHours()-stat[0];
                 let minute_diff=this.time.getMinutes()-stat[1];
                 let delay=hour_diff*60+minute_diff;
-
-                let cur_station:FirebaseObjectObservable<any>;
-
-                for(let n=i;n<stations.length;n++){
-
-                    let stat1=stations[n].dpt_time.split(':');
+                let alert = this.util.doAlert("Confirmation","You departed from "+current_station.name+" station","Proceed");
+                alert.present();
+               
+                //for(let n=i;n<stations.length;n++){
+                    let stat1=stations[i].dpt_time.split(':');
                     let new_time=(Number(stat1[0])+Number((delay/60).toFixed(0)))+":"+(Number(stat1[1])+(delay%60));
-
-                    cur_station= this.af.database.object('/stations/'+stations[n].id+'/arrivals/'+trainId);
+                    
+                 let cur_station:FirebaseObjectObservable<any>= this.af.database.object('/stations/'+current_station.id+'/arrivals/'+trainId);
                     cur_station.update({
                         dynamic_dpt_time:new_time
                     });
-                }
-                let alert = this.util.doAlert("Confirmation","You are at "+stations.length+" station","Proceed");
-                alert.present();
-
+                   
+                //}
+                
                 i++;
 
                 current_station=stations[i];
 
-            }else if(!arrived && location.distance<=500){
+                arrived=false;
+
+            }else if(!arrived && location.distance<=300){
+                
+                 let alert = this.util.doAlert("Confirmation","You arrived at "+current_station.name+" station","Proceed");
+                alert.present();
 
                 this.time=new Date();
 
-                for(let n=i;n<stations.length;n++){
-                    let cur_station:FirebaseObjectObservable<any>= this.af.database.object('/stations/'+stations[n].id+'/arrivals/'+trainId);
+                //for(let n=i;n<stations.length;n++){
+                    let cur_station:FirebaseObjectObservable<any>= this.af.database.object('/stations/'+current_station.id+'/arrivals/'+trainId);
                     cur_station.update({
                         dynamic_ar_time:this.time.getHours()+":"+this.time.getMinutes()
                     });
-                }
+                //}
                 arrived=true;
 
-            }*/
+            }
 
             // Run update inside of Angular's zone
             this.zone.run(() => {
@@ -127,7 +130,7 @@ export class LocationTracker {
                     latitude:location.latitude,
                     longitude: location.longitude,
                     distance:distance,
-                    total_distance:5000-distance
+                    total_distance:6825-distance
                 });
                 distance+=Number(location.distance);
 
@@ -150,6 +153,7 @@ export class LocationTracker {
         BackgroundGeolocation.start();
 
         this.backgroundMode.enable();
+}
 
     }
 
@@ -200,8 +204,7 @@ export class LocationTracker {
         console.log('stopTracking');
 
         BackgroundGeolocation.finish();
-        this.watch.unsubscribe();
-
+      
     }
 
 }

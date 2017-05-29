@@ -1,0 +1,3731 @@
+{
+    "3": {
+        "name": "Colombo Fort",
+        "longitude": 79.850506,
+        "latitude": 6.933500,
+        "distances": {
+            "4": 1856,
+            "8003": 566
+        },
+        "arrivals": {
+            "8718": {
+                "trainId": "8718",
+                "name": "MDA/MRT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "06.59",
+                "static_dpt_time": "07.00",
+                "dynamic_ar_time": "06.59",
+                "dynamic_dpt_time": "07.00"
+            },
+            "8723": {
+                "trainId": "8723",
+                "name": " MDA/PND NS/NSU/NH - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.04",
+                "static_dpt_time": "07.05",
+                "dynamic_ar_time": "07.04",
+                "dynamic_dpt_time": "07.05"
+            },
+            "8732": {
+                "trainId": "8732",
+                "name": "MDA/MLV NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.15",
+                "static_dpt_time": "08.17",
+                "dynamic_ar_time": "08.15",
+                "dynamic_dpt_time": "08.17"
+            },
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "11.14",
+                "static_dpt_time": "11.15",
+                "dynamic_ar_time": "11.14",
+                "dynamic_dpt_time": "11.15"
+            },
+            "8744": {
+                "trainId": "8744",
+                "name": "MDA/KTS NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.09",
+                "static_dpt_time": "12.10",
+                "dynamic_ar_time": "12.09",
+                "dynamic_dpt_time": "12.10"
+            },
+            "8724": {
+                "trainId": "8724",
+                "name": " MDA/PND NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "06.28",
+                "static_dpt_time": "06.29",
+                "dynamic_ar_time": "06.28",
+                "dynamic_dpt_time": "06.29"
+            },
+            "8725": {
+                "trainId": "8725",
+                "name": "MDA/RML NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.40",
+                "static_dpt_time": "07.41",
+                "dynamic_ar_time": "07.40",
+                "dynamic_dpt_time": "07.41"
+            },
+            "8727": {
+                "trainId": "8727",
+                "name": "MDA/PND NS/NSU/NH - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.35",
+                "static_dpt_time": "07.37",
+                "dynamic_ar_time": "07.35",
+                "dynamic_dpt_time": "07.37"
+            },
+            "8729": {
+                "trainId": "8729",
+                "name": "MDA/PND NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "07.58",
+                "static_dpt_time": "07.59",
+                "dynamic_ar_time": "07.58",
+                "dynamic_dpt_time": "07.59"
+            },
+            "8733": {
+                "trainId": "8733",
+                "name": " MDA/MRT NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.03",
+                "static_dpt_time": "08.04",
+                "dynamic_ar_time": "08.03",
+                "dynamic_dpt_time": "08.04"
+            },
+            "8736": {
+                "trainId": "8736",
+                "name": " MDA/KTS Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "08.39",
+                "static_dpt_time": "08.45",
+                "dynamic_ar_time": "08.39",
+                "dynamic_dpt_time": "08.45"
+            },
+            "8741": {
+                "trainId": "8741",
+                "name": "MDA/KTS Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "09.10",
+                "static_dpt_time": "09.40",
+                "dynamic_ar_time": "09.10",
+                "dynamic_dpt_time": "09.40"
+            },
+            "8748": {
+                "trainId": "8748",
+                "name": "MDA/PND NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "13.34",
+                "static_dpt_time": "13.35",
+                "dynamic_ar_time": "13.34",
+                "dynamic_dpt_time": "13.35"
+            },
+            "8749": {
+                "trainId": "8749",
+                "name": "MDA/PND DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "14.35",
+                "static_dpt_time": "14.36",
+                "dynamic_ar_time": "14.35",
+                "dynamic_dpt_time": "14.36"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "14.09",
+                "static_dpt_time": "14.10",
+                "dynamic_ar_time": "14.09",
+                "dynamic_dpt_time": "14.10"
+            },
+            "8755": {
+                "trainId": "8755",
+                "name": " MDA/MLV NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "15.05",
+                "static_dpt_time": "15.06",
+                "dynamic_ar_time": "15.05",
+                "dynamic_dpt_time": "15.06"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "16.49",
+                "static_dpt_time": "16.50",
+                "dynamic_ar_time": "16.49",
+                "dynamic_dpt_time": "16.50"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "16.49",
+                "static_dpt_time": "16.50",
+                "dynamic_ar_time": "16.49",
+                "dynamic_dpt_time": "16.50"
+            },
+            "8763": {
+                "trainId": "8763",
+                "name": " MDA/PND NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "16.29",
+                "static_dpt_time": "16.30",
+                "dynamic_ar_time": "16.29",
+                "dynamic_dpt_time": "16.30"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "18.14",
+                "static_dpt_time": "18.15",
+                "dynamic_ar_time": "18.14",
+                "dynamic_dpt_time": "18.15"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "18.30",
+                "static_dpt_time": "18.35",
+                "dynamic_ar_time": "18.30",
+                "dynamic_dpt_time": "18.35"
+            }
+        }
+    },
+    "4": {
+        "name": "Maradana",
+        "longitude": 79.865186,
+        "latitude": 6.929461,
+        "distances": {
+            "3": 1856,
+            "1002": 1768
+        },
+        "arrivals": {}
+    },
+    "1002": {
+        "name": "Dematagoda",
+        "longitude": 79.879081,
+        "latitude": 6.937440,
+        "distances": {
+            "4": 1768,
+            "1014": 11878
+        },
+        "arrivals": {}
+    },
+    "1014": {
+        "name": "Ragama",
+        "longitude": 79.921420,
+        "latitude": 7.029987,
+        "distances": {
+            "1002": 11878,
+            "1026": 11992
+        },
+        "arrivals": {}
+    },
+    "1026": {
+        "name": "Gampaha",
+        "longitude": 11.24121,
+        "latitude": 21.24521,
+        "distances": {
+            "1014": 11992
+        },
+        "arrivals": {}
+    },
+    "8003": {
+        "name": "Secretartat Halt",
+        "longitude": 79.846101,
+        "latitude": 6.931998,
+        "distances": {
+            "3": 566,
+            "8004": 1054
+        },
+        "arrivals": {
+            "8718": {
+                "trainId": "8718",
+                "name": "MDA/MRT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.02",
+                "static_dpt_time": "07.03",
+                "dynamic_ar_time": "07.02",
+                "dynamic_dpt_time": "07.03"
+            },
+            "8723": {
+                "trainId": "8723",
+                "name": " MDA/PND NS/NSU/NH - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.07",
+                "static_dpt_time": "07.08",
+                "dynamic_ar_time": "07.07",
+                "dynamic_dpt_time": "07.08"
+            },
+            "8732": {
+                "trainId": "8732",
+                "name": "MDA/MLV NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.19",
+                "static_dpt_time": "08.20",
+                "dynamic_ar_time": "08.19",
+                "dynamic_dpt_time": "08.20"
+            },
+            "8744": {
+                "trainId": "8744",
+                "name": "MDA/KTS NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.12",
+                "static_dpt_time": "12.13",
+                "dynamic_ar_time": "12.12",
+                "dynamic_dpt_time": "12.13"
+            },
+            "8725": {
+                "trainId": "8725",
+                "name": "MDA/RML NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.43",
+                "static_dpt_time": "07.44",
+                "dynamic_ar_time": "07.43",
+                "dynamic_dpt_time": "07.44"
+            },
+            "8727": {
+                "trainId": "8727",
+                "name": "MDA/PND NS/NSU/NH - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.39",
+                "static_dpt_time": "07.40",
+                "dynamic_ar_time": "07.39",
+                "dynamic_dpt_time": "07.40"
+            },
+            "8729": {
+                "trainId": "8729",
+                "name": "MDA/PND NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.01",
+                "static_dpt_time": "08.02",
+                "dynamic_ar_time": "08.01",
+                "dynamic_dpt_time": "08.02"
+            },
+            "8733": {
+                "trainId": "8733",
+                "name": " MDA/MRT NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.06",
+                "static_dpt_time": "08.07",
+                "dynamic_ar_time": "08.06",
+                "dynamic_dpt_time": "08.07"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "16.52",
+                "static_dpt_time": "16.53",
+                "dynamic_ar_time": "16.52",
+                "dynamic_dpt_time": "16.53"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "16.52",
+                "static_dpt_time": "16.53",
+                "dynamic_ar_time": "16.52",
+                "dynamic_dpt_time": "16.53"
+            },
+            "8763": {
+                "trainId": "8763",
+                "name": " MDA/PND NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "16.32",
+                "static_dpt_time": "16.33",
+                "dynamic_ar_time": "16.32",
+                "dynamic_dpt_time": "16.33"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "18.17",
+                "static_dpt_time": "18.18",
+                "dynamic_ar_time": "18.17",
+                "dynamic_dpt_time": "18.18"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "18.37",
+                "static_dpt_time": "18.38",
+                "dynamic_ar_time": "18.37",
+                "dynamic_dpt_time": "18.38"
+            },
+            "8777": {
+                "trainId": "8777",
+                "name": " FOT/KTS NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "19.12",
+                "static_dpt_time": "19.13",
+                "dynamic_ar_time": "19.12",
+                "dynamic_dpt_time": "19.13"
+            }
+        }
+    },
+    "8004": {
+        "name": "Kompnnavidiya",
+        "longitude": 79.849578,
+        "latitude": 6.922957,
+        "distances": {
+            "8003": 1054,
+            "8005": 1388
+        },
+        "arrivals": {
+            "8718": {
+                "trainId": "8718",
+                "name": "MDA/MRT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.05",
+                "static_dpt_time": "07.06",
+                "dynamic_ar_time": "07.05",
+                "dynamic_dpt_time": "07.06"
+            },
+            "8723": {
+                "trainId": "8723",
+                "name": " MDA/PND NS/NSU/NH - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.10",
+                "static_dpt_time": "07.11",
+                "dynamic_ar_time": "07.10",
+                "dynamic_dpt_time": "07.11"
+            },
+            "8732": {
+                "trainId": "8732",
+                "name": "MDA/MLV NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.22",
+                "static_dpt_time": "08.23",
+                "dynamic_ar_time": "08.22",
+                "dynamic_dpt_time": "08.23"
+            },
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "11.18",
+                "static_dpt_time": "11.19",
+                "dynamic_ar_time": "11.18",
+                "dynamic_dpt_time": "11.19"
+            },
+            "8744": {
+                "trainId": "8744",
+                "name": "MDA/KTS NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.15",
+                "static_dpt_time": "12.16",
+                "dynamic_ar_time": "12.15",
+                "dynamic_dpt_time": "12.16"
+            },
+            "8724": {
+                "trainId": "8724",
+                "name": " MDA/PND NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "06.32",
+                "static_dpt_time": "06.33",
+                "dynamic_ar_time": "06.32",
+                "dynamic_dpt_time": "06.33"
+            },
+            "8725": {
+                "trainId": "8725",
+                "name": "MDA/RML NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.46",
+                "static_dpt_time": "07.47",
+                "dynamic_ar_time": "07.46",
+                "dynamic_dpt_time": "07.47"
+            },
+            "8727": {
+                "trainId": "8727",
+                "name": "MDA/PND NS/NSU/NH - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.42",
+                "static_dpt_time": "07.43",
+                "dynamic_ar_time": "07.42",
+                "dynamic_dpt_time": "07.43"
+            },
+            "8729": {
+                "trainId": "8729",
+                "name": "MDA/PND NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.04",
+                "static_dpt_time": "08.05",
+                "dynamic_ar_time": "08.04",
+                "dynamic_dpt_time": "08.05"
+            },
+            "8733": {
+                "trainId": "8733",
+                "name": " MDA/MRT NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.09",
+                "static_dpt_time": "08.10",
+                "dynamic_ar_time": "08.09",
+                "dynamic_dpt_time": "08.10"
+            },
+            "8736": {
+                "trainId": "8736",
+                "name": " MDA/KTS Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "08.48",
+                "static_dpt_time": "08.49",
+                "dynamic_ar_time": "08.48",
+                "dynamic_dpt_time": "08.49"
+            },
+            "8741": {
+                "trainId": "8741",
+                "name": "MDA/KTS Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "09.43",
+                "static_dpt_time": "09.44",
+                "dynamic_ar_time": "09.43",
+                "dynamic_dpt_time": "09.44"
+            },
+            "8748": {
+                "trainId": "8748",
+                "name": "MDA/PND NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "13.38",
+                "static_dpt_time": "13.39",
+                "dynamic_ar_time": "13.38",
+                "dynamic_dpt_time": "13.39"
+            },
+            "8749": {
+                "trainId": "8749",
+                "name": "MDA/PND DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "14.39",
+                "static_dpt_time": "14.40",
+                "dynamic_ar_time": "14.39",
+                "dynamic_dpt_time": "14.40"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "14.13",
+                "static_dpt_time": "14.14",
+                "dynamic_ar_time": "14.13",
+                "dynamic_dpt_time": "14.14"
+            },
+            "8755": {
+                "trainId": "8755",
+                "name": " MDA/MLV NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "15.09",
+                "static_dpt_time": "15.10",
+                "dynamic_ar_time": "15.09",
+                "dynamic_dpt_time": "15.10"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "16.55",
+                "static_dpt_time": "16.56",
+                "dynamic_ar_time": "16.55",
+                "dynamic_dpt_time": "16.56"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "16.55",
+                "static_dpt_time": "16.56",
+                "dynamic_ar_time": "16.55",
+                "dynamic_dpt_time": "16.56"
+            },
+            "8763": {
+                "trainId": "8763",
+                "name": " MDA/PND NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "16.35",
+                "static_dpt_time": "16.36",
+                "dynamic_ar_time": "16.35",
+                "dynamic_dpt_time": "16.36"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "18.20",
+                "static_dpt_time": "18.21",
+                "dynamic_ar_time": "18.20",
+                "dynamic_dpt_time": "18.21"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "18.40",
+                "static_dpt_time": "18.41",
+                "dynamic_ar_time": "18.40",
+                "dynamic_dpt_time": "18.41"
+            },
+            "8777": {
+                "trainId": "8777",
+                "name": " FOT/KTS NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "19.15",
+                "static_dpt_time": "19.16",
+                "dynamic_ar_time": "19.15",
+                "dynamic_dpt_time": "19.16"
+            }
+        }
+    },
+    "8005": {
+        "name": "Kollupitiya",
+        "longitude": 79.848210,
+        "latitude": 6.911236,
+        "distances": {
+            "8004": 1388,
+            "8007": 2017
+        },
+        "arrivals": {
+            "8718": {
+                "trainId": "8718",
+                "name": "MDA/MRT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.08",
+                "static_dpt_time": "07.09",
+                "dynamic_ar_time": "07.08",
+                "dynamic_dpt_time": "07.09"
+            },
+            "8723": {
+                "trainId": "8723",
+                "name": " MDA/PND NS/NSU/NH - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.13",
+                "static_dpt_time": "07.14",
+                "dynamic_ar_time": "07.13",
+                "dynamic_dpt_time": "07.14"
+            },
+            "8732": {
+                "trainId": "8732",
+                "name": "MDA/MLV NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.26",
+                "static_dpt_time": "08.27",
+                "dynamic_ar_time": "08.26",
+                "dynamic_dpt_time": "08.27"
+            },
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "11.21",
+                "static_dpt_time": "11.22",
+                "dynamic_ar_time": "11.21",
+                "dynamic_dpt_time": "11.22"
+            },
+            "8744": {
+                "trainId": "8744",
+                "name": "MDA/KTS NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.18",
+                "static_dpt_time": "12.19",
+                "dynamic_ar_time": "12.18",
+                "dynamic_dpt_time": "12.19"
+            },
+            "8724": {
+                "trainId": "8724",
+                "name": " MDA/PND NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "06.35",
+                "static_dpt_time": "06.36",
+                "dynamic_ar_time": "06.35",
+                "dynamic_dpt_time": "06.36"
+            },
+            "8725": {
+                "trainId": "8725",
+                "name": "MDA/RML NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.50",
+                "static_dpt_time": "07.51",
+                "dynamic_ar_time": "07.50",
+                "dynamic_dpt_time": "07.51"
+            },
+            "8727": {
+                "trainId": "8727",
+                "name": "MDA/PND NS/NSU/NH - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.46",
+                "static_dpt_time": "07.47",
+                "dynamic_ar_time": "07.46",
+                "dynamic_dpt_time": "07.47"
+            },
+            "8729": {
+                "trainId": "8729",
+                "name": "MDA/PND NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.07",
+                "static_dpt_time": "08.08",
+                "dynamic_ar_time": "08.07",
+                "dynamic_dpt_time": "08.08"
+            },
+            "8733": {
+                "trainId": "8733",
+                "name": " MDA/MRT NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.12",
+                "static_dpt_time": "08.13",
+                "dynamic_ar_time": "08.12",
+                "dynamic_dpt_time": "08.13"
+            },
+            "8736": {
+                "trainId": "8736",
+                "name": " MDA/KTS Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "08.51",
+                "static_dpt_time": "08.52",
+                "dynamic_ar_time": "08.51",
+                "dynamic_dpt_time": "08.52"
+            },
+            "8741": {
+                "trainId": "8741",
+                "name": "MDA/KTS Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "09.47",
+                "static_dpt_time": "09.48",
+                "dynamic_ar_time": "09.47",
+                "dynamic_dpt_time": "09.48"
+            },
+            "8748": {
+                "trainId": "8748",
+                "name": "MDA/PND NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "13.41",
+                "static_dpt_time": "13.42",
+                "dynamic_ar_time": "13.41",
+                "dynamic_dpt_time": "13.42"
+            },
+            "8749": {
+                "trainId": "8749",
+                "name": "MDA/PND DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "14.43",
+                "static_dpt_time": "14.44",
+                "dynamic_ar_time": "14.43",
+                "dynamic_dpt_time": "14.44"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "14.16",
+                "static_dpt_time": "14.17",
+                "dynamic_ar_time": "14.16",
+                "dynamic_dpt_time": "14.17"
+            },
+            "8755": {
+                "trainId": "8755",
+                "name": " MDA/MLV NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "15.13",
+                "static_dpt_time": "15.14",
+                "dynamic_ar_time": "15.13",
+                "dynamic_dpt_time": "15.14"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "16.58",
+                "static_dpt_time": "16.59",
+                "dynamic_ar_time": "16.58",
+                "dynamic_dpt_time": "16.59"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "16.58",
+                "static_dpt_time": "16.59",
+                "dynamic_ar_time": "16.58",
+                "dynamic_dpt_time": "16.59"
+            },
+            "8763": {
+                "trainId": "8763",
+                "name": " MDA/PND NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "16.38",
+                "static_dpt_time": "16.39",
+                "dynamic_ar_time": "16.38",
+                "dynamic_dpt_time": "16.39"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "18.23",
+                "static_dpt_time": "18.24",
+                "dynamic_ar_time": "18.23",
+                "dynamic_dpt_time": "18.24"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "18.44",
+                "static_dpt_time": "18.45",
+                "dynamic_ar_time": "18.44",
+                "dynamic_dpt_time": "18.45"
+            },
+            "8777": {
+                "trainId": "8777",
+                "name": " FOT/KTS NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "19.18",
+                "static_dpt_time": "19.19",
+                "dynamic_ar_time": "19.18",
+                "dynamic_dpt_time": "19.19"
+            }
+        }
+    },
+    "8007": {
+        "name": "Bambalapitiya",
+        "longitude": 79.583011,
+        "latitude": 6.893502,
+        "distances": {
+            "8005": 2017,
+            "8009": 2120
+        },
+        "arrivals": {
+            "8718": {
+                "trainId": "8718",
+                "name": "MDA/MRT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.12",
+                "static_dpt_time": "07.13",
+                "dynamic_ar_time": "07.12",
+                "dynamic_dpt_time": "07.13"
+            },
+            "8723": {
+                "trainId": "8723",
+                "name": " MDA/PND NS/NSU/NH - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.17",
+                "static_dpt_time": "07.18",
+                "dynamic_ar_time": "07.17",
+                "dynamic_dpt_time": "07.18"
+            },
+            "8732": {
+                "trainId": "8732",
+                "name": "MDA/MLV NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.30",
+                "static_dpt_time": "08.31",
+                "dynamic_ar_time": "08.30",
+                "dynamic_dpt_time": "08.31"
+            },
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "11.25",
+                "static_dpt_time": "11.26",
+                "dynamic_ar_time": "11.25",
+                "dynamic_dpt_time": "11.26"
+            },
+            "8744": {
+                "trainId": "8744",
+                "name": "MDA/KTS NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.22",
+                "static_dpt_time": "12.23",
+                "dynamic_ar_time": "12.22",
+                "dynamic_dpt_time": "12.23"
+            },
+            "8724": {
+                "trainId": "8724",
+                "name": " MDA/PND NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "06.39",
+                "static_dpt_time": "06.40",
+                "dynamic_ar_time": "06.39",
+                "dynamic_dpt_time": "06.40"
+            },
+            "8725": {
+                "trainId": "8725",
+                "name": "MDA/RML NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.54",
+                "static_dpt_time": "07.55",
+                "dynamic_ar_time": "07.54",
+                "dynamic_dpt_time": "07.55"
+            },
+            "8727": {
+                "trainId": "8727",
+                "name": "MDA/PND NS/NSU/NH - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.50",
+                "static_dpt_time": "07.51",
+                "dynamic_ar_time": "07.50",
+                "dynamic_dpt_time": "07.51"
+            },
+            "8729": {
+                "trainId": "8729",
+                "name": "MDA/PND NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.11",
+                "static_dpt_time": "08.12",
+                "dynamic_ar_time": "08.11",
+                "dynamic_dpt_time": "08.12"
+            },
+            "8733": {
+                "trainId": "8733",
+                "name": " MDA/MRT NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.16",
+                "static_dpt_time": "08.17",
+                "dynamic_ar_time": "08.16",
+                "dynamic_dpt_time": "08.17"
+            },
+            "8736": {
+                "trainId": "8736",
+                "name": " MDA/KTS Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "08.55",
+                "static_dpt_time": "08.56",
+                "dynamic_ar_time": "08.55",
+                "dynamic_dpt_time": "08.56"
+            },
+            "8741": {
+                "trainId": "8741",
+                "name": "MDA/KTS Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "09.51",
+                "static_dpt_time": "09.52",
+                "dynamic_ar_time": "09.51",
+                "dynamic_dpt_time": "09.52"
+            },
+            "8748": {
+                "trainId": "8748",
+                "name": "MDA/PND NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "13.45",
+                "static_dpt_time": "13.46",
+                "dynamic_ar_time": "13.45",
+                "dynamic_dpt_time": "13.46"
+            },
+            "8749": {
+                "trainId": "8749",
+                "name": "MDA/PND DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "14.47",
+                "static_dpt_time": "14.48",
+                "dynamic_ar_time": "14.47",
+                "dynamic_dpt_time": "14.48"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "14.20",
+                "static_dpt_time": "14.21",
+                "dynamic_ar_time": "14.20",
+                "dynamic_dpt_time": "14.21"
+            },
+            "8755": {
+                "trainId": "8755",
+                "name": " MDA/MLV NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "15.17",
+                "static_dpt_time": "15.18",
+                "dynamic_ar_time": "15.17",
+                "dynamic_dpt_time": "15.18"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "17.02",
+                "static_dpt_time": "17.03",
+                "dynamic_ar_time": "17.02",
+                "dynamic_dpt_time": "17.03"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "17.02",
+                "static_dpt_time": "17.03",
+                "dynamic_ar_time": "17.02",
+                "dynamic_dpt_time": "17.03"
+            },
+            "8763": {
+                "trainId": "8763",
+                "name": " MDA/PND NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "16.42",
+                "static_dpt_time": "16.43",
+                "dynamic_ar_time": "16.42",
+                "dynamic_dpt_time": "16.43"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "18.27",
+                "static_dpt_time": "18.28",
+                "dynamic_ar_time": "18.27",
+                "dynamic_dpt_time": "18.28"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "18.48",
+                "static_dpt_time": "18.49",
+                "dynamic_ar_time": "18.48",
+                "dynamic_dpt_time": "18.49"
+            },
+            "8777": {
+                "trainId": "8777",
+                "name": " FOT/KTS NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "19.22",
+                "static_dpt_time": "19.23",
+                "dynamic_ar_time": "19.22",
+                "dynamic_dpt_time": "19.23"
+            }
+        }
+    },
+    "8009": {
+        "name": "Wellawatte",
+        "longitude": 79.857403,
+        "latitude": 6.875102,
+        "distances": {
+            "8007": 2120,
+            "8012": 2712
+        },
+        "arrivals": {
+            "8732": {
+                "trainId": "8732",
+                "name": "MDA/MLV NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.35",
+                "static_dpt_time": "08.36",
+                "dynamic_ar_time": "08.35",
+                "dynamic_dpt_time": "08.36"
+            },
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "11.29",
+                "static_dpt_time": "11.30",
+                "dynamic_ar_time": "11.29",
+                "dynamic_dpt_time": "11.30"
+            },
+            "8744": {
+                "trainId": "8744",
+                "name": "MDA/KTS NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.26",
+                "static_dpt_time": "12.27",
+                "dynamic_ar_time": "12.26",
+                "dynamic_dpt_time": "12.27"
+            },
+            "8724": {
+                "trainId": "8724",
+                "name": " MDA/PND NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "06.43",
+                "static_dpt_time": "06.44",
+                "dynamic_ar_time": "06.43",
+                "dynamic_dpt_time": "06.44"
+            },
+            "8725": {
+                "trainId": "8725",
+                "name": "MDA/RML NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.59",
+                "static_dpt_time": "08.00",
+                "dynamic_ar_time": "07.59",
+                "dynamic_dpt_time": "08.00"
+            },
+            "8727": {
+                "trainId": "8727",
+                "name": "MDA/PND NS/NSU/NH - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.55",
+                "static_dpt_time": "07.56",
+                "dynamic_ar_time": "07.55",
+                "dynamic_dpt_time": "07.56"
+            },
+            "8729": {
+                "trainId": "8729",
+                "name": "MDA/PND NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.15",
+                "static_dpt_time": "08.16",
+                "dynamic_ar_time": "08.15",
+                "dynamic_dpt_time": "08.16"
+            },
+            "8733": {
+                "trainId": "8733",
+                "name": " MDA/MRT NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.20",
+                "static_dpt_time": "08.21",
+                "dynamic_ar_time": "08.20",
+                "dynamic_dpt_time": "08.21"
+            },
+            "8736": {
+                "trainId": "8736",
+                "name": " MDA/KTS Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "08.59",
+                "static_dpt_time": "09.00",
+                "dynamic_ar_time": "08.59",
+                "dynamic_dpt_time": "09.00"
+            },
+            "8741": {
+                "trainId": "8741",
+                "name": "MDA/KTS Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "09.56",
+                "static_dpt_time": "09.57",
+                "dynamic_ar_time": "09.56",
+                "dynamic_dpt_time": "09.57"
+            },
+            "8748": {
+                "trainId": "8748",
+                "name": "MDA/PND NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "13.49",
+                "static_dpt_time": "13.50",
+                "dynamic_ar_time": "13.49",
+                "dynamic_dpt_time": "13.50"
+            },
+            "8749": {
+                "trainId": "8749",
+                "name": "MDA/PND DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "14.52",
+                "static_dpt_time": "14.53",
+                "dynamic_ar_time": "14.52",
+                "dynamic_dpt_time": "14.53"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "14.24",
+                "static_dpt_time": "14.25",
+                "dynamic_ar_time": "14.24",
+                "dynamic_dpt_time": "14.25"
+            },
+            "8755": {
+                "trainId": "8755",
+                "name": " MDA/MLV NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "15.22",
+                "static_dpt_time": "15.23",
+                "dynamic_ar_time": "15.22",
+                "dynamic_dpt_time": "15.23"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "17.06",
+                "static_dpt_time": "17.07",
+                "dynamic_ar_time": "17.06",
+                "dynamic_dpt_time": "17.07"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "17.06",
+                "static_dpt_time": "17.07",
+                "dynamic_ar_time": "17.06",
+                "dynamic_dpt_time": "17.07"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "18.31",
+                "static_dpt_time": "18.32",
+                "dynamic_ar_time": "18.31",
+                "dynamic_dpt_time": "18.32"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "18.53",
+                "static_dpt_time": "18.54",
+                "dynamic_ar_time": "18.53",
+                "dynamic_dpt_time": "18.54"
+            },
+            "8777": {
+                "trainId": "8777",
+                "name": " FOT/KTS NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "19.26",
+                "static_dpt_time": "19.27",
+                "dynamic_ar_time": "19.26",
+                "dynamic_dpt_time": "19.27"
+            }
+        }
+    },
+    "8012": {
+        "name": "Dehiwala",
+        "longitude": 79.862094,
+        "latitude": 6.850888,
+        "distances": {
+            "8009": 2712,
+            "8014": 2254
+        },
+        "arrivals": {
+            "8723": {
+                "trainId": "8723",
+                "name": " MDA/PND NS/NSU/NH - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.25",
+                "static_dpt_time": "07.26",
+                "dynamic_ar_time": "07.25",
+                "dynamic_dpt_time": "07.26"
+            },
+            "8732": {
+                "trainId": "8732",
+                "name": "MDA/MLV NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.41",
+                "static_dpt_time": "08.42",
+                "dynamic_ar_time": "08.41",
+                "dynamic_dpt_time": "08.42"
+            },
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "11.34",
+                "static_dpt_time": "11.35",
+                "dynamic_ar_time": "11.34",
+                "dynamic_dpt_time": "11.35"
+            },
+            "8744": {
+                "trainId": "8744",
+                "name": "MDA/KTS NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.31",
+                "static_dpt_time": "12.32",
+                "dynamic_ar_time": "12.31",
+                "dynamic_dpt_time": "12.32"
+            },
+            "8724": {
+                "trainId": "8724",
+                "name": " MDA/PND NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "06.48",
+                "static_dpt_time": "06.49",
+                "dynamic_ar_time": "06.48",
+                "dynamic_dpt_time": "06.49"
+            },
+            "8725": {
+                "trainId": "8725",
+                "name": "MDA/RML NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "08.05",
+                "static_dpt_time": "08.06",
+                "dynamic_ar_time": "08.05",
+                "dynamic_dpt_time": "08.06"
+            },
+            "8727": {
+                "trainId": "8727",
+                "name": "MDA/PND NS/NSU/NH - Pass ",
+                "status": "stopping",
+                "static_ar_time": "08.01",
+                "static_dpt_time": "08.02",
+                "dynamic_ar_time": "08.01",
+                "dynamic_dpt_time": "08.02"
+            },
+            "8729": {
+                "trainId": "8729",
+                "name": "MDA/PND NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.20",
+                "static_dpt_time": "08.21",
+                "dynamic_ar_time": "08.20",
+                "dynamic_dpt_time": "08.21"
+            },
+            "8733": {
+                "trainId": "8733",
+                "name": " MDA/MRT NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.25",
+                "static_dpt_time": "08.26",
+                "dynamic_ar_time": "08.25",
+                "dynamic_dpt_time": "08.26"
+            },
+            "8736": {
+                "trainId": "8736",
+                "name": " MDA/KTS Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "09.04",
+                "static_dpt_time": "09.05",
+                "dynamic_ar_time": "09.04",
+                "dynamic_dpt_time": "09.05"
+            },
+            "8741": {
+                "trainId": "8741",
+                "name": "MDA/KTS Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "10.02",
+                "static_dpt_time": "10.04",
+                "dynamic_ar_time": "10.02",
+                "dynamic_dpt_time": "10.04"
+            },
+            "8748": {
+                "trainId": "8748",
+                "name": "MDA/PND NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "13.54",
+                "static_dpt_time": "13.55",
+                "dynamic_ar_time": "13.54",
+                "dynamic_dpt_time": "13.55"
+            },
+            "8749": {
+                "trainId": "8749",
+                "name": "MDA/PND DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "14.58",
+                "static_dpt_time": "14.59",
+                "dynamic_ar_time": "14.58",
+                "dynamic_dpt_time": "14.59"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "14.29",
+                "static_dpt_time": "14.30",
+                "dynamic_ar_time": "14.29",
+                "dynamic_dpt_time": "14.30"
+            },
+            "8755": {
+                "trainId": "8755",
+                "name": " MDA/MLV NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "15.28",
+                "static_dpt_time": "15.29",
+                "dynamic_ar_time": "15.28",
+                "dynamic_dpt_time": "15.29"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "17.11",
+                "static_dpt_time": "17.12",
+                "dynamic_ar_time": "17.11",
+                "dynamic_dpt_time": "17.12"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "17.11",
+                "static_dpt_time": "17.12",
+                "dynamic_ar_time": "17.11",
+                "dynamic_dpt_time": "17.12"
+            },
+            "8763": {
+                "trainId": "8763",
+                "name": " MDA/PND NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "16.49",
+                "static_dpt_time": "16.50",
+                "dynamic_ar_time": "16.49",
+                "dynamic_dpt_time": "16.50"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "18.36",
+                "static_dpt_time": "18.37",
+                "dynamic_ar_time": "18.36",
+                "dynamic_dpt_time": "18.37"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "18.59",
+                "static_dpt_time": "19.00",
+                "dynamic_ar_time": "18.59",
+                "dynamic_dpt_time": "19.00"
+            },
+            "8777": {
+                "trainId": "8777",
+                "name": " FOT/KTS NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "19.31",
+                "static_dpt_time": "19.32",
+                "dynamic_ar_time": "19.31",
+                "dynamic_dpt_time": "19.32"
+            }
+        }
+    },
+    "8014": {
+        "name": "Mount Laviniya",
+        "longitude": 79.862789,
+        "latitude": 6.831673,
+        "distances": {
+            "80012": 2254,
+            "8016": 1799
+        },
+        "arrivals": {
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "11.38",
+                "static_dpt_time": "11.39",
+                "dynamic_ar_time": "11.38",
+                "dynamic_dpt_time": "11.39"
+            },
+            "8744": {
+                "trainId": "8744",
+                "name": "MDA/KTS NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.35",
+                "static_dpt_time": "12.36",
+                "dynamic_ar_time": "12.35",
+                "dynamic_dpt_time": "12.36"
+            },
+            "8724": {
+                "trainId": "8724",
+                "name": " MDA/PND NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "06.52",
+                "static_dpt_time": "06.53",
+                "dynamic_ar_time": "06.52",
+                "dynamic_dpt_time": "06.53"
+            },
+            "8725": {
+                "trainId": "8725",
+                "name": "MDA/RML NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "08.10",
+                "static_dpt_time": "08.11",
+                "dynamic_ar_time": "08.10",
+                "dynamic_dpt_time": "08.11"
+            },
+            "8727": {
+                "trainId": "8727",
+                "name": "MDA/PND NS/NSU/NH - Pass ",
+                "status": "stopping",
+                "static_ar_time": "08.06",
+                "static_dpt_time": "08.07",
+                "dynamic_ar_time": "08.06",
+                "dynamic_dpt_time": "08.07"
+            },
+            "8729": {
+                "trainId": "8729",
+                "name": "MDA/PND NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.24",
+                "static_dpt_time": "08.25",
+                "dynamic_ar_time": "08.24",
+                "dynamic_dpt_time": "08.25"
+            },
+            "8733": {
+                "trainId": "8733",
+                "name": " MDA/MRT NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.29",
+                "static_dpt_time": "08.30",
+                "dynamic_ar_time": "08.29",
+                "dynamic_dpt_time": "08.30"
+            },
+            "8736": {
+                "trainId": "8736",
+                "name": " MDA/KTS Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "09.08",
+                "static_dpt_time": "09.09",
+                "dynamic_ar_time": "09.08",
+                "dynamic_dpt_time": "09.09"
+            },
+            "8741": {
+                "trainId": "8741",
+                "name": "MDA/KTS Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "10.08",
+                "static_dpt_time": "10.09",
+                "dynamic_ar_time": "10.08",
+                "dynamic_dpt_time": "10.09"
+            },
+            "8748": {
+                "trainId": "8748",
+                "name": "MDA/PND NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "13.58",
+                "static_dpt_time": "13.59",
+                "dynamic_ar_time": "13.58",
+                "dynamic_dpt_time": "13.59"
+            },
+            "8749": {
+                "trainId": "8749",
+                "name": "MDA/PND DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "15.03",
+                "static_dpt_time": "15.04",
+                "dynamic_ar_time": "15.03",
+                "dynamic_dpt_time": "15.04"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "14.33",
+                "static_dpt_time": "14.34",
+                "dynamic_ar_time": "14.33",
+                "dynamic_dpt_time": "14.34"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "17.15",
+                "static_dpt_time": "17.16",
+                "dynamic_ar_time": "17.15",
+                "dynamic_dpt_time": "17.16"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "17.15",
+                "static_dpt_time": "17.16",
+                "dynamic_ar_time": "17.15",
+                "dynamic_dpt_time": "17.16"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "18.40",
+                "static_dpt_time": "18.41",
+                "dynamic_ar_time": "18.40",
+                "dynamic_dpt_time": "18.41"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "19.04",
+                "static_dpt_time": "19.05",
+                "dynamic_ar_time": "19.04",
+                "dynamic_dpt_time": "19.05"
+            },
+            "8777": {
+                "trainId": "8777",
+                "name": " FOT/KTS NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "19.35",
+                "static_dpt_time": "19.36",
+                "dynamic_ar_time": "19.35",
+                "dynamic_dpt_time": "19.36"
+            }
+        }
+    },
+    "8016": {
+        "name": "Rathmalana",
+        "longitude": 79.866840,
+        "latitude": 6.814847,
+        "distances": {
+            "8014": 1799,
+            "8018": 1929
+        },
+        "arrivals": {
+            "8718": {
+                "trainId": "8718",
+                "name": "MDA/MRT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.23",
+                "static_dpt_time": "07.24",
+                "dynamic_ar_time": "07.23",
+                "dynamic_dpt_time": "07.24"
+            },
+            "8723": {
+                "trainId": "8723",
+                "name": " MDA/PND NS/NSU/NH - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.31",
+                "static_dpt_time": "07.32",
+                "dynamic_ar_time": "07.31",
+                "dynamic_dpt_time": "07.32"
+            },
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "11.42",
+                "static_dpt_time": "11.43",
+                "dynamic_ar_time": "11.42",
+                "dynamic_dpt_time": "11.43"
+            },
+            "8744": {
+                "trainId": "8744",
+                "name": "MDA/KTS NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.39",
+                "static_dpt_time": "12.40",
+                "dynamic_ar_time": "12.39",
+                "dynamic_dpt_time": "12.40"
+            },
+            "8724": {
+                "trainId": "8724",
+                "name": " MDA/PND NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "06.56",
+                "static_dpt_time": "06.57",
+                "dynamic_ar_time": "06.56",
+                "dynamic_dpt_time": "06.57"
+            },
+            "8727": {
+                "trainId": "8727",
+                "name": "MDA/PND NS/NSU/NH - Pass ",
+                "status": "stopping",
+                "static_ar_time": "08.11",
+                "static_dpt_time": "08.12",
+                "dynamic_ar_time": "08.11",
+                "dynamic_dpt_time": "08.12"
+            },
+            "8729": {
+                "trainId": "8729",
+                "name": "MDA/PND NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.28",
+                "static_dpt_time": "08.29",
+                "dynamic_ar_time": "08.28",
+                "dynamic_dpt_time": "08.29"
+            },
+            "8733": {
+                "trainId": "8733",
+                "name": " MDA/MRT NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.33",
+                "static_dpt_time": "08.34",
+                "dynamic_ar_time": "08.33",
+                "dynamic_dpt_time": "08.34"
+            },
+            "8736": {
+                "trainId": "8736",
+                "name": " MDA/KTS Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "09.12",
+                "static_dpt_time": "09.13",
+                "dynamic_ar_time": "09.12",
+                "dynamic_dpt_time": "09.13"
+            },
+            "8741": {
+                "trainId": "8741",
+                "name": "MDA/KTS Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "10.13",
+                "static_dpt_time": "10.15",
+                "dynamic_ar_time": "10.13",
+                "dynamic_dpt_time": "10.15"
+            },
+            "8748": {
+                "trainId": "8748",
+                "name": "MDA/PND NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "14.02",
+                "static_dpt_time": "14.03",
+                "dynamic_ar_time": "14.02",
+                "dynamic_dpt_time": "14.03"
+            },
+            "8749": {
+                "trainId": "8749",
+                "name": "MDA/PND DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "15.08",
+                "static_dpt_time": "15.09",
+                "dynamic_ar_time": "15.08",
+                "dynamic_dpt_time": "15.09"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "14.37",
+                "static_dpt_time": "14.38",
+                "dynamic_ar_time": "14.37",
+                "dynamic_dpt_time": "14.38"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "17.18",
+                "static_dpt_time": "17.19",
+                "dynamic_ar_time": "17.18",
+                "dynamic_dpt_time": "17.19"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "17.18",
+                "static_dpt_time": "17.19",
+                "dynamic_ar_time": "17.18",
+                "dynamic_dpt_time": "17.19"
+            },
+            "8763": {
+                "trainId": "8763",
+                "name": " MDA/PND NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "16.56",
+                "static_dpt_time": "16.57",
+                "dynamic_ar_time": "16.56",
+                "dynamic_dpt_time": "16.57"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "18.44",
+                "static_dpt_time": "18.45",
+                "dynamic_ar_time": "18.44",
+                "dynamic_dpt_time": "18.45"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "19.09",
+                "static_dpt_time": "19.10",
+                "dynamic_ar_time": "19.09",
+                "dynamic_dpt_time": "19.10"
+            },
+            "8777": {
+                "trainId": "8777",
+                "name": " FOT/KTS NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "19.39",
+                "static_dpt_time": "19.40",
+                "dynamic_ar_time": "19.39",
+                "dynamic_dpt_time": "19.40"
+            }
+        }
+    },
+    "8018": {
+        "name": "Angulana",
+        "longitude": 79.872516,
+        "latitude": 6.798907,
+        "distances": {
+            "8016": 1929,
+            "8019": 1427
+        },
+        "arrivals": {
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "11.45",
+                "static_dpt_time": "11.46",
+                "dynamic_ar_time": "11.45",
+                "dynamic_dpt_time": "11.46"
+            },
+            "8744": {
+                "trainId": "8744",
+                "name": "MDA/KTS NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.42",
+                "static_dpt_time": "12.43",
+                "dynamic_ar_time": "12.42",
+                "dynamic_dpt_time": "12.43"
+            },
+            "8724": {
+                "trainId": "8724",
+                "name": " MDA/PND NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "06.59",
+                "static_dpt_time": "07.00",
+                "dynamic_ar_time": "06.59",
+                "dynamic_dpt_time": "07.00"
+            },
+            "8727": {
+                "trainId": "8727",
+                "name": "MDA/PND NS/NSU/NH - Pass ",
+                "status": "stopping",
+                "static_ar_time": "08.15",
+                "static_dpt_time": "08.16",
+                "dynamic_ar_time": "08.15",
+                "dynamic_dpt_time": "08.16"
+            },
+            "8729": {
+                "trainId": "8729",
+                "name": "MDA/PND NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.31",
+                "static_dpt_time": "08.32",
+                "dynamic_ar_time": "08.31",
+                "dynamic_dpt_time": "08.32"
+            },
+            "8733": {
+                "trainId": "8733",
+                "name": " MDA/MRT NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.36",
+                "static_dpt_time": "08.37",
+                "dynamic_ar_time": "08.36",
+                "dynamic_dpt_time": "08.37"
+            },
+            "8736": {
+                "trainId": "8736",
+                "name": " MDA/KTS Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "09.15",
+                "static_dpt_time": "09.16",
+                "dynamic_ar_time": "09.15",
+                "dynamic_dpt_time": "09.16"
+            },
+            "8741": {
+                "trainId": "8741",
+                "name": "MDA/KTS Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "10.18",
+                "static_dpt_time": "10.19",
+                "dynamic_ar_time": "10.18",
+                "dynamic_dpt_time": "10.19"
+            },
+            "8748": {
+                "trainId": "8748",
+                "name": "MDA/PND NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "14.05",
+                "static_dpt_time": "14.06",
+                "dynamic_ar_time": "14.05",
+                "dynamic_dpt_time": "14.06"
+            },
+            "8749": {
+                "trainId": "8749",
+                "name": "MDA/PND DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "15.12",
+                "static_dpt_time": "15.13",
+                "dynamic_ar_time": "15.12",
+                "dynamic_dpt_time": "15.13"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "14.40",
+                "static_dpt_time": "14.41",
+                "dynamic_ar_time": "14.40",
+                "dynamic_dpt_time": "14.41"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "17.21",
+                "static_dpt_time": "17.22",
+                "dynamic_ar_time": "17.21",
+                "dynamic_dpt_time": "17.22"
+            },
+            "8763": {
+                "trainId": "8763",
+                "name": " MDA/PND NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "16.59",
+                "static_dpt_time": "17.00",
+                "dynamic_ar_time": "16.59",
+                "dynamic_dpt_time": "17.00"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "18.47",
+                "static_dpt_time": "18.48",
+                "dynamic_ar_time": "18.47",
+                "dynamic_dpt_time": "18.48"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "19.13",
+                "static_dpt_time": "19.14",
+                "dynamic_ar_time": "19.13",
+                "dynamic_dpt_time": "19.14"
+            },
+            "8777": {
+                "trainId": "8777",
+                "name": " FOT/KTS NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "19.42",
+                "static_dpt_time": "19.43",
+                "dynamic_ar_time": "19.42",
+                "dynamic_dpt_time": "19.43"
+            }
+        }
+    },
+    "8019": {
+        "name": "Lunawa",
+        "longitude": 79.875459,
+        "latitude": 6.787045,
+        "distances": {
+            "8018": 1427,
+            "8021": 1583
+        },
+        "arrivals": {
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "11.48",
+                "static_dpt_time": "11.49",
+                "dynamic_ar_time": "11.48",
+                "dynamic_dpt_time": "11.49"
+            },
+            "8744": {
+                "trainId": "8744",
+                "name": "MDA/KTS NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.45",
+                "static_dpt_time": "12.46",
+                "dynamic_ar_time": "12.45",
+                "dynamic_dpt_time": "12.46"
+            },
+            "8724": {
+                "trainId": "8724",
+                "name": " MDA/PND NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.02",
+                "static_dpt_time": "07.03",
+                "dynamic_ar_time": "07.02",
+                "dynamic_dpt_time": "07.03"
+            },
+            "8727": {
+                "trainId": "8727",
+                "name": "MDA/PND NS/NSU/NH - Pass ",
+                "status": "stopping",
+                "static_ar_time": "08.19",
+                "static_dpt_time": "08.20",
+                "dynamic_ar_time": "08.19",
+                "dynamic_dpt_time": "08.20"
+            },
+            "8729": {
+                "trainId": "8729",
+                "name": "MDA/PND NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.35",
+                "static_dpt_time": "08.36",
+                "dynamic_ar_time": "08.35",
+                "dynamic_dpt_time": "08.36"
+            },
+            "8733": {
+                "trainId": "8733",
+                "name": " MDA/MRT NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.39",
+                "static_dpt_time": "08.40",
+                "dynamic_ar_time": "08.39",
+                "dynamic_dpt_time": "08.40"
+            },
+            "8736": {
+                "trainId": "8736",
+                "name": " MDA/KTS Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "09.18",
+                "static_dpt_time": "09.19",
+                "dynamic_ar_time": "09.18",
+                "dynamic_dpt_time": "09.19"
+            },
+            "8741": {
+                "trainId": "8741",
+                "name": "MDA/KTS Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "10.23",
+                "static_dpt_time": "10.23",
+                "dynamic_ar_time": "10.23",
+                "dynamic_dpt_time": "10.23"
+            },
+            "8748": {
+                "trainId": "8748",
+                "name": "MDA/PND NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "14.08",
+                "static_dpt_time": "14.09",
+                "dynamic_ar_time": "14.08",
+                "dynamic_dpt_time": "14.09"
+            },
+            "8749": {
+                "trainId": "8749",
+                "name": "MDA/PND DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "15.16",
+                "static_dpt_time": "15.17",
+                "dynamic_ar_time": "15.16",
+                "dynamic_dpt_time": "15.17"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "14.43",
+                "static_dpt_time": "14.44",
+                "dynamic_ar_time": "14.43",
+                "dynamic_dpt_time": "14.44"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "18.50",
+                "static_dpt_time": "18.51",
+                "dynamic_ar_time": "18.50",
+                "dynamic_dpt_time": "18.51"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "19.17",
+                "static_dpt_time": "19.18",
+                "dynamic_ar_time": "19.17",
+                "dynamic_dpt_time": "19.18"
+            },
+            "8777": {
+                "trainId": "8777",
+                "name": " FOT/KTS NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "19.46",
+                "static_dpt_time": "19.47",
+                "dynamic_ar_time": "19.46",
+                "dynamic_dpt_time": "19.47"
+            }
+        }
+    },
+    "8021": {
+        "name": "Moratuwa",
+        "longitude": 79.881935,
+        "latitude": 6.774266,
+        "distances": {
+            "8019": 1583,
+            "8023": 1782
+        },
+        "arrivals": {
+            "8723": {
+                "trainId": "8723",
+                "name": " MDA/PND NS/NSU/NH - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.38",
+                "static_dpt_time": "07.39",
+                "dynamic_ar_time": "07.38",
+                "dynamic_dpt_time": "07.39"
+            },
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "11.52",
+                "static_dpt_time": "11.54",
+                "dynamic_ar_time": "11.52",
+                "dynamic_dpt_time": "11.54"
+            },
+            "8744": {
+                "trainId": "8744",
+                "name": "MDA/KTS NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.49",
+                "static_dpt_time": "12.50",
+                "dynamic_ar_time": "12.49",
+                "dynamic_dpt_time": "12.50"
+            },
+            "8724": {
+                "trainId": "8724",
+                "name": " MDA/PND NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.06",
+                "static_dpt_time": "07.07",
+                "dynamic_ar_time": "07.06",
+                "dynamic_dpt_time": "07.07"
+            },
+            "8727": {
+                "trainId": "8727",
+                "name": "MDA/PND NS/NSU/NH - Pass ",
+                "status": "stopping",
+                "static_ar_time": "08.23",
+                "static_dpt_time": "08.24",
+                "dynamic_ar_time": "08.23",
+                "dynamic_dpt_time": "08.24"
+            },
+            "8729": {
+                "trainId": "8729",
+                "name": "MDA/PND NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.38",
+                "static_dpt_time": "08.39",
+                "dynamic_ar_time": "08.38",
+                "dynamic_dpt_time": "08.39"
+            },
+            "8736": {
+                "trainId": "8736",
+                "name": " MDA/KTS Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "09.21",
+                "static_dpt_time": "09.22",
+                "dynamic_ar_time": "09.21",
+                "dynamic_dpt_time": "09.22"
+            },
+            "8741": {
+                "trainId": "8741",
+                "name": "MDA/KTS Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "10.26",
+                "static_dpt_time": "10.30",
+                "dynamic_ar_time": "10.26",
+                "dynamic_dpt_time": "10.30"
+            },
+            "8748": {
+                "trainId": "8748",
+                "name": "MDA/PND NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "14.12",
+                "static_dpt_time": "14.13",
+                "dynamic_ar_time": "14.12",
+                "dynamic_dpt_time": "14.13"
+            },
+            "8749": {
+                "trainId": "8749",
+                "name": "MDA/PND DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "15.20",
+                "static_dpt_time": "15.21",
+                "dynamic_ar_time": "15.20",
+                "dynamic_dpt_time": "15.21"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "14.47",
+                "static_dpt_time": "14.54",
+                "dynamic_ar_time": "14.47",
+                "dynamic_dpt_time": "14.54"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "17.25",
+                "static_dpt_time": "17.30",
+                "dynamic_ar_time": "17.25",
+                "dynamic_dpt_time": "17.30"
+            },
+            "8763": {
+                "trainId": "8763",
+                "name": " MDA/PND NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "17.04",
+                "static_dpt_time": "17.05",
+                "dynamic_ar_time": "17.04",
+                "dynamic_dpt_time": "17.05"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "18.54",
+                "static_dpt_time": "18.55",
+                "dynamic_ar_time": "18.54",
+                "dynamic_dpt_time": "18.55"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "19.21",
+                "static_dpt_time": "19.23",
+                "dynamic_ar_time": "19.21",
+                "dynamic_dpt_time": "19.23"
+            },
+            "8777": {
+                "trainId": "8777",
+                "name": " FOT/KTS NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "19.49",
+                "static_dpt_time": "19.50",
+                "dynamic_ar_time": "19.49",
+                "dynamic_dpt_time": "19.50"
+            }
+        }
+    },
+    "8023": {
+        "name": "Koralawella",
+        "longitude": 79.885865,
+        "latitude": 6.758404,
+        "distances": {
+            "8021": 1782,
+            "8024": 1832
+        },
+        "arrivals": {
+            "8723": {
+                "trainId": "8723",
+                "name": " MDA/PND NS/NSU/NH - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.42",
+                "static_dpt_time": "07.43",
+                "dynamic_ar_time": "07.42",
+                "dynamic_dpt_time": "07.43"
+            },
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "11.57",
+                "static_dpt_time": "11.58",
+                "dynamic_ar_time": "11.57",
+                "dynamic_dpt_time": "11.58"
+            },
+            "8744": {
+                "trainId": "8744",
+                "name": "MDA/KTS NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.53",
+                "static_dpt_time": "12.54",
+                "dynamic_ar_time": "12.53",
+                "dynamic_dpt_time": "12.54"
+            },
+            "8724": {
+                "trainId": "8724",
+                "name": " MDA/PND NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.10",
+                "static_dpt_time": "07.11",
+                "dynamic_ar_time": "07.10",
+                "dynamic_dpt_time": "07.11"
+            },
+            "8727": {
+                "trainId": "8727",
+                "name": "MDA/PND NS/NSU/NH - Pass ",
+                "status": "stopping",
+                "static_ar_time": "08.28",
+                "static_dpt_time": "08.29",
+                "dynamic_ar_time": "08.28",
+                "dynamic_dpt_time": "08.29"
+            },
+            "8729": {
+                "trainId": "8729",
+                "name": "MDA/PND NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.42",
+                "static_dpt_time": "08.43",
+                "dynamic_ar_time": "08.42",
+                "dynamic_dpt_time": "08.43"
+            },
+            "8736": {
+                "trainId": "8736",
+                "name": " MDA/KTS Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "09.25",
+                "static_dpt_time": "09.26",
+                "dynamic_ar_time": "09.25",
+                "dynamic_dpt_time": "09.26"
+            },
+            "8741": {
+                "trainId": "8741",
+                "name": "MDA/KTS Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "10.34",
+                "static_dpt_time": "10.35",
+                "dynamic_ar_time": "10.34",
+                "dynamic_dpt_time": "10.35"
+            },
+            "8748": {
+                "trainId": "8748",
+                "name": "MDA/PND NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "14.16",
+                "static_dpt_time": "14.17",
+                "dynamic_ar_time": "14.16",
+                "dynamic_dpt_time": "14.17"
+            },
+            "8749": {
+                "trainId": "8749",
+                "name": "MDA/PND DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "15.25",
+                "static_dpt_time": "15.26",
+                "dynamic_ar_time": "15.25",
+                "dynamic_dpt_time": "15.26"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "14.57",
+                "static_dpt_time": "14.58",
+                "dynamic_ar_time": "14.57",
+                "dynamic_dpt_time": "14.58"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "18.58",
+                "static_dpt_time": "18.59",
+                "dynamic_ar_time": "18.58",
+                "dynamic_dpt_time": "18.59"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "19.27",
+                "static_dpt_time": "19.28",
+                "dynamic_ar_time": "19.27",
+                "dynamic_dpt_time": "19.28"
+            }
+        }
+    },
+    "8024": {
+        "name": "Egodauyana",
+        "longitude": 79.891602,
+        "latitude": 6.742861,
+        "distances": {
+            "8023": 1832,
+            "8028": 3686
+        },
+        "arrivals": {
+            "8723": {
+                "trainId": "8723",
+                "name": " MDA/PND NS/NSU/NH - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.45",
+                "static_dpt_time": "07.46",
+                "dynamic_ar_time": "07.45",
+                "dynamic_dpt_time": "07.46"
+            },
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.00",
+                "static_dpt_time": "12.01",
+                "dynamic_ar_time": "12.00",
+                "dynamic_dpt_time": "12.01"
+            },
+            "8744": {
+                "trainId": "8744",
+                "name": "MDA/KTS NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.56",
+                "static_dpt_time": "12.57",
+                "dynamic_ar_time": "12.56",
+                "dynamic_dpt_time": "12.57"
+            },
+            "8724": {
+                "trainId": "8724",
+                "name": " MDA/PND NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "07.13",
+                "static_dpt_time": "07.14",
+                "dynamic_ar_time": "07.13",
+                "dynamic_dpt_time": "07.14"
+            },
+            "8727": {
+                "trainId": "8727",
+                "name": "MDA/PND NS/NSU/NH - Pass ",
+                "status": "stopping",
+                "static_ar_time": "08.32",
+                "static_dpt_time": "08.33",
+                "dynamic_ar_time": "08.32",
+                "dynamic_dpt_time": "08.33"
+            },
+            "8729": {
+                "trainId": "8729",
+                "name": "MDA/PND NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "08.45",
+                "static_dpt_time": "08.46",
+                "dynamic_ar_time": "08.45",
+                "dynamic_dpt_time": "08.46"
+            },
+            "8736": {
+                "trainId": "8736",
+                "name": " MDA/KTS Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "09.28",
+                "static_dpt_time": "09.29",
+                "dynamic_ar_time": "09.28",
+                "dynamic_dpt_time": "09.29"
+            },
+            "8741": {
+                "trainId": "8741",
+                "name": "MDA/KTS Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "10.38",
+                "static_dpt_time": "10.39",
+                "dynamic_ar_time": "10.38",
+                "dynamic_dpt_time": "10.39"
+            },
+            "8748": {
+                "trainId": "8748",
+                "name": "MDA/PND NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "14.19",
+                "static_dpt_time": "14.20",
+                "dynamic_ar_time": "14.19",
+                "dynamic_dpt_time": "14.20"
+            },
+            "8749": {
+                "trainId": "8749",
+                "name": "MDA/PND DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "15.29",
+                "static_dpt_time": "15.30",
+                "dynamic_ar_time": "15.29",
+                "dynamic_dpt_time": "15.30"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "15.00",
+                "static_dpt_time": "15.01",
+                "dynamic_ar_time": "15.00",
+                "dynamic_dpt_time": "15.01"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "19.01",
+                "static_dpt_time": "19.02",
+                "dynamic_ar_time": "19.01",
+                "dynamic_dpt_time": "19.02"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "19.31",
+                "static_dpt_time": "19.32",
+                "dynamic_ar_time": "19.31",
+                "dynamic_dpt_time": "19.32"
+            }
+        }
+    },
+    "8028": {
+        "name": "Panadura",
+        "longitude": 79.904649,
+        "latitude": 6.712308,
+        "distances": {
+            "8024": 3686,
+            "8031": 3218
+        },
+        "arrivals": {
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.06",
+                "static_dpt_time": "12.07",
+                "dynamic_ar_time": "12.06",
+                "dynamic_dpt_time": "12.07"
+            },
+            "8744": {
+                "trainId": "8744",
+                "name": "MDA/KTS NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "13.02",
+                "static_dpt_time": "13.03",
+                "dynamic_ar_time": "13.02",
+                "dynamic_dpt_time": "13.03"
+            },
+            "8736": {
+                "trainId": "8736",
+                "name": " MDA/KTS Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "09.34",
+                "static_dpt_time": "09.35",
+                "dynamic_ar_time": "09.34",
+                "dynamic_dpt_time": "09.35"
+            },
+            "8741": {
+                "trainId": "8741",
+                "name": "MDA/KTS Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "10.45",
+                "static_dpt_time": "10.49",
+                "dynamic_ar_time": "10.45",
+                "dynamic_dpt_time": "10.49"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "15.06",
+                "static_dpt_time": "15.07",
+                "dynamic_ar_time": "15.06",
+                "dynamic_dpt_time": "15.07"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "17.38",
+                "static_dpt_time": "17.39",
+                "dynamic_ar_time": "17.38",
+                "dynamic_dpt_time": "17.39"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "19.07",
+                "static_dpt_time": "19.08",
+                "dynamic_ar_time": "19.07",
+                "dynamic_dpt_time": "19.08"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "19.38",
+                "static_dpt_time": "19.40",
+                "dynamic_ar_time": "19.38",
+                "dynamic_dpt_time": "19.40"
+            },
+            "8777": {
+                "trainId": "8777",
+                "name": " FOT/KTS NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "19.58",
+                "static_dpt_time": "19.59",
+                "dynamic_ar_time": "19.58",
+                "dynamic_dpt_time": "19.59"
+            }
+        }
+    },
+    "8031": {
+        "name": "Pinwatte",
+        "longitude": 79.915970,
+        "latitude": 6.685949,
+        "distances": {
+            "8028": 3218,
+            "8034": 2994
+        },
+        "arrivals": {
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.11",
+                "static_dpt_time": "12.12",
+                "dynamic_ar_time": "12.11",
+                "dynamic_dpt_time": "12.12"
+            },
+            "8744": {
+                "trainId": "8744",
+                "name": "MDA/KTS NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "13.07",
+                "static_dpt_time": "13.08",
+                "dynamic_ar_time": "13.07",
+                "dynamic_dpt_time": "13.08"
+            },
+            "8736": {
+                "trainId": "8736",
+                "name": " MDA/KTS Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "09.39",
+                "static_dpt_time": "09.40",
+                "dynamic_ar_time": "09.39",
+                "dynamic_dpt_time": "09.40"
+            },
+            "8741": {
+                "trainId": "8741",
+                "name": "MDA/KTS Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "10.54",
+                "static_dpt_time": "10.55",
+                "dynamic_ar_time": "10.54",
+                "dynamic_dpt_time": "10.55"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "15.11",
+                "static_dpt_time": "15.12",
+                "dynamic_ar_time": "15.11",
+                "dynamic_dpt_time": "15.12"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "17.43",
+                "static_dpt_time": "17.44",
+                "dynamic_ar_time": "17.43",
+                "dynamic_dpt_time": "17.44"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "19.12",
+                "static_dpt_time": "19.13",
+                "dynamic_ar_time": "19.12",
+                "dynamic_dpt_time": "19.13"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "19.45",
+                "static_dpt_time": "19.46",
+                "dynamic_ar_time": "19.45",
+                "dynamic_dpt_time": "19.46"
+            }
+        }
+    },
+    "3017": {
+        "name": "Kandana",
+        "longitude": 79.901135,
+        "latitude": 7.048957,
+        "distances": {
+            "1014": 3283,
+            "3020": 3518
+        },
+        "arrivals": {
+
+        }
+    },
+    "3020": {
+        "name": "Ja-ela",
+        "longitude": 79.891937,
+        "latitude": 7.077630,
+        "distances": {
+            "3017": 3518,
+            "3026": 5903
+        },
+        "arrivals": {}
+    },
+    "3026": {
+        "name": "Seeduwa",
+        "longitude": 79.882620,
+        "latitude": 7.128885,
+        "distances": {
+            "3020": 5903,
+            "3031": 7241
+        },
+        "arrivals": {}
+    },
+    "3031": {
+        "name": "Airport",
+        "longitude": 79.871771,
+        "latitude": 7.167265,
+        "distances": {
+            "3037": 7241,
+            "3026": 4215
+        },
+        "arrivals": {}
+    },
+    "3037": {
+        "name": "Negombo",
+        "longitude": 79.841974,
+        "latitude": 7.210600,
+        "distances": {
+            "3031": 4215,
+            "3091": 10215
+        },
+        "arrivals": {}
+    },
+    "3091": {
+        "name": "Chilaw",
+        "longitude": 79.791050,
+        "latitude": 7.575491,
+        "distances": {
+            "3037": 10215
+        },
+        "arrivals": {}
+    },
+    "8034": {
+        "name": "Wadduwa",
+        "longitude": 79.928591,
+        "latitude": 6.662832,
+        "distances": {
+            "8031": 2994,
+            "8038": 3591
+        },
+        "arrivals": {
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.16",
+                "static_dpt_time": "12.17",
+                "dynamic_ar_time": "12.16",
+                "dynamic_dpt_time": "12.17"
+            },
+            "8744": {
+                "trainId": "8744",
+                "name": "MDA/KTS NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "13.12",
+                "static_dpt_time": "13.13",
+                "dynamic_ar_time": "13.12",
+                "dynamic_dpt_time": "13.13"
+            },
+            "8736": {
+                "trainId": "8736",
+                "name": " MDA/KTS Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "09.44",
+                "static_dpt_time": "09.45",
+                "dynamic_ar_time": "09.44",
+                "dynamic_dpt_time": "09.45"
+            },
+            "8741": {
+                "trainId": "8741",
+                "name": "MDA/KTS Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "11.00",
+                "static_dpt_time": "11.01",
+                "dynamic_ar_time": "11.00",
+                "dynamic_dpt_time": "11.01"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "15.16",
+                "static_dpt_time": "15.17",
+                "dynamic_ar_time": "15.16",
+                "dynamic_dpt_time": "15.17"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "17.48",
+                "static_dpt_time": "17.49",
+                "dynamic_ar_time": "17.48",
+                "dynamic_dpt_time": "17.49"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "19.17",
+                "static_dpt_time": "19.18",
+                "dynamic_ar_time": "19.17",
+                "dynamic_dpt_time": "19.18"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "19.51",
+                "static_dpt_time": "19.52",
+                "dynamic_ar_time": "19.51",
+                "dynamic_dpt_time": "19.52"
+            },
+            "8777": {
+                "trainId": "8777",
+                "name": " FOT/KTS NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "20.06",
+                "static_dpt_time": "20.07",
+                "dynamic_ar_time": "20.06",
+                "dynamic_dpt_time": "20.07"
+            }
+        }
+    },
+    "8038": {
+        "name": "Train Hault 01",
+        "longitude": 79.940354,
+        "latitude": 6.632537,
+        "distances": {
+            "8034": 3591,
+            "8042": 3816
+        },
+        "arrivals": {
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.22",
+                "static_dpt_time": "12.23",
+                "dynamic_ar_time": "12.22",
+                "dynamic_dpt_time": "12.23"
+            },
+            "8744": {
+                "trainId": "8744",
+                "name": "MDA/KTS NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "13.18",
+                "static_dpt_time": "13.19",
+                "dynamic_ar_time": "13.18",
+                "dynamic_dpt_time": "13.19"
+            },
+            "8736": {
+                "trainId": "8736",
+                "name": " MDA/KTS Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "09.50",
+                "static_dpt_time": "09.51",
+                "dynamic_ar_time": "09.50",
+                "dynamic_dpt_time": "09.51"
+            },
+            "8741": {
+                "trainId": "8741",
+                "name": "MDA/KTS Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "11.06",
+                "static_dpt_time": "11.07",
+                "dynamic_ar_time": "11.06",
+                "dynamic_dpt_time": "11.07"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "15.22",
+                "static_dpt_time": "15.23",
+                "dynamic_ar_time": "15.22",
+                "dynamic_dpt_time": "15.23"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "17.53",
+                "static_dpt_time": "17.54",
+                "dynamic_ar_time": "17.53",
+                "dynamic_dpt_time": "17.54"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "19.23",
+                "static_dpt_time": "19.24",
+                "dynamic_ar_time": "19.23",
+                "dynamic_dpt_time": "19.24"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "19.57",
+                "static_dpt_time": "19.58",
+                "dynamic_ar_time": "19.57",
+                "dynamic_dpt_time": "19.58"
+            }
+        }
+    },
+    "8042": {
+        "name": "Kalutara North",
+        "longitude": 79.954257,
+        "latitude": 6.601231,
+        "distances": {
+            "8038": 3816,
+            "8044": 1989
+        },
+        "arrivals": {
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.28",
+                "static_dpt_time": "12.29",
+                "dynamic_ar_time": "12.28",
+                "dynamic_dpt_time": "12.29"
+            },
+            "8744": {
+                "trainId": "8744",
+                "name": "MDA/KTS NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "13.24",
+                "static_dpt_time": "13.25",
+                "dynamic_ar_time": "13.24",
+                "dynamic_dpt_time": "13.25"
+            },
+            "8736": {
+                "trainId": "8736",
+                "name": " MDA/KTS Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "09.56",
+                "static_dpt_time": "09.57",
+                "dynamic_ar_time": "09.56",
+                "dynamic_dpt_time": "09.57"
+            },
+            "8741": {
+                "trainId": "8741",
+                "name": "MDA/KTS Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "11.12",
+                "static_dpt_time": "11.13",
+                "dynamic_ar_time": "11.12",
+                "dynamic_dpt_time": "11.13"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "15.28",
+                "static_dpt_time": "15.29",
+                "dynamic_ar_time": "15.28",
+                "dynamic_dpt_time": "15.29"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "17.58",
+                "static_dpt_time": "17.59",
+                "dynamic_ar_time": "17.58",
+                "dynamic_dpt_time": "17.59"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "19.29",
+                "static_dpt_time": "19.30",
+                "dynamic_ar_time": "19.29",
+                "dynamic_dpt_time": "19.30"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "20.03",
+                "static_dpt_time": "20.04",
+                "dynamic_ar_time": "20.03",
+                "dynamic_dpt_time": "20.04"
+            },
+            "8777": {
+                "trainId": "8777",
+                "name": " FOT/KTS NS/NSU - Pass",
+                "status": "stopping",
+                "static_ar_time": "20.15",
+                "static_dpt_time": "20.16",
+                "dynamic_ar_time": "20.15",
+                "dynamic_dpt_time": "20.16"
+            }
+        }
+    },
+    "8044": {
+        "name": "Kalutara South",
+        "longitude": 79.958996,
+        "latitude": 6.584139,
+        "distances": {
+            "8042": 1989,
+            "8047": 2810
+        },
+        "arrivals": {
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.33",
+                "static_dpt_time": "12.35",
+                "dynamic_ar_time": "12.33",
+                "dynamic_dpt_time": "12.35"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "15.33",
+                "static_dpt_time": "15.34",
+                "dynamic_ar_time": "15.33",
+                "dynamic_dpt_time": "15.34"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "18.03",
+                "static_dpt_time": "18.04",
+                "dynamic_ar_time": "18.03",
+                "dynamic_dpt_time": "18.04"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "19.34",
+                "static_dpt_time": "19.35",
+                "dynamic_ar_time": "19.34",
+                "dynamic_dpt_time": "19.35"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "20.08",
+                "static_dpt_time": "20.09",
+                "dynamic_ar_time": "20.08",
+                "dynamic_dpt_time": "20.09"
+            }
+        }
+    },
+    "8047": {
+        "name": "Katukurunda",
+        "longitude": 79.966107,
+        "latitude": 6.560095,
+        "distances": {
+            "8044": 2810,
+            "8050": 3373
+        },
+        "arrivals": {
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.39",
+                "static_dpt_time": "12.40",
+                "dynamic_ar_time": "12.39",
+                "dynamic_dpt_time": "12.40"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "15.37",
+                "static_dpt_time": "15.38",
+                "dynamic_ar_time": "15.37",
+                "dynamic_dpt_time": "15.38"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "18.07",
+                "static_dpt_time": "18.08",
+                "dynamic_ar_time": "18.07",
+                "dynamic_dpt_time": "18.08"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "19.39",
+                "static_dpt_time": "19.40",
+                "dynamic_ar_time": "19.39",
+                "dynamic_dpt_time": "19.40"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "20.14",
+                "static_dpt_time": "20.15",
+                "dynamic_ar_time": "20.14",
+                "dynamic_dpt_time": "20.15"
+            }
+        }
+    },
+    "8050": {
+        "name": "Payagala North",
+        "longitude": 79.975027,
+        "latitude": 6.531607,
+        "distances": {
+            "8047": 3373,
+            "8051": 1216
+        },
+        "arrivals": {
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.44",
+                "static_dpt_time": "12.45",
+                "dynamic_ar_time": "12.44",
+                "dynamic_dpt_time": "12.45"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "15.41",
+                "static_dpt_time": "15.42",
+                "dynamic_ar_time": "15.41",
+                "dynamic_dpt_time": "15.42"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "18.12",
+                "static_dpt_time": "18.13",
+                "dynamic_ar_time": "18.12",
+                "dynamic_dpt_time": "18.13"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "19.44",
+                "static_dpt_time": "19.45",
+                "dynamic_ar_time": "19.44",
+                "dynamic_dpt_time": "19.45"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "20.20",
+                "static_dpt_time": "20.21",
+                "dynamic_ar_time": "20.20",
+                "dynamic_dpt_time": "20.21"
+            }
+        }
+    },
+    "8051": {
+        "name": "Payagala South",
+        "longitude": 79.978827,
+        "latitude": 6.521697,
+        "distances": {
+            "8050": 1216,
+            "8053": 1895
+        },
+        "arrivals": {
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.47",
+                "static_dpt_time": "12.48",
+                "dynamic_ar_time": "12.47",
+                "dynamic_dpt_time": "12.48"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "15.44",
+                "static_dpt_time": "15.54",
+                "dynamic_ar_time": "15.44",
+                "dynamic_dpt_time": "15.54"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "18.15",
+                "static_dpt_time": "18.16",
+                "dynamic_ar_time": "18.15",
+                "dynamic_dpt_time": "18.16"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "19.47",
+                "static_dpt_time": "19.48",
+                "dynamic_ar_time": "19.47",
+                "dynamic_dpt_time": "19.48"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "20.24",
+                "static_dpt_time": "20.25",
+                "dynamic_ar_time": "20.24",
+                "dynamic_dpt_time": "20.25"
+            }
+        }
+    },
+    "8053": {
+        "name": "Maggona",
+        "longitude": 79.981397,
+        "latitude": 6.504823,
+        "distances": {
+            "8051": 1895,
+            "8056": 3175
+        },
+        "arrivals": {
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.51",
+                "static_dpt_time": "12.52",
+                "dynamic_ar_time": "12.51",
+                "dynamic_dpt_time": "12.52"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "15.56",
+                "static_dpt_time": "15.57",
+                "dynamic_ar_time": "15.56",
+                "dynamic_dpt_time": "15.57"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "18.19",
+                "static_dpt_time": "18.20",
+                "dynamic_ar_time": "18.19",
+                "dynamic_dpt_time": "18.20"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "19.51",
+                "static_dpt_time": "19.52",
+                "dynamic_ar_time": "19.51",
+                "dynamic_dpt_time": "19.52"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "20.28",
+                "static_dpt_time": "20.29",
+                "dynamic_ar_time": "20.28",
+                "dynamic_dpt_time": "20.29"
+            }
+        }
+    },
+    "8056": {
+        "name": "Beruwala",
+        "longitude": 79.983493,
+        "latitude": 6.477061,
+        "distances": {
+            "8053": 3175,
+            "8058": 2181
+        },
+        "arrivals": {
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "12.57",
+                "static_dpt_time": "12.58",
+                "dynamic_ar_time": "12.57",
+                "dynamic_dpt_time": "12.58"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "16.01",
+                "static_dpt_time": "16.02",
+                "dynamic_ar_time": "16.01",
+                "dynamic_dpt_time": "16.02"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "18.24",
+                "static_dpt_time": "18.25",
+                "dynamic_ar_time": "18.24",
+                "dynamic_dpt_time": "18.25"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "19.57",
+                "static_dpt_time": "19.58",
+                "dynamic_ar_time": "19.57",
+                "dynamic_dpt_time": "19.58"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "20.34",
+                "static_dpt_time": "20.35",
+                "dynamic_ar_time": "20.34",
+                "dynamic_dpt_time": "20.35"
+            }
+        }
+    },
+    "8058": {
+        "name": "Hettimulla",
+        "longitude": 79.990783,
+        "latitude": 6.458044,
+        "distances": {
+            "8056": 2181,
+            "8062": 3154
+        },
+        "arrivals": {
+            "8742": {
+                "trainId": "8742",
+                "name": " MDA/ALT Daily - Pass ",
+                "status": "stopping",
+                "static_ar_time": "13.02",
+                "static_dpt_time": "13.03",
+                "dynamic_ar_time": "13.02",
+                "dynamic_dpt_time": "13.03"
+            },
+            "8751": {
+                "trainId": "8751",
+                "name": "MDA/ALT DAILY - Pass ",
+                "status": "stopping",
+                "static_ar_time": "16.06",
+                "static_dpt_time": "16.07",
+                "dynamic_ar_time": "16.06",
+                "dynamic_dpt_time": "16.07"
+            },
+            "8758": {
+                "trainId": "8758",
+                "name": "MDA /ALT NS/NSU - Pass ",
+                "status": "stopping",
+                "static_ar_time": "18.29",
+                "static_dpt_time": "18.30",
+                "dynamic_ar_time": "18.29",
+                "dynamic_dpt_time": "18.30"
+            },
+            "8773": {
+                "trainId": "8773",
+                "name": " MDA/ALT Daily - pass ",
+                "status": "stopping",
+                "static_ar_time": "20.02",
+                "static_dpt_time": "20.03",
+                "dynamic_ar_time": "20.02",
+                "dynamic_dpt_time": "20.03"
+            },
+            "8774": {
+                "trainId": "8774",
+                "name": " MDA/ALT DAILY - Pass",
+                "status": "stopping",
+                "static_ar_time": "20.39",
+                "static_dpt_time": "20.40",
+                "dynamic_ar_time": "20.39",
+                "dynamic_dpt_time": "20.40"
+            }
+        }
+    },
+    "8062": {
+        "name": "Aluthgama",
+        "longitude": 80.000290,
+        "latitude": 6.432898,
+        "distances": {
+            "8058": 3154,
+            "8063": 1297
+        },
+        "arrivals": {}
+    },
+    "8063": {
+        "name": "Bentota",
+        "longitude": 79.996622,
+        "latitude": 6.422134,
+        "distances": {
+            "8062": 1297,
+            "8067": 3981
+        },
+        "arrivals": {}
+    },
+    "8067": {
+        "name": "Induruwa",
+        "longitude": 80.008616,
+        "latitude": 6.387290,
+        "distances": {
+            "8063": 3981,
+            "8070": 2690
+        },
+        "arrivals": {}
+    },
+    "8070": {
+        "name": "Maha Induruwa",
+        "longitude": 80.013792,
+        "latitude": 6.364273,
+        "distances": {
+            "8067": 2690,
+            "8073": 3438
+        },
+        "arrivals": {}
+    },
+    "8073": {
+        "name": "Kosgoda",
+        "longitude": 80.028885,
+        "latitude": 6.338267,
+        "distances": {
+            "8070": 3438,
+            "8074": 1449
+        },
+        "arrivals": {}
+    },
+    "8074": {
+        "name": "Piyagama",
+        "longitude": 80.034071,
+        "latitude": 6.327517,
+        "distances": {
+            "8073": 1449,
+            "8076": 1468
+        },
+        "arrivals": {}
+    },
+    "8076": {
+        "name": "Ahungalla",
+        "longitude": 80.037698,
+        "latitude": 6.312602,
+        "distances": {
+            "8074": 1468,
+            "8078": 2116
+        },
+        "arrivals": {}
+    },
+    "8078": {
+        "name": "Pathagamgoda",
+        "longitude": 80.041764,
+        "latitude": 6.296556,
+        "distances": {
+            "8076": 2116,
+            "8080": 2105
+        },
+        "arrivals": {}
+    },
+    "8080": {
+        "name": "Balapitiya",
+        "longitude": 80.043410,
+        "latitude": 6.276971,
+        "distances": {
+            "8078": 2105,
+            "8083": 3251
+        },
+        "arrivals": {}
+    },
+    "8083": {
+        "name": "Kandegoda",
+        "longitude": 80.052977,
+        "latitude": 6.250049,
+        "distances": {
+            "8080": 3251,
+            "8085": 1671
+        },
+        "arrivals": {}
+    },
+    "8085": {
+        "name": "Ambalangoda",
+        "longitude": 80.054929,
+        "latitude": 6.235357,
+        "distances": {
+            "8083": 1671,
+            "8088": 2732
+        },
+        "arrivals": {}
+    },
+    "8088": {
+        "name": "Madampagama",
+        "longitude": 80.061123,
+        "latitude": 6.212654,
+        "distances": {
+            "8085": 2732,
+            "8090": 1961
+        },
+        "arrivals": {}
+    },
+    "8090": {
+        "name": "Akurala",
+        "longitude": 80.064779,
+        "latitude": 6.192334,
+        "distances": {
+            "8088": 1961,
+            "8091": 1472
+        },
+        "arrivals": {}
+    },
+    "8091": {
+        "name": "Kahawa",
+        "longitude": 80.073982,
+        "latitude": 6.183174,
+        "distances": {
+            "8090": 1472,
+            "8093": 2675
+        },
+        "arrivals": {}
+    },
+    "8093": {
+        "name": "Thelwatte",
+        "longitude": 80.088983,
+        "latitude": 6.169295,
+        "distances": {
+            "8091": 2675,
+            "8095": 753
+        },
+        "arrivals": {}
+    },
+    "8095": {
+        "name": "Seenigama",
+        "longitude": 80.080225,
+        "latitude": 6.177537,
+        "distances": {
+            "8093": 753,
+            "8097": 2408
+        },
+        "arrivals": {}
+    },
+    "8097": {
+        "name": "Hikkaduwa",
+        "longitude": 80.100211,
+        "latitude": 6.141697,
+        "distances": {
+            "8095": 2408,
+            "8101": 4468
+        },
+        "arrivals": {}
+    },
+    "8101": {
+        "name": "Kumarakanda",
+        "longitude": 80.124106,
+        "latitude": 6.113065,
+        "distances": {
+            "8097": 4468,
+            "8103": 1929
+        },
+        "arrivals": {}
+    },
+    "8103": {
+        "name": "Dodanduwa",
+        "longitude": 80.132676,
+        "latitude": 6.098311,
+        "distances": {
+            "8101": 1929,
+            "8104": 1025
+        },
+        "arrivals": {}
+    },
+    "8104": {
+        "name": "Ratgama",
+        "longitude": 80.139955,
+        "latitude": 6.093427,
+        "distances": {
+            "8103": 1025,
+            "8108": 3188
+        },
+        "arrivals": {}
+    },
+    "8108": {
+        "name": "Boossa",
+        "longitude": 80.161039,
+        "latitude": 6.074124,
+        "distances": {
+            "8104": 3188,
+            "8110": 2569
+        },
+        "arrivals": {}
+    },
+    "8110": {
+        "name": "Gintota",
+        "longitude": 80.179327,
+        "latitude": 6.060719,
+        "distances": {
+            "8108": 2569,
+            "8112": 1674
+        },
+        "arrivals": {}
+    },
+    "8112": {
+        "name": "Piyadigama",
+        "longitude": 80.190828,
+        "latitude": 6.053550,
+        "distances": {
+            "8110": 1674,
+            "8113": 1432
+        },
+        "arrivals": {}
+    },
+    "8113": {
+        "name": "Richmond Hill",
+        "longitude": 80.204588,
+        "latitude": 6.053927,
+        "distances": {
+            "8112": 1432,
+            "8116": 2473
+        },
+        "arrivals": {}
+    },
+    "8116": {
+        "name": "Galle",
+        "longitude": 80.214299,
+        "latitude": 6.033436,
+        "distances": {
+            "8113": 2473,
+            "8120": 4389
+        },
+        "arrivals": {}
+    },
+    "8120": {
+        "name": "Katugoda",
+        "longitude": 80.240075,
+        "latitude": 6.032677,
+        "distances": {
+            "8116": 4389,
+            "8121": 1250
+        },
+        "arrivals": {}
+    },
+    "8121": {
+        "name": "Unawatuna",
+        "longitude": 80.249128,
+        "latitude": 6.021981,
+        "distances": {
+            "8120": 1250,
+            "8126": 4820
+        },
+        "arrivals": {}
+    },
+    "8126": {
+        "name": "Talpe",
+        "longitude": 80.280178,
+        "latitude": 5.998577,
+        "distances": {
+            "8121": 4820,
+            "8129": 3044
+        },
+        "arrivals": {}
+    },
+    "8129": {
+        "name": "Habaraduwa",
+        "longitude": 80.307368,
+        "latitude": 5.994352,
+        "distances": {
+            "8126": 3044,
+            "8131": 1717
+        },
+        "arrivals": {}
+    },
+    "8131": {
+        "name": "Koggala",
+        "longitude": 80.331647,
+        "latitude": 5.986018,
+        "distances": {
+            "8129": 1717,
+            "8133": 2185
+        },
+        "arrivals": {}
+    },
+    "8133": {
+        "name": "Kataluwa",
+        "longitude": 80.340331,
+        "latitude": 5.982630,
+        "distances": {
+            "8131": 2185,
+            "8136": 2874
+        },
+        "arrivals": {}
+    },
+    "8136": {
+        "name": "Ahangama",
+        "longitude": 80.363782,
+        "latitude": 5.973151,
+        "distances": {
+            "8133": 2874,
+            "8140": 3498
+        },
+        "arrivals": {}
+    },
+    "8140": {
+        "name": "Midigama",
+        "longitude": 80.391545,
+        "latitude": 5.965232,
+        "distances": {
+            "8136": 3498,
+            "8142": 1539
+        },
+        "arrivals": {}
+    },
+    "8142": {
+        "name": "Kumbalgama",
+        "longitude": 80.409662,
+        "latitude": 5.963659,
+        "distances": {
+            "8140": 1539,
+            "8143": 3628
+        },
+        "arrivals": {}
+    },
+    "8143": {
+        "name": "Weligama",
+        "longitude": 80.429566,
+        "latitude": 5.975587,
+        "distances": {
+            "8142": 3628,
+            "8148": 3424
+        },
+        "arrivals": {}
+    },
+    "8148": {
+        "name": "Polwathumodara",
+        "longitude": 80.457278,
+        "latitude": 5.964268,
+        "distances": {
+            "8143": 3424,
+            "8149": 1308
+        },
+        "arrivals": {}
+    },
+    "8149": {
+        "name": "Mirissa",
+        "longitude": 80.473405,
+        "latitude": 5.956908,
+        "distances": {
+            "8148": 1308,
+            "8153": 3797
+        },
+        "arrivals": {}
+    },
+    "8153": {
+        "name": "Kamburugamuwa",
+        "longitude": 80.495912,
+        "latitude": 5.943507,
+        "distances": {
+            "8149": 3797,
+            "8156": 2747
+        },
+        "arrivals": {}
+    },
+    "8156": {
+        "name": "Walgama",
+        "longitude": 80.514206,
+        "latitude": 5.945418,
+        "distances": {
+            "8153": 2747,
+            "8159": 2713
+        },
+        "arrivals": {}
+    },
+    "8159": {
+        "name": "Matara",
+        "longitude": 80.543498,
+        "latitude": 5.951789,
+        "distances": {
+            "8156": 2713
+        },
+        "arrivals": {}
+    }
+
+}

@@ -38,7 +38,7 @@ export class LoginPage {
             this.auth.signin(this.loginForm.value)
             .then((data) => {
                 this.storage.set('uid', data.uid);
-                if(this.next=="contribution"){
+                if(this.next==null){
                     this.nav.push(ContributionPage);
                 }else if(this.next=="post"){
                     this.nav.push(PostPage);
