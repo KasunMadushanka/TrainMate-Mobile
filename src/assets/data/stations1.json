@@ -25,6 +25,15 @@
                 "dynamic_ar_time": "11:10",
                 "dynamic_dpt_time": "11:10"
             },
+            "8743": {
+                "trainId": 8743,
+                "name": "MDA/ALT Daily",
+                "status": "stopping",
+                "static_ar_time": "11:05",
+                "static_dpt_time": "11:05",
+                "dynamic_ar_time": "11:05",
+                "dynamic_dpt_time": "11:05"
+            },
             "8346": {
                 "trainId": 8346,
                 "name": "MLV/MDA Sunday & Holidays - Pass",
@@ -64,14 +73,32 @@
                 "dynamic_ar_time": "09:10",
                 "dynamic_dpt_time": "09:40"
             },
+            "8743": {
+                "trainId": 8743,
+                "name": "MDA/ALT Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "11:08",
+                "static_dpt_time": "11:08",
+                "dynamic_ar_time": "11:08",
+                "dynamic_dpt_time": "11:08"
+            },
+            "8745": {
+                "trainId": 8745,
+                "name": "MDA/ALT Daily",
+                "status": "stopping",
+                "static_ar_time": "11:20",
+                "static_dpt_time": "11:22",
+                "dynamic_ar_time": "11:20",
+                "dynamic_dpt_time": "11:22"
+            },
             "8742": {
                 "trainId": 8742,
                 "name": "MDA/ALT Daily - Pass",
                 "status": "stopping",
-                "static_ar_time": "11:14",
-                "static_dpt_time": "11:15",
-                "dynamic_ar_time": "11:14",
-                "dynamic_dpt_time": "11:15"
+                "static_ar_time": "11:05",
+                "static_dpt_time": "11:05",
+                "dynamic_ar_time": "11:05",
+                "dynamic_dpt_time": "11:05"
             },
             "8346": {
                 "trainId": 8346,
@@ -120,6 +147,15 @@
                 "static_dpt_time": "11:19",
                 "dynamic_ar_time": "11:18",
                 "dynamic_dpt_time": "11:19"
+            },
+            "8745": {
+                "trainId": 8745,
+                "name": "MDA/ALT Daily",
+                "status": "stopping",
+                "static_ar_time": "11:30",
+                "static_dpt_time": "11:32",
+                "dynamic_ar_time": "11:30",
+                "dynamic_dpt_time": "11:32"
             },
             "8346": {
                 "trainId": 8346,

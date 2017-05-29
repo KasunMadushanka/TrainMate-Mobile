@@ -23,7 +23,7 @@ export class LocationTracker {
     trains: FirebaseListObservable<any>;
 
     constructor(public zone: NgZone, private alertCtrl: AlertController,public util:UtilProvider, private backgroundMode: BackgroundMode,private badge: Badge,public af: AngularFire,public up: UserProvider) {
-this.k=0;
+        this.k=0;
         this.trains=af.database.list('/trains');
 
     }
@@ -36,124 +36,124 @@ this.k=0;
     }
 
     startTracking(con_id,trainId,stations) {
-        
-if(this.k==0){
-    
-    this.k++;
-        this.trainId=trainId;
 
-        console.log(stations)
-        let config = {
-            desiredAccuracy: 0,
-            stationaryRadius: 5,
-            distanceFilter: 10,
-            debug: false,
-            interval: 2000
-        };
+        if(this.k==0){
 
-        let distance=0;
-        let current_station=stations[0];
+            this.k++;
+            this.trainId=trainId;
 
-        let i=0;
-
-        let arrived=true;
-
-        let placeLocation = {
-            id:current_station.id,
-            name:current_station.name,
-            lat: current_station.latitude,
-            lng: current_station.longitude
-        };
-
-        BackgroundGeolocation.configure((location) => {
-
-            let usersLocation = {
-                lat: location.latitude,
-                lng:location.longitude
+            console.log(stations)
+            let config = {
+                desiredAccuracy: 0,
+                stationaryRadius: 5,
+                distanceFilter: 10,
+                debug: false,
+                interval: 2000
             };
 
-            location.distance = this.getDistanceBetweenPoints(
-                placeLocation,
-                usersLocation,
-                'miles'
-            ).toFixed(2);
-           
-            if(arrived && location.distance>=300){
-                this.time=new Date();
-                let stat=stations[i].dpt_time.split(':');
+            let distance=0;
+            let current_station=stations[0];
 
-                let hour_diff=this.time.getHours()-stat[0];
-                let minute_diff=this.time.getMinutes()-stat[1];
-                let delay=hour_diff*60+minute_diff;
-                let alert = this.util.doAlert("Confirmation","You departed from "+current_station.name+" station","Proceed");
-                alert.present();
-               
-                //for(let n=i;n<stations.length;n++){
+            let i=0;
+
+            let arrived=true;
+
+            let placeLocation = {
+                id:current_station.id,
+                name:current_station.name,
+                lat: current_station.latitude,
+                lng: current_station.longitude
+            };
+
+            BackgroundGeolocation.configure((location) => {
+
+                let usersLocation = {
+                    lat: location.latitude,
+                    lng:location.longitude
+                };
+
+                location.distance = this.getDistanceBetweenPoints(
+                    placeLocation,
+                    usersLocation,
+                    'miles'
+                ).toFixed(2);
+
+                if(arrived && location.distance>=250){
+                    this.time=new Date();
+                    let stat=stations[i].dpt_time.split(':');
+
+                    let hour_diff=this.time.getHours()-stat[0];
+                    let minute_diff=this.time.getMinutes()-stat[1];
+                    let delay=hour_diff*60+minute_diff;
+                    let alert = this.util.doAlert("Confirmation","You departed from "+current_station.name+" station","Proceed");
+                    alert.present();
+
+                    //for(let n=i;n<stations.length;n++){
                     let stat1=stations[i].dpt_time.split(':');
                     let new_time=(Number(stat1[0])+Number((delay/60).toFixed(0)))+":"+(Number(stat1[1])+(delay%60));
-                    
-                 let cur_station:FirebaseObjectObservable<any>= this.af.database.object('/stations/'+current_station.id+'/arrivals/'+trainId);
+
+                    let cur_station:FirebaseObjectObservable<any>= this.af.database.object('/stations/'+current_station.id+'/arrivals/'+trainId);
                     cur_station.update({
                         dynamic_dpt_time:new_time
                     });
-                   
-                //}
-                
-                i++;
 
-                current_station=stations[i];
+                    //}
 
-                arrived=false;
+                    i++;
 
-            }else if(!arrived && location.distance<=300){
-                
-                 let alert = this.util.doAlert("Confirmation","You arrived at "+current_station.name+" station","Proceed");
-                alert.present();
+                    current_station=stations[i];
 
-                this.time=new Date();
+                    arrived=false;
 
-                //for(let n=i;n<stations.length;n++){
+                }else if(!arrived && location.distance<=250){
+
+                    let alert = this.util.doAlert("Confirmation","You arrived at "+current_station.name+" station","Proceed");
+                    alert.present();
+
+                    this.time=new Date();
+
+                    //for(let n=i;n<stations.length;n++){
                     let cur_station:FirebaseObjectObservable<any>= this.af.database.object('/stations/'+current_station.id+'/arrivals/'+trainId);
                     cur_station.update({
                         dynamic_ar_time:this.time.getHours()+":"+this.time.getMinutes()
                     });
-                //}
-                arrived=true;
+                    //}
+                    arrived=true;
 
-            }
+                }
 
-            // Run update inside of Angular's zone
-            this.zone.run(() => {
+                // Run update inside of Angular's zone
+                this.zone.run(() => {
 
-                this.trains.update(trainId, {
-                    con_id: con_id,
-                    latitude:location.latitude,
-                    longitude: location.longitude,
-                    distance:distance,
-                    total_distance:6825-distance
+                    this.trains.update(trainId, {
+                        con_id: con_id,
+                        latitude:location.latitude,
+                        longitude: location.longitude,
+                        distance:distance,
+                        total_distance:(6.825-distance).toFixed(3)
+                    });
+                    distance+=Number(location.distance);
+
+                    placeLocation = {
+                        id:current_station.id,
+                        name:current_station.name,
+                        lat: location.latitude,
+                        lng: location.longitude
+                    };
+
                 });
-                distance+=Number(location.distance);
 
-                placeLocation = {
-                    id:current_station.id,
-                    name:current_station.name,
-                    lat: location.latitude,
-                    lng: location.longitude
-                };
+            }, (err) => {
 
-            });
+                console.log(err);
 
-        }, (err) => {
+            }, config);
 
-            console.log(err);
+            // Turn ON the background-geolocation system.
+            BackgroundGeolocation.start();
 
-        }, config);
-
-        // Turn ON the background-geolocation system.
-        BackgroundGeolocation.start();
-
-        this.backgroundMode.enable();
-}
+            this.backgroundMode.enable();
+        }
 
     }
 
@@ -191,7 +191,7 @@ if(this.k==0){
         let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
         let d = R * c;
 
-        return d*1609.34;
+        return d*1.60934;
 
     }
 
@@ -204,7 +204,7 @@ if(this.k==0){
         console.log('stopTracking');
 
         BackgroundGeolocation.finish();
-      
+
     }
 
 }

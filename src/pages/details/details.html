@@ -1,36 +1,20 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>{{trainName}}</ion-title>
+        <ion-title>{{stationName}}</ion-title>
         <ion-buttons end>
             <button ion-button (click)="showOnMap()">View On Map</button>
         </ion-buttons>
     </ion-navbar>
 </ion-header>
 
-<ion-content class="list-avatar-page">
-
-    <ion-row>
-        <ion-col>
-            <strong>Station</strong>
-            <br>
-            <ion-item *ngFor="let arrival of arrivals">
-                {{arrival.station}}
-            </ion-item>
-        </ion-col>
-        <ion-col>
-            <strong>Arriving</strong>
-            <br>
-            <ion-item *ngFor="let arrival of arrivals">
-                {{arrival.ar_time}}
-            </ion-item>
-        </ion-col>
-        <ion-col>
-            <strong>Departing</strong>
-            <br>
-            <ion-item *ngFor="let arrival of arrivals">
-                {{arrival.dpt_time}}
-            </ion-item>
-        </ion-col>
-    </ion-row>
+<ion-content>
+    <img src="assets/images/stations/{{stationName}}.jpg">
+    <div text-center>
+        <h3>Arriving Time: {{static_ar_time}}</h3>
+        <h3>Expected Time: {{dynamic_ar_time}}</h3>
+            <h3>Delay: 02:30 mins</h3>
+        <br>
+        <h3>Time Remaining: {{tick}}</h3>
+    </div>
 
 </ion-content>

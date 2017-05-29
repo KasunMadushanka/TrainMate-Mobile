@@ -16,6 +16,7 @@ import { HistoryPage } from '../pages/history/history';
 import { TrackingPage } from '../pages/tracking/tracking';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TrainsPage } from '../pages/trains/trains';
+import { TimeTablePage } from '../pages/time-table/time-table';
 import { DetailsPage } from '../pages/details/details';
 import { ForumPage } from '../pages/forum/forum';
 import { ForumTopicsPage } from '../pages/forum-topics/forum-topics';
@@ -66,6 +67,7 @@ const myFirebaseAuthConfig = {
         LeaderboardPage,
         HistoryPage,
         TrainsPage,
+        TimeTablePage,
         DetailsPage,
         ForumPage,
         ForumTopicsPage,
@@ -97,6 +99,7 @@ const myFirebaseAuthConfig = {
         LeaderboardPage,
         HistoryPage,
         TrainsPage,
+        TimeTablePage,
         DetailsPage,
         ForumPage,
         ForumTopicsPage,

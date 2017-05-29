@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import {AngularFire, FirebaseListObservable} from 'angularfire2';
+import { NavController, NavParams,LoadingController } from 'ionic-angular';
+import {AngularFire, FirebaseListObservable,FirebaseObjectObservable} from 'angularfire2';
 import { UserProvider } from '../../providers/user-provider/user-provider';
-import {DetailsPage} from '../details/details';
+import {TimeTablePage} from '../time-table/time-table';
 import firebase from 'firebase';
 
 @Component({
@@ -11,20 +11,31 @@ import firebase from 'firebase';
 })
 export class TrainsPage {
     trains:any;
-    options:any;
+    options=[];
 
-    direct_trains:any;
-    other_options:any;
+    direct_trains=[];
+    other_options=[];
 
-    constructor(public navCtrl: NavController, public navParams: NavParams,public af: AngularFire,public userProvider:UserProvider) {
+    start_station:string;
+    end_station:string;
+    display:boolean;
+
+    constructor(public navCtrl: NavController, public navParams: NavParams,public af: AngularFire,public userProvider:UserProvider,public loadingCtrl: LoadingController) {
+
+        this.presentLoading();
 
         this.trains=navParams.get('trains');
-        this.options=[];
+        console.log(this.trains[0][0].ar_time)
+
+        let start_station=navParams.get('start');
+        let end_station=navParams.get('end');
+
+        this.load(start_station,end_station);
 
         let trainRef,startRef,endRef;
-
+        let status=1;
         let train,start,end;
-        console.log(this.trains.length)
+        console.log(this.trains)
         for(let i=0;i<this.trains.length;i++){
             let temp=[];
             let entries=this.trains[i].length;
@@ -33,27 +44,53 @@ export class TrainsPage {
 
                 this.getTrain(i,j,entries,data=>{
                     if(entries>1){
+                        console.log(this.trains[i][j].trainId+"kb")
                         this.getStart(i,j,data,result=>{
                             this.getEnd(i,j,result,res=>{
-                                if(temp.length==0){
-                                    temp.push(this.trains[i][j].trainId)
+                                    temp.push([this.trains[i][j].trainId,this.trains[i][j].ar_time,this.trains[i][j].dpt_time,data,res]);
+                                    if(j==entries-1){
+                                    this.other_options.push(temp);
                                 }
-                                temp.push(res)
                             });
                         });
 
                     }else{
-                        console.log(data)
-                        temp.push(this.trains[i][j].trainId,data)
-
+                        status=0
+                        this.direct_trains.push([this.trains[i][j].trainId,this.trains[i][j].ar_time,this.trains[i][j].dpt_time,data])
                     }
                 });
 
             }
-            this.options.push(temp);
-
 
         }
+
+
+    }
+
+    presentLoading() {
+        this.loadingCtrl.create({
+            content: 'Please wait...',
+            duration: 3000,
+            dismissOnPageChange: true
+        }).present();
+    }
+
+    getTimes(){
+
+
+    }
+
+    load(start,end){
+
+        let station = this.af.database.object('/stations/' +start, { preserveSnapshot: true });
+        station.subscribe(snapshot => {
+            this.start_station=snapshot.val().name;
+        });
+
+        station = this.af.database.object('/stations/' +end, { preserveSnapshot: true });
+        station.subscribe(snapshot => {
+            this.end_station=snapshot.val().name;
+        });
 
     }
 
@@ -62,15 +99,7 @@ export class TrainsPage {
         let trainRef = firebase.database().ref('/trains/'+this.trains[i][j].trainId);
         trainRef.on('value', function(snapshot) {
             let train=snapshot.val().name;
-            if(entries==1){
-                temp=train+" is a Direct Train";
-            }else{
-                if(j==0){
-                    temp=" First You can take "+train;
-                }else{
-                    temp=" Then take "+train;
-                }
-            }
+            temp=train;
             callback(temp)
         });
     }
@@ -81,7 +110,7 @@ export class TrainsPage {
         startRef.on('value', function(snapshot) {
             let start=snapshot.val().name;
 
-            tmp+=" from "+start;
+            tmp=" from "+start;
             callback(tmp)
         });
     }
@@ -98,7 +127,7 @@ export class TrainsPage {
     }
 
     getDetails(trainId){
-        this.navCtrl.push(DetailsPage,{trainId:trainId});
+        this.navCtrl.push(TimeTablePage,{trainId:trainId});
 
     }
 

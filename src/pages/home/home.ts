@@ -10,6 +10,9 @@ import {Http} from '@angular/http';
 })
 export class HomePage {
 
+    start_station:string;
+    end_station:string;
+
     graph = {
         '001': ['002'],
         '002': ['001', '003'],
@@ -55,6 +58,8 @@ export class HomePage {
     }
 
     findRoutes(start, end) {
+        this.start_station=start;
+        this.end_station=end;
         console.log(start + " " + end)
         let queue = [];
         let temp_path = [start];
@@ -63,7 +68,7 @@ export class HomePage {
         //console.log(queue)
 
         while (queue.length != 0) {
-                console.log("outside")
+
             let tmp_path = queue.shift();
             let last_node = tmp_path[tmp_path.length - 1];
 
@@ -76,24 +81,19 @@ export class HomePage {
             }
 
             for (let i = 0; i < this.graph[last_node].length; i++) {
-                console.log("inside")
+
                 let k = 0;
-                console.log(tmp_path.length)
+
                 for (let j = 0; j < tmp_path.length; j++) {
+
                     if (this.graph[last_node][i] == tmp_path[j]) {
-                        //console.log(j)
                         k = 1;
                     }
 
                 }
                 if (k == 0) {
-
-                    let new_path = [];
-                    new_path=tmp_path;
-                    console.log(tmp_path)
-
+                    let new_path=tmp_path.slice();
                     new_path.push(this.graph[last_node][i]);
-                    //console.log(new_path)
                     queue.push(new_path);
                 }
             }
@@ -137,7 +137,7 @@ export class HomePage {
                     if (current_train.trainId == arrivals[arrivals.length - 1][j].trainId && (current_train.dpt_time < arrivals[arrivals.length - 1][j].ar_time)) {
                         p = true;
                         console.log(current_train.trainId)
-                        path.push({ trainId: current_train.trainId, start: route[0], end: route[route.length - 1] });
+                        path.push({ trainId: current_train.trainId, start: route[0], end: route[route.length - 1],ar_time:current_train.ar_time,dpt_time:current_train.dpt_time});
                         break;
                     }
                 }
@@ -155,7 +155,7 @@ export class HomePage {
                                     path[path.length - 1].end = route[m];
 
                                 } else {
-                                    path.push({ trainId: current_train.trainId, start: route[m - 1], end: route[m] });
+                                    path.push({ trainId: current_train.trainId, start: route[m - 1], end: route[m],ar_time:current_train.ar_time,dpt_time:current_train.dpt_time });console.log(current_train.trainId)
                                 }
                                 current_train = arrivals[m][n];
                                 break;
@@ -191,7 +191,7 @@ export class HomePage {
                 }
             }
 
-            this.navCtrl.push(TrainsPage, { trains: data });
+            this.navCtrl.push(TrainsPage, { trains: data,start:this.start_station,end:this.end_station });
 
         }
 
