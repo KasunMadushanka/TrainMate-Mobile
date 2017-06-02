@@ -1,10 +1,13 @@
 {
     "001": {
         "name": "Maradana",
-         "longitude": 79.865186,
-        "latitude": 6.929461,
+         "latitude": 6.929553,
+        "longitude": 79.866547,
         "distances": {
-            "002": 1800
+            "002": {
+                "distance":1.800,
+                "avgSpeed":21.6
+            }
         },
         "arrivals": {
             "8741": {
@@ -57,11 +60,17 @@
     },
     "002": {
         "name": "Colombo Fort",
-        "latitude": 6.933436917812894,
-        "longitude": 79.85051416394049,
+        "latitude": 6.933366,
+        "longitude": 79.850811,
         "distances": {
-            "001": 1800,
-            "003": 1620
+            "002": {
+                "distance":1.800,
+                "avgSpeed":21.6
+            },
+            "003": {
+                "distance":0.566,
+                "avgSpeed":24.3
+            }
         },
         "arrivals": {
             "8741": {
@@ -126,18 +135,24 @@
         "longitude": 79.846101,
         "latitude": 6.931998,
         "distances": {
-            "002": 1620,
-            "004": 1388
+            "002": {
+                "distance":0.566,
+                "avgSpeed":33.96
+            },
+            "004": {
+                "distance":1.054,
+                "avgSpeed":31.62
+            }
         },
         "arrivals": {
             "8741": {
                 "trainId": 8741,
                 "name": "MDA/KTS Daily - Pass",
-                "status": "stopping",
-                "static_ar_time": "09:43",
-                "static_dpt_time": "09:44",
-                "dynamic_ar_time": "09:43",
-                "dynamic_dpt_time": "09:44"
+                "status": "passing",
+                "static_ar_time": "09:41",
+                "static_dpt_time": "09:41",
+                "dynamic_ar_time": "09:41",
+                "dynamic_dpt_time": "09:41"
             },
             "8742": {
                 "trainId": 8742,
@@ -183,8 +198,14 @@
         "longitude": 79.849578,
         "latitude": 6.922957,
         "distances": {
-            "002": 1620,
-            "004": 1388
+            "003": {
+                "distance":1.054,
+                "avgSpeed":31.62
+            },
+            "005": {
+                "distance":1.388,
+                "avgSpeed":27.76
+            }
         },
         "arrivals": {
             "8741": {
@@ -231,8 +252,14 @@
         "longitude": 79.848210,
         "latitude": 6.911236,
         "distances": {
-            "003": 1388,
-            "005": 2017
+            "004": {
+                "distance":1.388,
+                "avgSpeed":27.76
+            },
+            "006": {
+                "distance":2.017,
+                "avgSpeed":40.34
+            }
         },
         "arrivals": {
             "8741": {
@@ -279,8 +306,14 @@
          "longitude": 79.853011,
         "latitude": 6.893502,
         "distances": {
-            "004": 2017,
-            "006": 2120
+            "005": {
+                "distance":2.017,
+                "avgSpeed":40.34
+            },
+            "007": {
+                "distance":2.120,
+                "avgSpeed":31.8
+            }
         },
         "arrivals": {
             "8741": {
@@ -327,10 +360,25 @@
         "longitude": 79.857403,
         "latitude": 6.875102,
         "distances": {
-            "001": 1800,
-            "003": 12262
+            "006": {
+                "distance":2.120,
+                "avgSpeed":31.8
+            },
+            "008": {
+                "distance":2.712,
+                "avgSpeed":32.54
+            }
         },
         "arrivals": {
+            "8741": {
+                "trainId": 8741,
+                "name": "MDA/KTS Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "09:56",
+                "static_dpt_time": "09:57",
+                "dynamic_ar_time": "09:56",
+                "dynamic_dpt_time": "09:57"
+            }
 
         }
 
@@ -340,10 +388,25 @@
         "longitude": 79.862094,
         "latitude": 6.850888,
         "distances": {
-            "001": 1800,
-            "003": 12262
+            "007": {
+                "distance":2.712,
+                "avgSpeed":32.54
+            },
+            "009": {
+                "distance":2.712,
+                "avgSpeed":32.54
+            }
         },
         "arrivals": {
+            "8741": {
+                "trainId": 8741,
+                "name": "MDA/KTS Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "10:02",
+                "static_dpt_time": "10:04",
+                "dynamic_ar_time": "10:02",
+                "dynamic_dpt_time": "10:04"
+            }
 
         }
 
@@ -353,8 +416,14 @@
         "latitude": 6.831672283442692,
         "longitude": 79.86277722355658,
         "distances": {
-            "002": 12262,
-            "004": 1940
+            "008": {
+                "distance":2.712,
+                "avgSpeed":32.54
+            },
+            "010": {
+                "distance":2.712,
+                "avgSpeed":32.54
+            }
         },
         "arrivals": {
 

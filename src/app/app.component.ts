@@ -4,7 +4,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
-import { NotificationsPage } from '../pages/notifications/notifications';
+import { LeaderboardPage } from '../pages/leaderboard/leaderboard';
 import { ProfilePage } from '../pages/profile/profile';
 import { SettingsPage } from '../pages/settings/settings';
 import { Push, PushObject,PushOptions } from '@ionic-native/push';
@@ -18,26 +18,27 @@ export class MyApp {
     pages: Array<{title: string, component: any}>;
 
     constructor(platform: Platform,public push:Push,public alertCtrl:AlertController) {
-        
+
         this.pages = [
-           { title: 'Home', component: HomePage },
-           { title: 'Notifications', component: NotificationsPage },
-           { title: 'Profile', component:ProfilePage },
-           { title: 'Settings', component: SettingsPage }
+            { title: 'Home', component: HomePage },
+            { title: 'Notifications', component: LeaderboardPage },
+            { title: 'Profile', component:ProfilePage },
+            { title: 'Settings', component: SettingsPage }
         ];
-        
+
         platform.ready().then(() => {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
             StatusBar.styleDefault();
             Splashscreen.hide();
+            this.pushSetup();
         });
-        this.pushSetup();
+
     }
 
- openPage(page) {
-    this.nav.setRoot(page.component);
-  }
+    openPage(page) {
+        this.nav.setRoot(page.component);
+    }
 
     pushSetup() {
         const options: PushOptions = {
@@ -55,17 +56,21 @@ export class MyApp {
         const pushObject: PushObject = this.push.init(options);
 
         pushObject.on('notification').subscribe((notification: any) => {
+            let json = JSON.parse(JSON.stringify(notification.additionalData));
             if (notification.additionalData.foreground) {
                 let youralert = this.alertCtrl.create({
-                    title: 'New Push notification',
-                    message: notification.message
+                    title: notification.title,
+                    message:json['kasun']
                 });
                 youralert.present();
+            }else{
+
             }
         });
 
         pushObject.on('registration').subscribe((registration: any) => {
-            //do whatever you want with the registration ID
+            pushObject.setApplicationIconBadgeNumber(2);
+            console.log("device token ->", registration.registrationId);
         });
 
         pushObject.on('error').subscribe(error => alert('Error with Push plugin' + error));

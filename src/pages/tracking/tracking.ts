@@ -23,20 +23,20 @@ export class TrackingPage {
     startDisabled:any;
     stopDisabled:any;
     imgDisplayed:any;
-    
+
     userId:any;
     sessions:any;
     sessionId:any;
 
     constructor(public navCtrl: NavController, public locationTracker: LocationTracker,public util:UtilProvider,public http:Http,private alertCtrl: AlertController,private backgroundMode: BackgroundMode,public af: AngularFire,public userProvider:UserProvider) {
-        
-         this.userProvider.getUid()
-         .then(uid=> {
-             this.userId=uid;
-             this.sessions= firebase.database().ref('/users/'+this.userId+'/contributions');
-             
-         });
-       
+
+        this.userProvider.getUid()
+        .then(uid=> {
+            this.userId=uid;
+            this.sessions= firebase.database().ref('/users/'+this.userId+'/contributions');
+
+        });
+
         this.checkLocation();
         this.startDisabled=true;
         this.stopDisabled=true;
@@ -55,15 +55,6 @@ export class TrackingPage {
     getAllStations(callback){
 
         var array=[];
-
-        //let list= this.af.database.list('/stations');
-        //list.subscribe(snapshot => {
-        //    for(let i=0;i<snapshot.length;i++){
-        //       array.push({id:snapshot[i].$key,name:snapshot[i].name,latitude:snapshot[i].latitude,longitude:snapshot[i].longitude})
-        //    }
-        //    callback(array);
-        //    console.log("scs")
-        //});
 
         let list = firebase.database().ref('/stations');
         list.on('child_added', function(snapshot) {
@@ -109,8 +100,10 @@ export class TrackingPage {
             let stations_list= this.af.database.object('/stations/'+stations[i], { preserveSnapshot: true });
             stations_list.subscribe(snapshot => {
                 let station=snapshot.val();
-                list.push({id:snapshot.key,name:station.name,latitude:station.latitude,longitude:station.longitude,ar_time:station.arrivals[this.trainId].dynamic_ar_time,dpt_time:station.arrivals[this.trainId].dynamic_dpt_time});
-                if(i==stations.length-1){
+                if(i<stations.length-1){
+                    list.push({id:snapshot.key,name:station.name,latitude:station.latitude,longitude:station.longitude,ar_time:station.arrivals[this.trainId].dynamic_ar_time,dpt_time:station.arrivals[this.trainId].dynamic_dpt_time,distance:station.distances[stations[i+1]]['distance'],avg_speed:station.distances[stations[i+1]].avgSpeed});
+                }else if(i==stations.length-1){
+                    list.push({id:snapshot.key,name:station.name,latitude:station.latitude,longitude:station.longitude,ar_time:station.arrivals[this.trainId].dynamic_ar_time,dpt_time:station.arrivals[this.trainId].dynamic_dpt_time,distance:0,avg_speed:0});
                     callback(list);
                 }
             });
@@ -153,7 +146,7 @@ export class TrackingPage {
                     'miles'
                 ).toFixed(2);
 
-                if(Number(distance)<1000){
+                if(Number(distance)<0.2){
                     let alert = this.util.doAlert("Confirmation","You are at "+placeLocation.name+" station","Proceed");
                     alert.present();
                     this.start_station=placeLocation;
@@ -171,23 +164,23 @@ export class TrackingPage {
 
         }
     }
-    
+
     startSession(){
-        
+
         let time=new Date();
 
         this.sessionId=this.sessions.push({
             start_time:time.getHours()+":"+time.getMinutes(),
             end_time:""
         }).key;
-        
+
         console.log(this.sessionId)
-        
-        
+
+
     }
-    
+
     endSession(){
-        
+
         let time=new Date();
         let session:FirebaseListObservable<any>=this.af.database.list('/users/'+this.userId+'/contributions');
         session.update(this.sessionId,{
@@ -196,7 +189,7 @@ export class TrackingPage {
     }
 
     start(trainId) {
-        this.locationTracker.startTracking(1,trainId,this.stations);
+        this.locationTracker.startTrack(1,trainId,this.stations);
         this.startSession();
         this.startDisabled=true;
         this.stopDisabled=false;
@@ -206,7 +199,7 @@ export class TrackingPage {
     stop() {
         this.locationTracker.stopTracking();
         this.endSession();
-        
+
     }
 
 }

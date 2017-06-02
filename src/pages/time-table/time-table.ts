@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import 'rxjs/add/operator/take';
 import {MapPage} from '../map/map';
 import {DetailsPage} from '../details/details';
 import {AngularFire, FirebaseObjectObservable} from 'angularfire2';
@@ -11,7 +12,7 @@ import {AngularFire, FirebaseObjectObservable} from 'angularfire2';
 export class TimeTablePage {
 
     arrivals:any;
-    train:FirebaseObjectObservable<any>;
+    train:any;
     trainId:number;
     trainName:string;
 
@@ -28,16 +29,19 @@ export class TimeTablePage {
     getData(){
         console.log(this.trainId)
         this.arrivals=[];
-        this.train=this.af.database.object('trains/'+this.trainId,{ preserveSnapshot: true });
+
+        this.train=this.af.database.object('trains/'+this.trainId,{ preserveSnapshot: true }).take(1);
+
         this.train.subscribe(snapshot => {
+
+            console.log(new Date().getSeconds());
             this.trainName=snapshot.val().name;
             let stations=snapshot.val()['route']
             let arrival;
             for(let i=0;i<stations.length;i++){
-                let arrivals=this.af.database.object('stations/'+stations[i],{ preserveSnapshot: true });
+                let arrivals=this.af.database.object('stations/'+stations[i],{ preserveSnapshot: true }).take(1);
                 arrivals.subscribe(snapshot => {
                     arrival=snapshot.val();
-                    console.log(arrival)
                     this.arrivals.push({stationId:stations[i],stationName:arrival['name'],ar_time:arrival['arrivals'][this.trainId].dynamic_ar_time,dpt_time:arrival['arrivals'][this.trainId].dynamic_dpt_time});
                 });
             }

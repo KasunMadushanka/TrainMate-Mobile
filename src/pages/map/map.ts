@@ -158,9 +158,9 @@ export class MapPage {
                 }
 
                this.getData(pathCoordinates=>{
-                   
+
                 let pathPoints=[];
-             
+
                     for(let i=0;i<pathCoordinates.length;i++){
                         let coords:GoogleMapsLatLng = new GoogleMapsLatLng(pathCoordinates[i][0],pathCoordinates[i][1]);
                         pathPoints.push(coords);
@@ -174,7 +174,7 @@ export class MapPage {
                     };
 
                     this.map.addPolyline(flightPath);
-           
+
                });
 
             });
@@ -187,7 +187,8 @@ export class MapPage {
 
                 let marker:GoogleMapsMarker=this.train_markers[i];
                 marker.setPosition(loc);
-                marker.setTitle(coords[i].name+"\npassed: "+coords[i].distance+" m\nto go: "+(coords[i].total_distance-coords[i].distance+" m"));
+                this.map.setCenter(loc)
+                marker.setTitle(coords[i].name+"\npassed: "+(coords[i].distance).toFixed(0)+" m\nto go: "+((coords[i].total_distance-coords[i].distance).toFixed(0)+" m"));
             }
 
             for(let i=0;i<this.station_markers.length;i++){
@@ -200,12 +201,12 @@ export class MapPage {
     }
 
     getData(callback){
-        
+
          this.http.get('assets/data/path.json')
          .subscribe(result =>
-            callback(result.json()['path']));             
-   
+            callback(result.json()['path']));
+
     }
-    
+
 
 }

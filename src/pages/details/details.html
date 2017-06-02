@@ -8,13 +8,31 @@
 </ion-header>
 
 <ion-content>
-    <img src="assets/images/stations/{{stationName}}.jpg">
+    <img src="assets/images/stations/{{stationId}}.jpg">
     <div text-center>
-        <h3>Arriving Time: {{static_ar_time}}</h3>
-        <h3>Expected Time: {{dynamic_ar_time}}</h3>
-            <h3>Delay: 02:30 mins</h3>
+        <h3>{{trainName}}</h3>
+        <div *ngIf="current_station==''">
+            Running from {{prev_station}} to {{next_station}}
+            <br>
+            Average Speed: {{avg_speed}}
+            <br>
+            Current Speed: {{current_speed}}
+        </div>
+        <div *ngIf="current_station!=''">
+            Stopped at {{current_station}}
+        </div>
         <br>
-        <h3>Time Remaining: {{tick}}</h3>
+        <h4>Expected Arriving Time:</h4>
+        {{static_ar_time}}
+        <br>
+        <h4>Updated Expected Time:</h4>
+        {{dynamic_ar_time}}
+        <br>
+        <h4>Delay:</h4>
+        {{delay}}
+        <br>
+        <h3>Time Remaining:</h3>
+        {{tick}}
     </div>
 
 </ion-content>

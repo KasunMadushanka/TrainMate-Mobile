@@ -6,6 +6,11 @@
         "longitude": 0,
         "name": "MDA/KTS Daily - Pass",
         "total_distance": 6825,
+        "prev_station":"",
+        "current_station":"",
+        "next_station":"",
+        "avg_speed":0,
+        "current_speed":0,
         "route": ["001", "002", "003", "004", "005"]
 
     },
@@ -16,6 +21,9 @@
         "longitude": 0,
         "name": "MDA/ALT Daily - Pass",
        "total_distance": 6825,
+       "prev_station":"",
+       "current_station":"",
+       "next_station":"",
         "route": ["001", "002", "003", "004", "005"]
 
     },
@@ -26,6 +34,9 @@
         "longitude": 0,
         "name": "MDA/ALT Daily",
        "total_distance": 6825,
+       "prev_station":"",
+       "current_station":"",
+       "next_station":"",
         "route": ["001", "002"]
 
     },
@@ -36,6 +47,9 @@
         "longitude": 0,
         "name": "MDA/ALT Daily",
        "total_distance": 6825,
+       "prev_station":"",
+       "current_station":"",
+       "next_station":"",
         "route": ["002", "003"]
 
     },
@@ -46,6 +60,9 @@
         "longitude": 0,
         "name": "MLV/MDA Sunday & Holidays - Pass",
         "total_distance": 6825,
+        "prev_station":"",
+        "current_station":"",
+        "next_station":"",
         "route": ["005", "004", "003", "002", "001"]
 
     },
@@ -56,6 +73,9 @@
         "longitude": 0,
         "name": "MRT / MDA SO - Pass",
         "total_distance": 6825,
+        "prev_station":"",
+        "current_station":"",
+        "next_station":"",
         "route": ["005", "004", "003", "002", "001"]
 
     }

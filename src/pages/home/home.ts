@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import 'rxjs/add/operator/take';
 import {TrainsPage} from '../trains/trains';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import {Http} from '@angular/http';
@@ -108,7 +109,7 @@ export class HomePage {
         for (let i = 0; i < route.length; i++) {
 
             array[i] = [];
-            let list = this.af.database.list('/stations/' + route[i] + '/arrivals');
+            let list = this.af.database.list('/stations/' + route[i] + '/arrivals').take(1);
             list.subscribe(
                 train => {
                     train.map(train =>
@@ -116,6 +117,7 @@ export class HomePage {
                     )
                     if (i == n-1) {
                         callback(array);
+
                     }
                 });
             }

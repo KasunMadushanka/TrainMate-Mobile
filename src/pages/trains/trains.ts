@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams,LoadingController } from 'ionic-angular';
 import {AngularFire, FirebaseListObservable,FirebaseObjectObservable} from 'angularfire2';
+import 'rxjs/add/operator/take';
 import { UserProvider } from '../../providers/user-provider/user-provider';
 import {TimeTablePage} from '../time-table/time-table';
 import firebase from 'firebase';
@@ -47,8 +48,8 @@ export class TrainsPage {
                         console.log(this.trains[i][j].trainId+"kb")
                         this.getStart(i,j,data,result=>{
                             this.getEnd(i,j,result,res=>{
-                                    temp.push([this.trains[i][j].trainId,this.trains[i][j].ar_time,this.trains[i][j].dpt_time,data,res]);
-                                    if(j==entries-1){
+                                temp.push([this.trains[i][j].trainId,this.trains[i][j].ar_time,this.trains[i][j].dpt_time,data,res]);
+                                if(j==entries-1){
                                     this.other_options.push(temp);
                                 }
                             });
@@ -82,12 +83,12 @@ export class TrainsPage {
 
     load(start,end){
 
-        let station = this.af.database.object('/stations/' +start, { preserveSnapshot: true });
+        let station = this.af.database.object('/stations/' +start, { preserveSnapshot: true }).take(1);
         station.subscribe(snapshot => {
             this.start_station=snapshot.val().name;
         });
 
-        station = this.af.database.object('/stations/' +end, { preserveSnapshot: true });
+        station = this.af.database.object('/stations/' +end, { preserveSnapshot: true }).take(1);
         station.subscribe(snapshot => {
             this.end_station=snapshot.val().name;
         });
@@ -96,8 +97,8 @@ export class TrainsPage {
 
     getTrain(i,j,entries,callback){
         let temp;
-        let trainRef = firebase.database().ref('/trains/'+this.trains[i][j].trainId);
-        trainRef.on('value', function(snapshot) {
+        let trainRef = this.af.database.object('/trains/'+this.trains[i][j].trainId, { preserveSnapshot: true }).take(1);
+        trainRef.subscribe(snapshot => {
             let train=snapshot.val().name;
             temp=train;
             callback(temp)
@@ -106,8 +107,8 @@ export class TrainsPage {
 
     getStart(i,j,tmp,callback){
 
-        let startRef = firebase.database().ref('/stations/'+this.trains[i][j].start);
-        startRef.on('value', function(snapshot) {
+        let startRef = this.af.database.object('/stations/'+this.trains[i][j].start, { preserveSnapshot: true }).take(1);
+        startRef.subscribe(snapshot => {
             let start=snapshot.val().name;
 
             tmp=" from "+start;
@@ -117,8 +118,8 @@ export class TrainsPage {
 
     getEnd(i,j,tmp,callback){
 
-        let endRef = firebase.database().ref('/stations/'+this.trains[i][j].end);
-        endRef.on('value', function(snapshot) {
+        let endRef =  this.af.database.object('/stations/'+this.trains[i][j].end, { preserveSnapshot: true }).take(1);
+        endRef.subscribe(snapshot => {
             let end=snapshot.val().name;
 
             tmp+=" to "+end;

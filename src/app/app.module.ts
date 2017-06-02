@@ -11,6 +11,7 @@ import { HomePage } from '../pages/home/home';
 import { SignupPage } from '../pages/signup/signup';
 import { RegisterPage } from '../pages/register/register';
 import { ContributionPage } from '../pages/contribution/contribution';
+import { TutorialPage } from '../pages/tutorial/tutorial';
 import { LeaderboardPage } from '../pages/leaderboard/leaderboard';
 import { HistoryPage } from '../pages/history/history';
 import { TrackingPage } from '../pages/tracking/tracking';
@@ -62,6 +63,7 @@ const myFirebaseAuthConfig = {
         HomePage,
         RegisterPage,
         TabsPage,
+        TutorialPage ,
         ContributionPage,
         TrackingPage,
         LeaderboardPage,
@@ -94,6 +96,7 @@ const myFirebaseAuthConfig = {
         HomePage,
         RegisterPage,
         TabsPage,
+        TutorialPage,
         ContributionPage,
         TrackingPage,
         LeaderboardPage,
