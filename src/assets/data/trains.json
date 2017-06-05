@@ -1,6 +1,7 @@
 {
     "8741": {
         "con_id": 1,
+        "status":1,
         "distance": 0,
         "latitude": 0,
         "longitude": 0,
@@ -11,11 +12,12 @@
         "next_station":"",
         "avg_speed":0,
         "current_speed":0,
-        "route": ["001", "002", "003", "004", "005"]
+        "route": ["001","002", "003", "004", "005"]
 
     },
     "8742": {
         "con_id": 1,
+        "status":1,
         "distance": 0,
         "latitude": 0,
         "longitude": 0,
@@ -24,11 +26,12 @@
        "prev_station":"",
        "current_station":"",
        "next_station":"",
-        "route": ["001", "002", "003", "004", "005"]
+        "route": ["039", "038", "001", "002", "003"]
 
     },
     "8743": {
         "con_id": 1,
+        "status":1,
         "distance": 0,
         "latitude": 0,
         "longitude": 0,
@@ -42,6 +45,7 @@
     },
     "8745": {
         "con_id": 1,
+        "status":1,
         "distance": 0,
         "latitude": 0,
         "longitude": 0,
@@ -55,6 +59,7 @@
     },
     "8346": {
         "con_id": 1,
+        "status":1,
         "distance": 0,
         "latitude": 0,
         "longitude": 0,
@@ -68,6 +73,7 @@
     },
     "8339": {
         "con_id": 1,
+        "status":1,
         "distance": 0,
         "latitude": 0,
         "longitude": 0,

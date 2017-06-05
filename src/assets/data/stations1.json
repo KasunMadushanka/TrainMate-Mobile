@@ -1,12 +1,12 @@
 {
     "001": {
         "name": "Maradana",
-         "latitude": 6.929553,
+        "latitude": 6.929553,
         "longitude": 79.866547,
         "distances": {
             "002": {
-                "distance":1.800,
-                "avgSpeed":21.6
+                "distance":1.980,
+                "avgSpeed":29.7
             }
         },
         "arrivals": {
@@ -14,10 +14,10 @@
                 "trainId": 8741,
                 "name": "MDA/KTS Daily - Pass",
                 "status": "stopping",
-                "static_ar_time": "09:05",
-                "static_dpt_time": "09:05",
-                "dynamic_ar_time": "09:05",
-                "dynamic_dpt_time": "09:05"
+                "static_ar_time": "09:06",
+                "static_dpt_time": "09:06",
+                "dynamic_ar_time": "09:06",
+                "dynamic_dpt_time": "09:06"
             },
             "8742": {
                 "trainId": 8742,
@@ -63,9 +63,9 @@
         "latitude": 6.933366,
         "longitude": 79.850811,
         "distances": {
-            "002": {
-                "distance":1.800,
-                "avgSpeed":21.6
+            "001": {
+                "distance":1.980,
+                "avgSpeed":29.7
             },
             "003": {
                 "distance":0.566,
@@ -303,7 +303,7 @@
     },
     "006": {
         "name": "Bambalapitiya",
-         "longitude": 79.853011,
+        "longitude": 79.853011,
         "latitude": 6.893502,
         "distances": {
             "005": {
@@ -510,7 +510,7 @@
     },
     "016": {
         "name": "Panadura",
-         "longitude": 79.904649,
+        "longitude": 79.904649,
         "latitude": 6.712308,
         "distances": {
             "003": 7380,
@@ -840,6 +840,102 @@
                 "static_dpt_time": "19:35",
                 "dynamic_ar_time": "19:35",
                 "dynamic_dpt_time": "19:35"
+            }
+        }
+
+    },
+    "038": {
+        "name": "Dematagoda",
+        "latitude":6.9375911,
+        "longitude": 79.8790437,
+        "distances": {
+            "039": {
+                "distance":1.980,
+                "avgSpeed":29.7
+            },
+            "001": {
+                "distance":1.980,
+                "avgSpeed":29.7
+            }
+        },
+        "arrivals": {
+            "8742": {
+                "trainId": 8742,
+                "name": "MDA/ALT Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "11:10",
+                "static_dpt_time": "11:10",
+                "dynamic_ar_time": "11:10",
+                "dynamic_dpt_time": "11:10"
+            }
+        }
+
+    },
+    "039": {
+        "name": "Kelaniya",
+        "latitude": 6.961153,
+        "longitude": 79.8945402,
+        "distances": {
+            "038": {
+                "distance":1.980,
+                "avgSpeed":29.7
+            }
+        },
+        "arrivals": {
+            "8742": {
+                "trainId": 8742,
+                "name": "MDA/ALT Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "11:10",
+                "static_dpt_time": "11:10",
+                "dynamic_ar_time": "11:10",
+                "dynamic_dpt_time": "11:10"
+            }
+        }
+
+    },
+    "040": {
+        "name": "Baseline",
+        "latitude": 6.9263603,
+        "longitude": 79.8784536,
+        "distances": {
+            "038": {
+                "distance":1.980,
+                "avgSpeed":29.7
+            }
+        },
+        "arrivals": {
+            "8742": {
+                "trainId": 8742,
+                "name": "MDA/ALT Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "11:10",
+                "static_dpt_time": "11:10",
+                "dynamic_ar_time": "11:10",
+                "dynamic_dpt_time": "11:10"
+            }
+        }
+
+    },
+    "041": {
+        "name": "Cotta Road",
+        "latitude": 6.9133485,
+        "longitude": 79.8845335,
+        "distances": {
+            "038": {
+                "distance":1.980,
+                "avgSpeed":29.7
+            }
+        },
+        "arrivals": {
+            "8742": {
+                "trainId": 8742,
+                "name": "MDA/ALT Daily - Pass",
+                "status": "stopping",
+                "static_ar_time": "11:10",
+                "static_dpt_time": "11:10",
+                "dynamic_ar_time": "11:10",
+                "dynamic_dpt_time": "11:10"
             }
         }
 

@@ -1,12 +1,14 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color="primary">
         <ion-title>Contribute</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content>
     <br>
-        <button ion-button full primary block round (click)="gotoContribution()">Start Contributing</button>
-        <button ion-button full primary block round (click)="gotoHistory()">View History</button>
-        <button ion-button full primary block round (click)="gotoLeaderboard()">Goto Leaderboard</button>
+    <div text-center>
+        <button ion-button class="round-button" full primary block round (click)="gotoContribution()">Start Contributing</button>
+        <button ion-button class="round-button" full primary block round (click)="gotoHistory()">View History</button>
+        <button ion-button class="round-button" full primary block round (click)="gotoLeaderboard()">Goto Leaderboard</button>
+    </div>
 </ion-content>

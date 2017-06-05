@@ -56,20 +56,11 @@ export class MyApp {
         const pushObject: PushObject = this.push.init(options);
 
         pushObject.on('notification').subscribe((notification: any) => {
-            let json = JSON.parse(JSON.stringify(notification.additionalData));
-            if (notification.additionalData.foreground) {
-                let youralert = this.alertCtrl.create({
-                    title: notification.title,
-                    message:json['kasun']
-                });
-                youralert.present();
-            }else{
+            pushObject.setApplicationIconBadgeNumber(new Date().getSeconds());
 
-            }
         });
 
         pushObject.on('registration').subscribe((registration: any) => {
-            pushObject.setApplicationIconBadgeNumber(2);
             console.log("device token ->", registration.registrationId);
         });
 
