@@ -213,7 +213,7 @@ export class TrackingPage {
 
         start(trainId) {
 
-            this.locationTracker.startTrack(1,trainId,this.stations);
+            this.locationTracker.startTrack(this.userId,trainId,this.stations);
             this.startSession();
             this.startDisabled=true;
             this.stopDisabled=false;

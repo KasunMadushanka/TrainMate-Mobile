@@ -57,6 +57,7 @@ export class LocationTracker {
         this.trainId=trainId;
 
         this.trains.update(trainId, {
+                con_id:con_id,
             current_station:current_station.name,
             total_distance:current_station.distance,
             avg_speed:current_station.avg_speed
@@ -212,7 +213,7 @@ export class LocationTracker {
         }
 
         startTrack(con_id,trainId,stations){
-
+console.log(con_id)
             let total_distance=0;
             let distance=0,gap=0;
             let i=0,j=0,k=0;
@@ -221,6 +222,7 @@ export class LocationTracker {
             this.trainId=trainId;
 
             this.trains.update(trainId, {
+                con_id:con_id,
                 current_station:current_station.name,
                 total_distance:current_station.distance,
                 avg_speed:current_station.avg_speed

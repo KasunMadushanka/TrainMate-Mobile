@@ -9,7 +9,6 @@ import { AuthService } from '../providers/auth-service';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { HomePage } from '../pages/home/home';
 import { SignupPage } from '../pages/signup/signup';
-import { RegisterPage } from '../pages/register/register';
 import { ContributionPage } from '../pages/contribution/contribution';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { LeaderboardPage } from '../pages/leaderboard/leaderboard';
@@ -60,8 +59,8 @@ const myFirebaseAuthConfig = {
         MyApp,
         WelcomePage,
         LoginPage,
+        SignupPage,
         HomePage,
-        RegisterPage,
         TabsPage,
         TutorialPage ,
         ContributionPage,
@@ -93,8 +92,8 @@ const myFirebaseAuthConfig = {
         MyApp,
         WelcomePage,
         LoginPage,
+        SignupPage,
         HomePage,
-        RegisterPage,
         TabsPage,
         TutorialPage,
         ContributionPage,

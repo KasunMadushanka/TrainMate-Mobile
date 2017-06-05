@@ -12,7 +12,6 @@
             <ion-label floating>Email</ion-label>
             <ion-input type="text" formControlName="email"></ion-input>
         </ion-item>
-
         <ion-item>
             <ion-label floating>Password</ion-label>
             <ion-input type="password" formControlName="password"></ion-input>
@@ -24,8 +23,8 @@
     </div>
 
     <div padding>
-      <button ion-button full clear favorite (click)="createAccount()" [disabled]="!loginForm.valid">
-          <ion-icon name="person"></ion-icon>
+      <button ion-button full clear favorite (click)="gotoSignUp()">
+          <ion-icon name="person"></ion-icon>&nbsp;
            Create an Account</button>
     </div>
    </form>
