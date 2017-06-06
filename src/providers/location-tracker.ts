@@ -33,9 +33,11 @@ export class LocationTracker {
     }
 
     getUserPosition(callback){
-        callback({latitude:6.961153,longitude:79.8945402});
+        callback({latitude:6.961153,longitude:79.8945402});//kelaniya
+        //callback({latitude:6.9375911,longitude:79.8790437});//dematagoda
+        //callback({latitude:6.9263603,longitude:79.8784536});//baseline
         //navigator.geolocation.getCurrentPosition(function (position) {
-    //        callback({latitude:position.coords.latitude,longitude:position.coords.longitude});
+        //    callback({latitude:position.coords.latitude,longitude:position.coords.longitude});
         //});
     }
 
@@ -57,7 +59,7 @@ export class LocationTracker {
         this.trainId=trainId;
 
         this.trains.update(trainId, {
-                con_id:con_id,
+            con_id:con_id,
             current_station:current_station.name,
             total_distance:current_station.distance,
             avg_speed:current_station.avg_speed
@@ -88,7 +90,7 @@ export class LocationTracker {
 
                 let hour_diff=this.time.getHours()-stat[0];
                 let minute_diff=this.time.getMinutes()-stat[1];
-                let delay=hour_diff*60+minute_diff;
+                let delay=Math.abs(hour_diff*60+minute_diff);
 
                 let alert = this.util.doAlert("Confirmation","You departed from "+current_station.name+" station","Proceed");
                 alert.present();
@@ -122,7 +124,7 @@ export class LocationTracker {
 
                 let hour_diff=this.time.getHours()-stat[0];
                 let minute_diff=this.time.getMinutes()-stat[1];
-                let delay=hour_diff*60+minute_diff;
+                let delay=Math.abs(hour_diff*60+minute_diff);
 
                 let alert = this.util.doAlert("Confirmation","You arrived at "+current_station.name+" station","Proceed");
                 alert.present();
@@ -213,7 +215,7 @@ export class LocationTracker {
         }
 
         startTrack(con_id,trainId,stations){
-console.log(con_id)
+            console.log(con_id)
             let total_distance=0;
             let distance=0,gap=0;
             let i=0,j=0,k=0;
@@ -260,206 +262,214 @@ console.log(con_id)
                             time:new Date()
                         };
 
-                        for(let n=m,b=0;n<pathCoordinates.length;n++,b++){
-                            let d=Number(this.getDistanceBetweenPoints(
-                                {lat:pathCoordinates[n][0],lng:pathCoordinates[n][1]},
-                                usersLocation,
-                                'miles'
-                            ).toFixed(3));
-                            if(d<0.05){
-                                status=1;
-                                m=n;
-                                console.log(b)
-                                break;
-                            }
-                        }
-
-                        if(status==1){
-
-                            if(arrived && gap>=0.2){
-
-                                this.time=new Date();
-                                let stat=stations[j].dpt_time.split(':');
-
-                                let hour_diff=this.time.getHours()-stat[0];
-                                let minute_diff=this.time.getMinutes()-stat[1];
-                                let delay=hour_diff*60+minute_diff;
-                                let alert = this.util.doAlert("Confirmation","You departed from "+current_station.name+" station","Proceed");
-                                alert.present();
-
-                                for(let n=j;n<stations.length;n++){
-
-                                    this.stations.update('/'+stations[n].id+'/arrivals/'+trainId,{
-                                        dynamic_ar_time:this.getUpdatedTime(stations[n].ar_time,delay),
-                                        dynamic_dpt_time:this.getUpdatedTime(stations[n].dpt_time,delay)
-                                    });
-
-                                    this.trains.update(trainId, {
-                                        prev_station:current_station.name,
-                                        current_station:"",
-                                        next_station:stations[j+1].name
-                                    });
-
-                                }
-
-                                j++;
-
-                                current_station=stations[j];
-                                distance=0;
-
-                                arrived=false;
-
-                            }else if(!arrived && gap<=0.2){
-
-                                let alert = this.util.doAlert("Confirmation","You arrived at "+current_station.name+" station","Proceed");
-                                alert.present();
-
-                                this.time=new Date();
-
-                                for(let n=j;n<stations.length;n++){
-
-                                    this.stations.update('/'+stations[n].id+'/arrivals/'+trainId,{
-                                        dynamic_ar_time:this.time.getHours()+":"+this.time.getMinutes()
-                                    });
-
-                                }
-
-                                this.trains.update(trainId, {
-                                    current_station:current_station.name,
-                                    next_station:stations[j+1].name,
-                                    total_distance:current_station.distance,
-                                    avg_speed:current_station.avg_speed
-                                });
-
-                                arrived=true;
-
-                            }
-
-                            let earthRadius = {
-                                miles: 3958.8,
-                                km: 6371
-                            };
-
-                            let units='miles';
-
-                            let d=Number(this.getDistanceBetweenPoints(
-                                placeLocation,
-                                usersLocation,
-                                'miles'
-                            ).toFixed(3));
-
-                            distance=d;
-
-                            gap= Number(this.getDistanceBetweenPoints(
-                                {lat:current_station.latitude,lng:current_station.longitude},
-                                usersLocation,
-                                'miles'
-                            ).toFixed(3));
-
-                            let eventStartTime = new Date(placeLocation.time);
-                            let eventEndTime = new Date(usersLocation.time);
-                            var duration = (eventEndTime.valueOf() - eventStartTime.valueOf())/(1000*60*60);
-
-                            let current_speed=distance/duration;
-
-                            this.trains.update(trainId, {
-                                con_id: con_id,
-                                latitude:pathCoordinates[i][0],
-                                longitude:pathCoordinates[i][1],
-                                distance:total_distance,
-                                current_speed:current_speed
-                            });
-                            total_distance+=distance;
-
-                            placeLocation = {
-                                lat: pathCoordinates[i][0],
-                                lng: pathCoordinates[i][1],
-                                time:new Date()
-                            };
-
-                            i++;
-
-                        }else{
-                            this.trains.update(trainId,{
-                                status:0
-                            })
-                        }
-
-                    }else{
-                        k++;
-                        segment=stations[k].id+'-'+stations[k+1].id;
-                        pathCoordinates=coords[segment];
-                        i=0;
-                        m=0;
-                    }
-
-                },2000);
-
-            });
-
-        }
-
-        getUpdatedTime(prev_time,delay){
-
-            let time=prev_time.split(':');
-
-            let hours=Number(time[0])+Number((delay/60).toFixed(0));
-            let minutes=Number(time[1])+(delay%60);
-
-            if(hours>23){
-                hours-=24;
-            }
-            if(minutes>59){
-                hours+=1;
-                minutes=(minutes%60);
-            }
-            if(hours<10){
-                hours=Number("0"+hours);
-            }
-            if(minutes<10){
-                minutes=Number("0"+minutes);
+                        /*for(let n=m,b=0;n<pathCoordinates.length;n++,b++){
+                        let d=Number(this.getDistanceBetweenPoints(
+                        {lat:pathCoordinates[n][0],lng:pathCoordinates[n][1]},
+                        usersLocation,
+                        'miles'
+                    ).toFixed(3));
+                    if(d<0.05){
+                    status=1;
+                    m=n;
+                    console.log(b)
+                    break;
+                }
             }
 
-            return hours+":"+minutes;
+            if(status==1){*/
 
-        }
+            if(arrived && gap>=0.2){
 
-        getDistanceBetweenPoints(start, end, units){
+                this.time=new Date();
+                let stat=stations[j].dpt_time.split(':');
+
+                let hour_diff=this.time.getHours()-stat[0];
+                let minute_diff=this.time.getMinutes()-stat[1];
+                let delay=Math.abs(hour_diff*60+minute_diff);
+
+                let alert = this.util.doAlert("Confirmation","You departed from "+current_station.name+" station","Proceed");
+                alert.present();
+
+                for(let n=j;n<stations.length;n++){
+
+                    this.stations.update('/'+stations[n].id+'/arrivals/'+trainId,{
+                        dynamic_ar_time:this.getUpdatedTime(stations[n].ar_time,delay),
+                        dynamic_dpt_time:this.getUpdatedTime(stations[n].dpt_time,delay)
+                    });
+
+                    this.trains.update(trainId, {
+                        prev_station:current_station.name,
+                        current_station:"",
+                        next_station:stations[j+1].name
+                    });
+
+                }
+
+                j++;
+
+                current_station=stations[j];
+                distance=0;
+
+                arrived=false;
+
+            }else if(!arrived && gap<=0.2){
+
+                this.time=new Date();
+                let stat=stations[j].dpt_time.split(':');
+
+                let hour_diff=this.time.getHours()-stat[0];
+                let minute_diff=this.time.getMinutes()-stat[1];
+                let delay=Math.abs(hour_diff*60+minute_diff);
+
+                let alert = this.util.doAlert("Confirmation","You arrived at "+current_station.name+" station","Proceed");
+                alert.present();
+
+                for(let n=j;n<stations.length;n++){
+
+                    this.stations.update('/'+stations[n].id+'/arrivals/'+trainId,{
+                        dynamic_ar_time:this.getUpdatedTime(stations[n].ar_time,delay),
+                        dynamic_dpt_time:this.getUpdatedTime(stations[n].dpt_time,delay)
+                    });
+
+                }
+
+                this.trains.update(trainId, {
+                    current_station:current_station.name,
+                    next_station:stations[j+1].name,
+                    total_distance:current_station.distance,
+                    avg_speed:current_station.avg_speed
+                });
+
+                arrived=true;
+
+            }
 
             let earthRadius = {
                 miles: 3958.8,
                 km: 6371
             };
 
-            let R = earthRadius[units || 'miles'];
-            let lat1 = start.lat;
-            let lon1 = start.lng;
-            let lat2 = end.lat;
-            let lon2 = end.lng;
+            let units='miles';
 
-            let dLat = this.toRad((lat2 - lat1));
-            let dLon = this.toRad((lon2 - lon1));
-            let a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-            Math.cos(this.toRad(lat1)) * Math.cos(this.toRad(lat2)) *
-            Math.sin(dLon / 2) *
-            Math.sin(dLon / 2);
-            let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-            let d = R * c;
+            let d=Number(this.getDistanceBetweenPoints(
+                placeLocation,
+                usersLocation,
+                'miles'
+            ).toFixed(3));
 
-            return d*1.60934;
+            distance=d;
 
-        }
+            gap= Number(this.getDistanceBetweenPoints(
+                {lat:current_station.latitude,lng:current_station.longitude},
+                usersLocation,
+                'miles'
+            ).toFixed(3));
 
-        toRad(x){
-            return x * Math.PI / 180;
-        }
+            let eventStartTime = new Date(placeLocation.time);
+            let eventEndTime = new Date(usersLocation.time);
+            var duration = (eventEndTime.valueOf() - eventStartTime.valueOf())/(1000*60*60);
 
-        stopTracking() {
+            let current_speed=distance/duration;
 
-            console.log('stopTracking');
+            this.trains.update(trainId, {
+                con_id: con_id,
+                latitude:pathCoordinates[i][0],
+                longitude:pathCoordinates[i][1],
+                distance:total_distance,
+                current_speed:current_speed
+            });
+            total_distance+=distance;
 
-            BackgroundGeolocation.finish();
+            placeLocation = {
+                lat: pathCoordinates[i][0],
+                lng: pathCoordinates[i][1],
+                time:new Date()
+            };
 
-        }
+            i++;
 
+            /*}else{
+            this.trains.update(trainId,{
+            status:0
+        })
+    }*/
+
+}else{
+    k++;
+    segment=stations[k].id+'-'+stations[k+1].id;
+    pathCoordinates=coords[segment];
+    i=0;
+    m=0;
+}
+
+},2000);
+
+});
+
+}
+
+getUpdatedTime(prev_time,delay){
+
+    let time=prev_time.split(':');
+
+    let hours=Number(time[0])+Number((delay/60).toFixed(0))-1;
+    let minutes=Number(time[1])+(delay%60);
+
+    if(hours>23){
+        hours-=24;
     }
+    if(minutes>59){
+        hours+=1;
+        minutes=(minutes%60);
+    }
+
+    if(hours<10){
+        hours=Number("0"+hours);
+    }
+    if(minutes<10){
+        minutes=Number("0"+minutes);
+    }
+
+    return hours+":"+minutes;
+
+}
+
+getDistanceBetweenPoints(start, end, units){
+
+    let earthRadius = {
+        miles: 3958.8,
+        km: 6371
+    };
+
+    let R = earthRadius[units || 'miles'];
+    let lat1 = start.lat;
+    let lon1 = start.lng;
+    let lat2 = end.lat;
+    let lon2 = end.lng;
+
+    let dLat = this.toRad((lat2 - lat1));
+    let dLon = this.toRad((lon2 - lon1));
+    let a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(this.toRad(lat1)) * Math.cos(this.toRad(lat2)) *
+    Math.sin(dLon / 2) *
+    Math.sin(dLon / 2);
+    let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    let d = R * c;
+
+    return d*1.60934;
+
+}
+
+toRad(x){
+    return x * Math.PI / 180;
+}
+
+stopTracking() {
+
+    console.log('stopTracking');
+
+    BackgroundGeolocation.finish();
+
+}
+
+}

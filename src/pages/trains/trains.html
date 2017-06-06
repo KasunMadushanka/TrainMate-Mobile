@@ -7,7 +7,10 @@
 <ion-content>
     <ion-list no-border>
 
-        <ion-item-divider color="light" style="font-size:18px;"><b>Direct Trains</b></ion-item-divider>
+        <ion-item-divider *ngIf="direct_trains.length>0" color="light" style="font-size:18px;"><b>Direct Trains</b></ion-item-divider>
+            <ion-item *ngIf="direct_trains.length==0">
+        <p>No Trains Available</p>
+    </ion-item>
         <ion-item *ngFor="let direct_train of direct_trains" (click)="getDetails(direct_train[0])">
             <ion-avatar item-left>
               <img src="assets/images/train.png">

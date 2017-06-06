@@ -39,11 +39,11 @@ export class DetailsPage {
         console.log(this.stationId)
         this.getArrival();
 
-        let timer = TimerObservable.create(2000, 1000).subscribe(t => {
+        /*let timer = TimerObservable.create(2000, 1000).subscribe(t => {
             let hourDiff2=Number(((this.dif-t)/60).toFixed(0));
             let minDiff=((this.dif-t)%60);
             this.tick = hourDiff2+":"+minDiff;
-        });
+        });*/
     }
 
     showOnMap(){

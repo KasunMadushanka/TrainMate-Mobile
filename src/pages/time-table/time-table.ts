@@ -18,6 +18,7 @@ export class TimeTablePage {
 
     constructor(public navCtrl: NavController, public navParams: NavParams,public af: AngularFire) {
         this.trainId=navParams.get('trainId');
+
         this.getData();
     }
 

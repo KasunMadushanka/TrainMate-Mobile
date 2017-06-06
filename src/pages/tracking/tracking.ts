@@ -75,6 +75,7 @@ export class TrackingPage {
             this.getTrainStations(trainId,list=>{
                 this.getCoordinates(list,stations=>{
                     this.stations=stations;
+                    console.log(this.stations)
                     this.startDisabled=false;
                 });
             });
@@ -85,8 +86,10 @@ export class TrackingPage {
             let stations= this.af.database.object('/trains/'+trainId+'/route', { preserveSnapshot: true }).take(1);
             stations.subscribe(snapshot => {
                 let list=snapshot.val();
+                console.log(list.length)
                 for(let i=0;i<list.length;i++){
                     if(this.start_station.id==list[i]){
+
                         callback(list.slice(i,list.length));
                     }
                 }

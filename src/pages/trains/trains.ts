@@ -26,7 +26,7 @@ export class TrainsPage {
         this.presentLoading();
 
         this.trains=navParams.get('trains');
-        console.log(this.trains[0][0].ar_time)
+        
 
         let start_station=navParams.get('start');
         let end_station=navParams.get('end');
@@ -56,8 +56,9 @@ export class TrainsPage {
                         });
 
                     }else{
-                        status=0
-                        this.direct_trains.push([this.trains[i][j].trainId,this.trains[i][j].ar_time,this.trains[i][j].dpt_time,data])
+                        console.log(this.trains[i][j].trainId)
+                        status=0;
+                        this.direct_trains.push([this.trains[i][j].trainId,this.trains[i][j].ar_time,this.trains[i][j].dpt_time,data]);
                     }
                 });
 

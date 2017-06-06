@@ -14,10 +14,10 @@
                 "trainId": 8741,
                 "name": "MDA/KTS Daily - Pass",
                 "status": "stopping",
-                "static_ar_time": "09:06",
-                "static_dpt_time": "09:06",
-                "dynamic_ar_time": "09:06",
-                "dynamic_dpt_time": "09:06"
+                "static_ar_time": "09:05",
+                "static_dpt_time": "09:05",
+                "dynamic_ar_time": "09:05",
+                "dynamic_dpt_time": "09:05"
             },
             "8742": {
                 "trainId": 8742,
@@ -32,28 +32,55 @@
                 "trainId": 8743,
                 "name": "MDA/ALT Daily",
                 "status": "stopping",
-                "static_ar_time": "11:05",
-                "static_dpt_time": "11:05",
-                "dynamic_ar_time": "11:05",
-                "dynamic_dpt_time": "11:05"
-            },
-            "8346": {
-                "trainId": 8346,
-                "name": "MLV/MDA Sunday & Holidays - Pass",
-                "status": "stopping",
-                "static_ar_time": "10:15",
-                "static_dpt_time": "10:15",
-                "dynamic_ar_time": "10:15",
-                "dynamic_dpt_time": "10:15"
+                "static_ar_time": "11:20",
+                "static_dpt_time": "11:20",
+                "dynamic_ar_time": "11:20",
+                "dynamic_dpt_time":"11:20"
             },
             "8339": {
                 "trainId": 8339,
-                "name": "MRT / MDA SO - Pass",
+                "name": "MDA/ALT Daily",
                 "status": "stopping",
-                "static_ar_time": "10:16",
-                "static_dpt_time": "10:16",
-                "dynamic_ar_time": "10:16",
-                "dynamic_dpt_time": "10:16"
+                "static_ar_time": "12:26",
+                "static_dpt_time": "12:27",
+                "dynamic_ar_time": "12:26",
+                "dynamic_dpt_time":"12:27"
+            },
+            "8346": {
+                "trainId": 8346,
+                "name": "MDA/ALT Daily",
+                "status": "stopping",
+                "static_ar_time": "12:30",
+                "static_dpt_time": "12:32",
+                "dynamic_ar_time": "12:30",
+                "dynamic_dpt_time":"12:32"
+            },
+            "8375": {
+                "trainId": 8375,
+                "name": "RGM / MDA SO - Pass",
+                "status": "stopping",
+                "static_ar_time": "13:00",
+                "static_dpt_time": "13:00",
+                "dynamic_ar_time": "13:00",
+                "dynamic_dpt_time": "13:00"
+            },
+            "8348": {
+                "trainId": 8348,
+                "name": "KND / PND - Pass",
+                "status": "stopping",
+                "static_ar_time": "13:10",
+                "static_dpt_time": "13:12",
+                "dynamic_ar_time": "13:10",
+                "dynamic_dpt_time": "13:12"
+            },
+            "8392": {
+                "trainId": 8392,
+                "name": "NGD / PND - Daily",
+                "status": "stopping",
+                "static_ar_time": "13:10",
+                "static_dpt_time": "13:12",
+                "dynamic_ar_time": "13:10",
+                "dynamic_dpt_time": "13:12"
             }
         }
 
@@ -82,51 +109,80 @@
                 "dynamic_ar_time": "09:10",
                 "dynamic_dpt_time": "09:40"
             },
-            "8743": {
-                "trainId": 8743,
+            "8742": {
+                "trainId": 8742,
                 "name": "MDA/ALT Daily - Pass",
                 "status": "stopping",
-                "static_ar_time": "11:08",
-                "static_dpt_time": "11:08",
-                "dynamic_ar_time": "11:08",
-                "dynamic_dpt_time": "11:08"
+                "static_ar_time": "11:14",
+                "static_dpt_time": "11:15",
+                "dynamic_ar_time": "11:14",
+                "dynamic_dpt_time": "11:15"
+            },
+            "8743": {
+                "trainId": 8743,
+                "name": "MDA/ALT Daily",
+                "status": "stopping",
+                "static_ar_time": "11:25",
+                "static_dpt_time": "11:30",
+                "dynamic_ar_time": "11:25",
+                "dynamic_dpt_time":"11:30"
             },
             "8745": {
                 "trainId": 8745,
                 "name": "MDA/ALT Daily",
                 "status": "stopping",
-                "static_ar_time": "11:20",
-                "static_dpt_time": "11:22",
-                "dynamic_ar_time": "11:20",
-                "dynamic_dpt_time": "11:22"
-            },
-            "8742": {
-                "trainId": 8742,
-                "name": "MDA/ALT Daily - Pass",
-                "status": "stopping",
-                "static_ar_time": "11:05",
-                "static_dpt_time": "11:05",
-                "dynamic_ar_time": "11:05",
-                "dynamic_dpt_time": "11:05"
-            },
-            "8346": {
-                "trainId": 8346,
-                "name": "MLV/MDA Sunday & Holidays - Pass",
-                "status": "stopping",
-                "static_ar_time": "10:09",
-                "static_dpt_time": "10:10",
-                "dynamic_ar_time": "10:09",
-                "dynamic_dpt_time": "10:10"
+                "static_ar_time": "11:30",
+                "static_dpt_time": "11:35",
+                "dynamic_ar_time": "11:30",
+                "dynamic_dpt_time":"11:35"
             },
             "8339": {
                 "trainId": 8339,
-                "name": "MRT / MDA SO - Pass",
+                "name": "MDA/ALT Daily",
                 "status": "stopping",
-                "static_ar_time": "10:11",
-                "static_dpt_time": "10:12",
-                "dynamic_ar_time": "10:11",
-                "dynamic_dpt_time": "10:12"
+                "static_ar_time": "12:20",
+                "static_dpt_time": "12:22",
+                "dynamic_ar_time": "12:20",
+                "dynamic_dpt_time":"12:22"
+            },
+            "8346": {
+                "trainId": 8346,
+                "name": "MDA/ALT Daily",
+                "status": "stopping",
+                "static_ar_time": "12:25",
+                "static_dpt_time": "12:26",
+                "dynamic_ar_time": "12:25",
+                "dynamic_dpt_time":"12:26"
+            },
+            "8375": {
+                "trainId": 8375,
+                "name": "RGM / MDA SO - Pass",
+                "status": "stopping",
+                "static_ar_time": "13:04",
+                "static_dpt_time": "13:05",
+                "dynamic_ar_time": "13:04",
+                "dynamic_dpt_time": "13:05"
+            },
+            "8348": {
+                "trainId": 8348,
+                "name": "KND / PND - Pass",
+                "status": "stopping",
+                "static_ar_time": "13:15",
+                "static_dpt_time": "13:16",
+                "dynamic_ar_time": "13:15",
+                "dynamic_dpt_time": "13:16"
+            },
+            "8392": {
+                "trainId": 8392,
+                "name": "NGD / PND - Daily",
+                "status": "stopping",
+                "static_ar_time": "13:15",
+                "static_dpt_time": "13:17",
+                "dynamic_ar_time": "13:15",
+                "dynamic_dpt_time": "13:17"
             }
+
+
         }
 
     },
@@ -167,29 +223,67 @@
                 "trainId": 8745,
                 "name": "MDA/ALT Daily",
                 "status": "stopping",
-                "static_ar_time": "11:30",
-                "static_dpt_time": "11:32",
-                "dynamic_ar_time": "11:30",
-                "dynamic_dpt_time": "11:32"
-            },
-            "8346": {
-                "trainId": 8346,
-                "name": "MLV/MDA Sunday & Holidays - Pass",
-                "status": "stopping",
-                "static_ar_time": "10:03",
-                "static_dpt_time": "10:04",
-                "dynamic_ar_time": "10:03",
-                "dynamic_dpt_time": "10:04"
+                "static_ar_time": "11:40",
+                "static_dpt_time": "11:45",
+                "dynamic_ar_time": "11:40",
+                "dynamic_dpt_time":"11:45"
             },
             "8339": {
                 "trainId": 8339,
-                "name": "MRT / MDA SO - Pass",
+                "name": "MDA/ALT Daily",
                 "status": "stopping",
-                "static_ar_time": "10:05",
-                "static_dpt_time": "10:06",
-                "dynamic_ar_time": "10:05",
-                "dynamic_dpt_time": "10:06"
+                "static_ar_time": "12:20",
+                "static_dpt_time": "12:21",
+                "dynamic_ar_time": "12:20",
+                "dynamic_dpt_time":"12:21"
+            },
+            "8346": {
+                "trainId": 8346,
+                "name": "MDA/ALT Daily",
+                "status": "stopping",
+                "static_ar_time": "12:25",
+                "static_dpt_time": "12:26",
+                "dynamic_ar_time": "12:25",
+                "dynamic_dpt_time":"12:26"
+            },
+            "8392": {
+                "trainId": 8392,
+                "name": "NGD / PND - Daily",
+                "status": "stopping",
+                "static_ar_time": "13:05",
+                "static_dpt_time": "13:06",
+                "dynamic_ar_time": "13:05",
+                "dynamic_dpt_time": "13:06"
+            },
+            "8375": {
+                "trainId": 8375,
+                "name": "RGM / MDA SO - Pass",
+                "status": "stopping",
+                "static_ar_time": "13:08",
+                "static_dpt_time": "13:10",
+                "dynamic_ar_time": "13:08",
+                "dynamic_dpt_time": "13:10"
+            },
+            "8348": {
+                "trainId": 8348,
+                "name": "KND / PND - Pass",
+                "status": "stopping",
+                "static_ar_time": "13:20",
+                "static_dpt_time": "13:22",
+                "dynamic_ar_time": "13:20",
+                "dynamic_dpt_time": "13:22"
+            },
+            "8392": {
+                "trainId": 8392,
+                "name": "NGD / PND - Daily",
+                "status": "stopping",
+                "static_ar_time": "13:20",
+                "static_dpt_time": "13:22",
+                "dynamic_ar_time": "13:20",
+                "dynamic_dpt_time": "13:22"
             }
+
+
         }
 
     },
@@ -221,29 +315,67 @@
                 "trainId": 8742,
                 "name": "MDA/ALT Daily - Pass",
                 "status": "stopping",
-                "static_ar_time": "11:18",
-                "static_dpt_time": "11:19",
-                "dynamic_ar_time": "11:18",
-                "dynamic_dpt_time": "11:19"
+                "static_ar_time": "11:21",
+                "static_dpt_time": "11:22",
+                "dynamic_ar_time": "11:21",
+                "dynamic_dpt_time": "11:22"
             },
-            "8346": {
-                "trainId": 8346,
-                "name": "MLV/MDA Sunday & Holidays - Pass",
+            "8745": {
+                "trainId": 8745,
+                "name": "MDA/ALT Daily",
                 "status": "stopping",
-                "static_ar_time": "10:03",
-                "static_dpt_time": "10:04",
-                "dynamic_ar_time": "10:03",
-                "dynamic_dpt_time": "10:04"
+                "static_ar_time": "11:51",
+                "static_dpt_time": "11:52",
+                "dynamic_ar_time": "11:51",
+                "dynamic_dpt_time":"11:52"
             },
             "8339": {
                 "trainId": 8339,
-                "name": "MRT / MDA SO - Pass",
+                "name": "MDA/ALT Daily",
                 "status": "stopping",
-                "static_ar_time": "10:05",
-                "static_dpt_time": "10:06",
-                "dynamic_ar_time": "10:05",
-                "dynamic_dpt_time": "10:06"
+                "static_ar_time": "12:15",
+                "static_dpt_time": "12:16",
+                "dynamic_ar_time": "12:15",
+                "dynamic_dpt_time":"12:16"
+            },
+            "8346": {
+                "trainId": 8346,
+                "name": "MDA/ALT Daily",
+                "status": "stopping",
+                "static_ar_time": "12:20",
+                "static_dpt_time": "12:25",
+                "dynamic_ar_time": "12:20",
+                "dynamic_dpt_time":"12:25"
+            },
+            "8375": {
+                "trainId": 8375,
+                "name": "RGM / MDA SO - Pass",
+                "status": "stopping",
+                "static_ar_time": "13:12",
+                "static_dpt_time": "13:14",
+                "dynamic_ar_time": "13:12",
+                "dynamic_dpt_time": "13:14"
+            },
+            "8348": {
+                "trainId": 8348,
+                "name": "KND / PND - Pass",
+                "status": "stopping",
+                "static_ar_time": "13:25",
+                "static_dpt_time": "13:27",
+                "dynamic_ar_time": "13:25",
+                "dynamic_dpt_time": "13:27"
+            },
+            "8392": {
+                "trainId": 8392,
+                "name": "NGD / PND - Daily",
+                "status": "stopping",
+                "static_ar_time": "13:25",
+                "static_dpt_time": "13:26",
+                "dynamic_ar_time": "13:25",
+                "dynamic_dpt_time": "13:26"
             }
+
+
         }
 
     },
@@ -275,29 +407,66 @@
                 "trainId": 8742,
                 "name": "MDA/ALT Daily - Pass",
                 "status": "stopping",
-                "static_ar_time": "11:21",
-                "static_dpt_time": "11:22",
-                "dynamic_ar_time": "11:21",
-                "dynamic_dpt_time": "11:22"
+                "static_ar_time": "11:25",
+                "static_dpt_time": "11:26",
+                "dynamic_ar_time": "11:25",
+                "dynamic_dpt_time": "11:26"
             },
-            "8346": {
-                "trainId": 8346,
-                "name": "MLV/MDA Sunday & Holidays - Pass",
+            "8745": {
+                "trainId": 8745,
+                "name": "MDA/ALT Daily",
                 "status": "stopping",
-                "static_ar_time": "09:59",
-                "static_dpt_time": "10:00",
-                "dynamic_ar_time": "09:59",
-                "dynamic_dpt_time": "10:00"
+                "static_ar_time": "11:55",
+                "static_dpt_time": "11:56",
+                "dynamic_ar_time": "11:55",
+                "dynamic_dpt_time":"11:56"
             },
             "8339": {
                 "trainId": 8339,
-                "name": "MRT / MDA SO - Pass",
+                "name": "MDA/ALT Daily",
                 "status": "stopping",
-                "static_ar_time": "10:02",
-                "static_dpt_time": "10:03",
-                "dynamic_ar_time": "10:02",
-                "dynamic_dpt_time": "10:03"
+                "static_ar_time": "12:10",
+                "static_dpt_time": "12:12",
+                "dynamic_ar_time": "12:10",
+                "dynamic_dpt_time":"12:12"
+            },
+            "8346": {
+                "trainId": 8346,
+                "name": "MDA/ALT Daily",
+                "status": "stopping",
+                "static_ar_time": "12:15",
+                "static_dpt_time": "12:16",
+                "dynamic_ar_time": "12:15",
+                "dynamic_dpt_time":"12:16"
+            },
+            "8375": {
+                "trainId": 8375,
+                "name": "RGM / MDA SO - Pass",
+                "status": "stopping",
+                "static_ar_time": "13:15",
+                "static_dpt_time": "13:16",
+                "dynamic_ar_time": "13:15",
+                "dynamic_dpt_time": "13:16"
+            },
+            "8348": {
+                "trainId": 8348,
+                "name": "KND / PND - Pass",
+                "status": "stopping",
+                "static_ar_time": "13:30",
+                "static_dpt_time": "13:32",
+                "dynamic_ar_time": "13:30",
+                "dynamic_dpt_time": "13:32"
+            },
+            "8392": {
+                "trainId": 8392,
+                "name": "NGD / PND - Daily",
+                "status": "stopping",
+                "static_ar_time": "13:30",
+                "static_dpt_time": "13:32",
+                "dynamic_ar_time": "13:30",
+                "dynamic_dpt_time": "13:32"
             }
+
         }
 
     },
@@ -329,29 +498,40 @@
                 "trainId": 8742,
                 "name": "MDA/ALT Daily - Pass",
                 "status": "stopping",
-                "static_ar_time": "11:25",
-                "static_dpt_time": "11:26",
-                "dynamic_ar_time": "11:25",
-                "dynamic_dpt_time": "11:26"
+                "static_ar_time": "11:28",
+                "static_dpt_time": "11:29",
+                "dynamic_ar_time": "11:28",
+                "dynamic_dpt_time": "11:29"
             },
-            "8346": {
-                "trainId": 8346,
-                "name": "MLV/MDA Sunday & Holidays - Pass",
+            "8745": {
+                "trainId": 8745,
+                "name": "MDA/ALT Daily",
                 "status": "stopping",
-                "static_ar_time": "09:55",
-                "static_dpt_time": "09:56",
-                "dynamic_ar_time": "09:55",
-                "dynamic_dpt_time": "09:56"
+                "static_ar_time": "12:00",
+                "static_dpt_time": "12:02",
+                "dynamic_ar_time": "12:00",
+                "dynamic_dpt_time":"12:02"
             },
             "8339": {
                 "trainId": 8339,
-                "name": "MRT / MDA SO - Pass",
+                "name": "MDA/ALT Daily",
                 "status": "stopping",
-                "static_ar_time": "09:59",
-                "static_dpt_time": "10:00",
-                "dynamic_ar_time": "09:59",
-                "dynamic_dpt_time": "10:00"
+                "static_ar_time": "12:00",
+                "static_dpt_time": "12:02",
+                "dynamic_ar_time": "12:00",
+                "dynamic_dpt_time":"12:02"
+            },
+            "8346": {
+                "trainId": 8346,
+                "name": "MDA/ALT Daily",
+                "status": "stopping",
+                "static_ar_time": "12:10",
+                "static_dpt_time": "12:11",
+                "dynamic_ar_time": "12:10",
+                "dynamic_dpt_time":"12:11"
             }
+
+
         }
 
     },
@@ -859,14 +1039,23 @@
             }
         },
         "arrivals": {
-            "8742": {
-                "trainId": 8742,
-                "name": "MDA/ALT Daily - Pass",
+            "8375": {
+                "trainId": 8375,
+                "name": "RGM / MDA SO - Pass",
                 "status": "stopping",
-                "static_ar_time": "11:10",
-                "static_dpt_time": "11:10",
-                "dynamic_ar_time": "11:10",
-                "dynamic_dpt_time": "11:10"
+                "static_ar_time": "13:10",
+                "static_dpt_time": "13:10",
+                "dynamic_ar_time": "13:10",
+                "dynamic_dpt_time": "13:10"
+            },
+            "8348": {
+                "trainId": 8348,
+                "name": "KND / PND - Pass",
+                "status": "stopping",
+                "static_ar_time": "13:00",
+                "static_dpt_time": "13:00",
+                "dynamic_ar_time": "13:00",
+                "dynamic_dpt_time": "13:00"
             }
         }
 
@@ -882,14 +1071,14 @@
             }
         },
         "arrivals": {
-            "8742": {
-                "trainId": 8742,
-                "name": "MDA/ALT Daily - Pass",
+            "8348": {
+                "trainId": 8375,
+                "name": "KND / PND - Pass",
                 "status": "stopping",
-                "static_ar_time": "11:10",
-                "static_dpt_time": "11:10",
-                "dynamic_ar_time": "11:10",
-                "dynamic_dpt_time": "11:10"
+                "static_ar_time": "12:50",
+                "static_dpt_time": "12:52",
+                "dynamic_ar_time": "12:50",
+                "dynamic_dpt_time": "12:52"
             }
         }
 
@@ -899,20 +1088,24 @@
         "latitude": 6.9263603,
         "longitude": 79.8784536,
         "distances": {
-            "038": {
+            "001": {
+                "distance":1.980,
+                "avgSpeed":29.7
+            },
+            "041": {
                 "distance":1.980,
                 "avgSpeed":29.7
             }
         },
         "arrivals": {
-            "8742": {
-                "trainId": 8742,
-                "name": "MDA/ALT Daily - Pass",
+            "8392": {
+                "trainId": 8392,
+                "name": "NGD / PND - Daily",
                 "status": "stopping",
-                "static_ar_time": "11:10",
-                "static_dpt_time": "11:10",
-                "dynamic_ar_time": "11:10",
-                "dynamic_dpt_time": "11:10"
+                "static_ar_time": "13:05",
+                "static_dpt_time": "13:07",
+                "dynamic_ar_time": "13:05",
+                "dynamic_dpt_time": "13:07"
             }
         }
 
@@ -922,21 +1115,13 @@
         "latitude": 6.9133485,
         "longitude": 79.8845335,
         "distances": {
-            "038": {
+            "040": {
                 "distance":1.980,
                 "avgSpeed":29.7
             }
         },
         "arrivals": {
-            "8742": {
-                "trainId": 8742,
-                "name": "MDA/ALT Daily - Pass",
-                "status": "stopping",
-                "static_ar_time": "11:10",
-                "static_dpt_time": "11:10",
-                "dynamic_ar_time": "11:10",
-                "dynamic_dpt_time": "11:10"
-            }
+
         }
 
     }
