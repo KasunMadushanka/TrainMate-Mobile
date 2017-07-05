@@ -28,25 +28,25 @@ export class TimeTablePage {
     }
 
     getData(){
-        console.log(this.trainId)
-        this.arrivals=[];
 
-        this.train=this.af.database.object('trains/'+this.trainId,{ preserveSnapshot: true }).take(1);
+            this.arrivals=[];
 
-        this.train.subscribe(snapshot => {
+            this.train=this.af.database.object('trains/'+this.trainId,{ preserveSnapshot: true }).take(1);
 
-            console.log(new Date().getSeconds());
-            this.trainName=snapshot.val().name;
-            let stations=snapshot.val()['route']
-            let arrival;
-            for(let i=0;i<stations.length;i++){
-                let arrivals=this.af.database.object('stations/'+stations[i],{ preserveSnapshot: true }).take(1);
-                arrivals.subscribe(snapshot => {
-                    arrival=snapshot.val();
-                    this.arrivals.push({stationId:stations[i],stationName:arrival['name'],ar_time:arrival['arrivals'][this.trainId].dynamic_ar_time,dpt_time:arrival['arrivals'][this.trainId].dynamic_dpt_time});
-                });
-            }
-        });
+            this.train.subscribe(snapshot => {
+
+                console.log(new Date().getSeconds());
+                this.trainName=snapshot.val().name;
+                let stations=snapshot.val()['route']
+                let arrival;
+                for(let i=0;i<stations.length;i++){
+                    let arrivals=this.af.database.object('stations/'+stations[i],{ preserveSnapshot: true }).take(1);
+                    arrivals.subscribe(snapshot => {
+                        arrival=snapshot.val();
+                        this.arrivals.push({stationId:stations[i],stationName:arrival['name'],ar_time:arrival['arrivals'][this.trainId].dynamic_ar_time,dpt_time:arrival['arrivals'][this.trainId].dynamic_dpt_time});
+                    });
+                }
+            });
 
     }
 

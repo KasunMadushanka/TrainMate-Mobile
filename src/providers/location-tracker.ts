@@ -33,8 +33,8 @@ export class LocationTracker {
     }
 
     getUserPosition(callback){
-        callback({latitude:6.961153,longitude:79.8945402});//kelaniya
-        //callback({latitude:6.9375911,longitude:79.8790437});//dematagoda
+        //callback({latitude:6.961153,longitude:79.8945402});//kelaniya
+        callback({latitude:6.9375911,longitude:79.8790437});//dematagoda
         //callback({latitude:6.9263603,longitude:79.8784536});//baseline
         //navigator.geolocation.getCurrentPosition(function (position) {
         //    callback({latitude:position.coords.latitude,longitude:position.coords.longitude});
@@ -227,7 +227,8 @@ export class LocationTracker {
                 con_id:con_id,
                 current_station:current_station.name,
                 total_distance:current_station.distance,
-                avg_speed:current_station.avg_speed
+                avg_speed:current_station.avg_speed,
+                status:1
             });
 
             let arrived=true;

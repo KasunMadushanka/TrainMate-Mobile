@@ -15,9 +15,15 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 ion-content{
-    background-image: url('img/10.jpg');
+    background-image: url('img/back.png');
+	background-size: contain;
+
 }
 
 .item{
     background-color: transparent;
+}
+
+h1, h2, h3,h4,h5,h6{
+color: #ffffff ;
 }

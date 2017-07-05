@@ -17,6 +17,8 @@ export class MyApp {
     rootPage = TabsPage;
     pages: Array<{title: string, component: any}>;
 
+ i=0;
+
     constructor(platform: Platform,public push:Push,public alertCtrl:AlertController) {
 
         this.pages = [
@@ -56,7 +58,8 @@ export class MyApp {
         const pushObject: PushObject = this.push.init(options);
 
         pushObject.on('notification').subscribe((notification: any) => {
-            pushObject.setApplicationIconBadgeNumber(new Date().getSeconds());
+            this.i++;
+            pushObject.setApplicationIconBadgeNumber(this.i);
 
         });
 
