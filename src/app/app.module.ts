@@ -40,6 +40,8 @@ import { ChatsProvider } from '../providers/chats-provider/chats-provider';
 import { UserProvider } from '../providers/user-provider/user-provider';
 import { UtilProvider } from '../providers/utils';
 
+import { Ionic2RatingModule } from 'ionic2-rating';
+
 export const firebaseConfig = {
     apiKey: "AIzaSyAcHi7drcrx1xTTwCxzTvMRg60cOn_ZvUY",
     authDomain: "trainmate07.firebaseapp.com",
@@ -85,7 +87,8 @@ const myFirebaseAuthConfig = {
     ],
     imports: [
         IonicModule.forRoot(MyApp),
-        AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
+        AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig),
+         Ionic2RatingModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [

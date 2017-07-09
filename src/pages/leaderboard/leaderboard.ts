@@ -3,18 +3,24 @@ import { NavController, NavParams } from 'ionic-angular';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 
 @Component({
-  selector: 'page-leaderboard',
-  templateUrl: 'leaderboard.html'
+    selector: 'page-leaderboard',
+    templateUrl: 'leaderboard.html'
 })
 export class LeaderboardPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public af:AngularFire) {
-      let id=navParams.get('id')
-     let a=af.database.list('/trains')
-     a.update('8741',{
-          con_id:id
-     });
-  }
+    users:FirebaseListObservable<any>;
 
+    constructor(public navCtrl: NavController, public navParams: NavParams,public af:AngularFire) {
+
+        this.users = af.database.list('/users', {
+            query: {
+                orderByChild: 'points'
+            }
+        });
+    }
+
+    test(value){
+        console.log(value)
+    }
 
 }

@@ -15,7 +15,7 @@ Ionic pages and navigation.
 <ion-content>
     <ion-list>
         <ion-item *ngFor="let session of sessions|async">
-            <h2 style="font-color:white">{{session.start_station}} to {{session.end_station}}</h2><span class="right">30 points</span>
+            <span style="color:white">{{session.start_station}} to {{session.end_station}}</span><span class="right" style="color:white">30 points</span>
             <h4>({{session.start_time}}
                 -{{session.end_time}})&nbsp;&nbsp;&nbsp;{{session.points}}&nbsp;Points
             </h4>
