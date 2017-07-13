@@ -51,4 +51,17 @@ export class SignupPage {
                 alert.present();
             });
         };
+
+        /*sendPicture() {
+            let chat = {from: this.uid, type: 'picture', picture:null};
+            this.userProvider.getPicture()
+            .then((image) => {
+                chat.picture =  image;
+                this.chats.push(chat);
+            });
+        }*/
+
+        selectImage(){
+
+        }
     }

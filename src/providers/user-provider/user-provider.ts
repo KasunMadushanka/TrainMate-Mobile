@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFire } from 'angularfire2';
 import { Storage } from '@ionic/storage';
-import { Camera } from 'ionic-native';
+import { Camera,CameraOptions } from 'ionic-native';
 
 @Injectable()
 export class UserProvider {
@@ -43,9 +43,17 @@ export class UserProvider {
         let base64Picture;
         let options = {
             destinationType: 0,
-            sourceType: 0,
-            encodingType:0
+            sourceType: 1,
+            encodingType:0,
+            cameraDirection:1
         };
+
+        const optionsx: CameraOptions = {
+            quality: 100,
+            destinationType: Camera.DestinationType.DATA_URL,
+            encodingType: Camera.EncodingType.JPEG,
+            mediaType: Camera.MediaType.PICTURE
+        }
 
         let promise = new Promise((resolve, reject) => {
             Camera.getPicture(options).then((imageData) => {

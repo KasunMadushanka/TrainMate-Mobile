@@ -5,33 +5,38 @@
 </ion-header>
 
 <ion-content class="padding">
-   <form [formGroup]="signupForm">
-    <ion-list>
-        <ion-item>
-            <ion-label floating>First Name</ion-label>
-            <ion-input type="text" formControlName="first_name"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label floating>Last Name</ion-label>
-            <ion-input type="text" formControlName="last_name"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label floating>Mobile</ion-label>
-            <ion-input type="number" formControlName="mobile"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label floating>Email</ion-label>
-            <ion-input type="text" formControlName="email"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label floating>Password</ion-label>
-            <ion-input type="password" formControlName="password"></ion-input>
-        </ion-item>
-    </ion-list>
+    <form [formGroup]="signupForm">
+        <ion-list>
+            <ion-item>
 
-    <div padding>
-      <button ion-button primary block round (click)="createAccount()" [disabled]="!signupForm.valid">Sign Up</button>
-    </div>
+                    <img class="circle-pic" style=" margin: auto;display: block;" (click)="selectImage()" src="https://firebasestorage.googleapis.com/v0/b/trainmate07.appspot.com/o/users%2F1.jpg?alt=media&token=dcce3c1a-2809-468d-9d6d-e7e2c55dc7da">
 
-   </form>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>First Name</ion-label>
+                <ion-input type="text" formControlName="first_name"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Last Name</ion-label>
+                <ion-input type="text" formControlName="last_name"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Mobile</ion-label>
+                <ion-input type="number" formControlName="mobile"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Email</ion-label>
+                <ion-input type="text" formControlName="email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Password</ion-label>
+                <ion-input type="password" formControlName="password"></ion-input>
+            </ion-item>
+        </ion-list>
+
+        <div padding>
+            <button ion-button primary block round (click)="createAccount()" [disabled]="!signupForm.valid">Sign Up</button>
+        </div>
+
+    </form>
 </ion-content>
