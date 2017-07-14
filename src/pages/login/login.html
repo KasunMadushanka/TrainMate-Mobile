@@ -5,27 +5,27 @@
 </ion-header>
 
 <ion-content class="padding">
-   <form [formGroup]="loginForm">
-    <ion-list>
 
-        <ion-item>
-            <ion-label floating>Email</ion-label>
-            <ion-input type="text" formControlName="email"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label floating>Password</ion-label>
-            <ion-input type="password" formControlName="password"></ion-input>
-        </ion-item>
-    </ion-list>
+    <form [formGroup]="loginForm" padding>
+        <ion-list>
 
-    <div padding>
-      <button ion-button primary block round (click)="signin()" [disabled]="!loginForm.valid">Sign In</button>
-    </div>
+            <ion-item>
+                <ion-label floating>Email</ion-label>
+                <ion-input type="text" formControlName="email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Pass</ion-label>
+                <ion-input type="password" formControlName="password"></ion-input>
+            </ion-item>
+        </ion-list>
 
-    <div padding>
-      <button ion-button full clear favorite (click)="gotoSignUp()">
-          <ion-icon name="person"></ion-icon>&nbsp;
-           Create an Account</button>
-    </div>
-   </form>
-</ion-content>
+        <div padding>
+            <button ion-button primary block round (click)="signin()" [disabled]="!loginForm.valid">Sign In</button>
+        </div>
+        <div padding>
+            <button ion-button full clear favorite (click)="gotoSignUp()">
+                <ion-icon name="person"></ion-icon>&nbsp;
+                Create an Account</button>
+        </div>
+    </form>
+    </ion-content>

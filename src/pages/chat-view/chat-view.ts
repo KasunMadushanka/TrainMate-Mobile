@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, Content } from 'ionic-angular';
+import { NavController, NavParams, Content,AlertController } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { ChatsProvider } from '../../providers/chats-provider/chats-provider';
 import { UserProvider } from '../../providers/user-provider/user-provider';
@@ -18,7 +18,8 @@ export class ChatViewPage {
         params:NavParams,
         public chatsProvider:ChatsProvider,
         public af:AngularFire,
-        public userProvider:UserProvider) {
+        public userProvider:UserProvider,
+        public alertCtrl:AlertController) {
 
             this.uid = params.data.uid;
             this.interlocutor = params.data.interlocutor;
@@ -34,7 +35,6 @@ export class ChatViewPage {
             this.content.scrollToBottom();
         }
 
-
         sendMessage() {
             if(this.message) {
                 let chat = {
@@ -47,12 +47,37 @@ export class ChatViewPage {
             }
         };
 
-        sendPicture() {
-            let chat = {from: this.uid, type: 'picture', picture:null};
-            this.userProvider.getPicture()
-            .then((image) => {
-                chat.picture =  image;
-                this.chats.push(chat);
+        selectOption(){
+
+            let alert = this.alertCtrl.create();
+            //alert.setTitle('Select');
+
+            alert.addInput({
+                type: 'radio',
+                label: 'Use Camera',
+                value: '1',
+                checked: true
             });
+
+            alert.addInput({
+                type: 'radio',
+                label: 'Select Image',
+                value: '2',
+                checked: false
+            });
+
+            alert.addButton('Cancel');
+            alert.addButton({
+                text: 'OK',
+                handler: option => {
+                    this.setPicture(option);
+                }
+            });
+            alert.present();
         }
+
+        setPicture(option){
+            this.userProvider.takePicture(option);
+        }
+
     }

@@ -10,45 +10,36 @@
 <ion-content>
 
     <ion-list>
-        <ion-item>
-            <button (click)="gotoForum()">
+        <ion-item (click)="gotoForum(trains)">
                 <ion-avatar item-left>
                     <img src="assets/images/forum/categories/1.jpg" />
                 </ion-avatar>
                 <h2>About Trains</h2>
-            </button>
         </ion-item>
-        <ion-item>
-            <button (click)="gotoForum()">
+        <ion-item (click)="gotoForum(gps)">
                 <ion-avatar item-left>
                     <img src="assets/images/forum/categories/2.png" />
                 </ion-avatar>
                 <h2>GPS Tracking</h2>
-            </button>
         </ion-item>
-        <ion-item>
-            <button (click)="gotoForum()">
+        <ion-item (click)="gotoForum(contribution)">
                 <ion-avatar item-left>
                     <img src="assets/images/forum/categories/3.png" />
                 </ion-avatar>
                 <h2>Contribution</h2>
-            </button>
         </ion-item>
-        <ion-item>
-            <button (click)="gotoUsers()">
-                <ion-avatar item-left>
-                    <img src="assets/images/forum/categories/4.png" />
-                </ion-avatar>
-                <h2>Community</h2>
-            </button>
-        </ion-item>
-        <ion-item>
-            <button (click)="gotoForum()">
+        <ion-item (click)="gotoForum(settings)">
                 <ion-avatar item-left>
                     <img src="assets/images/forum/categories/5.png" />
                 </ion-avatar>
                 <h2>Application Settings</h2>
-            </button>
         </ion-item>
+        <ion-item (click)="loadUsers()">
+                <ion-avatar item-left>
+                    <img src="assets/images/forum/categories/4.png" />
+                </ion-avatar>
+                <h2>Community</h2>
+        </ion-item>
+
     </ion-list>
 </ion-content>

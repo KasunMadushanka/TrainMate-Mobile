@@ -10,14 +10,14 @@ import { UsersPage } from '../users/users';
 export class ForumTopicsPage {
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
-       
+
     }
 
-    gotoForum() {
-        this.navCtrl.push(ForumPage);
+    gotoForum(topic) {
+        this.navCtrl.push(ForumPage,{topic:topic});
     }
 
-    gotoUsers(){
+    loadUsers(){
         this.navCtrl.push(UsersPage);
     }
 

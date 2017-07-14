@@ -3,6 +3,7 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { Storage } from '@ionic/storage';
 import { Push} from '@ionic-native/push';
+import { Camera} from '@ionic-native/camera';
 
 import { LoginPage } from '../pages/login/login';
 import { AuthService } from '../providers/auth-service';
@@ -120,6 +121,6 @@ const myFirebaseAuthConfig = {
         ProfilePage
 
     ],
-    providers: [LocationTracker,AuthService,BackgroundMode,Badge,AuthProvider, ChatsProvider, UserProvider, UtilProvider, Storage,Push]
+    providers: [LocationTracker,AuthService,BackgroundMode,Badge,AuthProvider, ChatsProvider, UserProvider, UtilProvider, Storage,Push,Camera]
 })
 export class AppModule {}

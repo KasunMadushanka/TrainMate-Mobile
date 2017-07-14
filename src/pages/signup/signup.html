@@ -1,17 +1,13 @@
 <ion-header>
     <ion-navbar color="primary">
-        <ion-title>Login</ion-title>
+        <ion-title>Sign Up</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content class="padding">
-    <form [formGroup]="signupForm">
+    <form [formGroup]="signupForm" padding>
         <ion-list>
-            <ion-item>
-
-                    <img class="circle-pic" style=" margin: auto;display: block;" (click)="selectImage()" src="https://firebasestorage.googleapis.com/v0/b/trainmate07.appspot.com/o/users%2F1.jpg?alt=media&token=dcce3c1a-2809-468d-9d6d-e7e2c55dc7da">
-
-            </ion-item>
+                <img padding class="circle-pic" style=" margin: auto;display: block;" (click)="selectOption()" src="{{picture}}">
             <ion-item>
                 <ion-label floating>First Name</ion-label>
                 <ion-input type="text" formControlName="first_name"></ion-input>

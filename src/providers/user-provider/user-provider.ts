@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import { AngularFire } from 'angularfire2';
 import { Storage } from '@ionic/storage';
-import { Camera,CameraOptions } from 'ionic-native';
+import { Camera} from '@ionic-native/camera';
+import firebase from 'firebase';
 
 @Injectable()
 export class UserProvider {
-    constructor(public af:AngularFire, public local:Storage) { }
+
+    public picture: string = null;
+
+    constructor(public af:AngularFire, public local:Storage,public camera:Camera) { }
 
     // Get Current User's UID
     getUid() {
@@ -28,7 +32,7 @@ export class UserProvider {
     getUser() {
         // Getting UID of Logged In User
         return this.getUid().then(uid => {
-            return this.af.database.object(`/users/${uid}`, { preserveSnapshot: true });
+            return this.af.database.object('/users/${uid}', { preserveSnapshot: true });
         });
     }
 
@@ -38,43 +42,48 @@ export class UserProvider {
         return this.af.database.list('/users');
     }
 
-    // Get base64 Picture of User
-    getPicture() {
-        let base64Picture;
-        let options = {
-            destinationType: 0,
-            sourceType: 1,
-            encodingType:0,
-            cameraDirection:1
-        };
+    takePicture(option){
 
-        const optionsx: CameraOptions = {
-            quality: 100,
-            destinationType: Camera.DestinationType.DATA_URL,
-            encodingType: Camera.EncodingType.JPEG,
-            mediaType: Camera.MediaType.PICTURE
+        let type;
+
+        if(option==1){
+            type=this.camera.PictureSourceType. CAMERA;
+        }else{
+            type=this.camera.PictureSourceType. PHOTOLIBRARY;
         }
 
-        let promise = new Promise((resolve, reject) => {
-            Camera.getPicture(options).then((imageData) => {
-                base64Picture = "data:image/jpeg;base64," + imageData;
-                resolve(base64Picture);
-            }, (error) => {
-                reject(error);
-            });
-
+        return this.camera.getPicture({
+            quality : 100,
+            destinationType : this.camera.DestinationType.DATA_URL,
+            sourceType : type,
+            cameraDirection:this.camera.Direction.FRONT,
+            allowEdit : true,
+            encodingType: this.camera.EncodingType.JPEG,
+            targetWidth: 500,
+            targetHeight: 500,
+            correctOrientation: true,
+            saveToPhotoAlbum: true
+        }).then(imageData => {
+            this.picture = imageData;
+            let base64Image = 'data:image/jpeg;base64,' + imageData;
+            return base64Image;
+        }, error => {
+            console.log("ERROR -> " + JSON.stringify(error));
         });
-        return promise;
+
     }
 
-    // Update Provide Picture of User
-    updatePicture() {
-        this.getUid().then(uid => {
-            let pictureRef = this.af.database.object(`/users/${uid}/picture`);
-            this.getPicture()
-            .then((image) => {
-                pictureRef.set(image);
+    savePicture(){
+        if (this.picture != null) {
+            return this.getUid().then(uid => {
+                firebase.storage().ref('profiles/users/')
+                .child(uid+'.png')
+                .putString(this.picture, 'base64', {contentType: 'image/png'})
+                .then((savedPicture) => {
+                    firebase.database().ref('users/${uid}/').child('image_url').set(savedPicture.downloadURL);
+                });
             });
-        });
+        }
     }
+
 }

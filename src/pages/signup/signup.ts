@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController,NavParams } from 'ionic-angular';
+import { NavController,NavParams,AlertController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { TabsPage } from '../tabs/tabs';
 import { LoginPage } from '../login/login';
@@ -18,14 +18,17 @@ import { UtilProvider } from '../../providers/utils';
 export class SignupPage {
 
     signupForm:any;
+    picture:any = "assets/images/default-user.png";
+    pictureSelected:boolean;
 
     constructor(public nav:NavController,
         public auth: AuthProvider,
         public userProvider: UserProvider,
         public util: UtilProvider,
         public navParams:NavParams,
-            public navCtrl:NavController,
-        public storage:Storage) {
+        public navCtrl:NavController,
+        public storage:Storage,
+        public alertCtrl:AlertController) {
 
         }
 
@@ -43,6 +46,9 @@ export class SignupPage {
             let credentials = this.signupForm.value;
             this.auth.createAccount(credentials)
             .then((data) => {
+                if(this.pictureSelected){
+                    this.userProvider.savePicture();
+                }
                 this.storage.set('uid', data.uid);
                 this.userProvider.createUser(credentials, data.uid);
                 this.navCtrl.push(LoginPage)
@@ -50,18 +56,43 @@ export class SignupPage {
                 let alert = this.util.doAlert("Error",error.message,"Ok");
                 alert.present();
             });
-        };
-
-        /*sendPicture() {
-            let chat = {from: this.uid, type: 'picture', picture:null};
-            this.userProvider.getPicture()
-            .then((image) => {
-                chat.picture =  image;
-                this.chats.push(chat);
-            });
-        }*/
-
-        selectImage(){
-
         }
+
+        selectOption(){
+
+            let alert = this.alertCtrl.create();
+            //alert.setTitle('Select');
+
+            alert.addInput({
+                type: 'radio',
+                label: 'Use Camera',
+                value: '1',
+                checked: true
+            });
+
+            alert.addInput({
+                type: 'radio',
+                label: 'Select Image',
+                value: '2',
+                checked: false
+            });
+
+            alert.addButton('Cancel');
+            alert.addButton({
+                text: 'OK',
+                handler: option => {
+                    this.setPicture(option);
+                }
+            });
+            alert.present();
+        }
+
+        setPicture(option){
+            this.userProvider.takePicture(option).then(data => {
+                this.picture=data;
+                this.pictureSelected=true;
+
+            });
+        }
+
     }

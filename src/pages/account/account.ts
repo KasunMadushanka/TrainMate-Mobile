@@ -10,8 +10,8 @@ import { UserProvider } from '../../providers/user-provider/user-provider';
 export class AccountPage {
     rootNav;
     user = {};
-    constructor(public nav: NavController, 
-                public auth: AuthProvider, 
+    constructor(public nav: NavController,
+                public auth: AuthProvider,
                 public userProvider: UserProvider,
                 public local:Storage) {
         this.userProvider.getUser()
@@ -21,10 +21,10 @@ export class AccountPage {
             });
         });
     }
-    
+
     //save user info
     updatePicture() {
-        this.userProvider.updatePicture();
+        //this.userProvider.updatePicture();
     };
 
     logout() {

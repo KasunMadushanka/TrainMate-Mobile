@@ -1,22 +1,49 @@
 <ion-header>
     <ion-navbar color="primary">
         <ion-title>Users</ion-title>
-        <ion-buttons end>
-            <ion-spinner color="light" *ngIf="!(users | async)"></ion-spinner>
-        </ion-buttons>
+
     </ion-navbar>
+    <ion-toolbar no-border-top color="primary">
+        <ion-segment [(ngModel)]="contacts">
+            <ion-segment-button value="admins">
+            <h6>Administrators</h6>
+            </ion-segment-button>
+            <ion-segment-button value="contributors">
+            <h6>Contributors</h6>
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-list>
-      <span *ngFor="let user of users | async">
-        <a ion-item (click)="openChat(user.$key)" *ngIf="user.$key !== uid">
-             <ion-avatar item-left>
-                <img *ngIf="!user.picture" src="assets/images/default.jpg">
-                <img *ngIf="user.picture" src="{{user.picture}}">
-             </ion-avatar>
-             <h2>{{user.email}}</h2>
-        </a>
-      </span>
-    </ion-list>
+    <div [ngSwitch]="contacts">
+
+        <ion-list *ngSwitchCase="'admins'">
+            <span *ngFor="let admin of admins | async">
+                <a ion-item (click)="openChat(admin.$key)">
+                    <ion-avatar item-left>
+                        <img *ngIf="!admin.picture" src="assets/images/default.jpg">
+                        <img *ngIf="admin.picture" src="{{admin.picture}}">
+                    </ion-avatar>
+                    <h2>{{admin.first_name}} {{admin.last_name}}</h2>
+                </a>
+            </span>
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'contributors'">
+            <span *ngFor="let user of users | async">
+                <a ion-item (click)="openChat(user.$key)" *ngIf="user.$key !== uid">
+                    <ion-avatar item-left>
+                        <img *ngIf="!user.picture" src="assets/images/default.jpg">
+                        <img *ngIf="user.picture" src="{{user.picture}}">
+                    </ion-avatar>
+                    <h2>{{user.first_name}} {{user.last_name}}</h2>
+                    <rating [(ngModel)]="rates" readOnly="true" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star" nullable="false" (ngOnInit)="rate(3)">
+                    </rating>
+                </a>
+
+            </span>
+        </ion-list>
+    </div>
+
 </ion-content>

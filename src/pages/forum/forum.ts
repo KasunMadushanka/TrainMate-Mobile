@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,NavParams } from 'ionic-angular';
 import { ChatViewPage } from '../chat-view/chat-view'
 import { LoginPage } from '../login/login';
 import { PostPage } from '../post/post';
@@ -13,8 +13,9 @@ export class ForumPage {
 
     posts:  FirebaseListObservable<any>;
 
-    constructor(public navCtrl: NavController,public af:AngularFire) {
-        this.posts=this.af.database.list('/forum');
+    constructor(public navCtrl: NavController,public af:AngularFire,public navParams:NavParams) {
+        let topic=navParams.get('topic');
+        this.posts=this.af.database.list('/forum/'+topic);
 
     }
 
