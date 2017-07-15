@@ -27,8 +27,8 @@ export class UsersPage {
         });
     };
 
-    openChat(key) {
-        let param = {uid: this.uid, interlocutor: key};
+    openChat(key,name) {
+        let param = {uid: this.uid, interlocutor: key,name:name};
         this.nav.push(ChatViewPage,param);
     }
 }

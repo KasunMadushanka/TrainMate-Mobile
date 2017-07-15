@@ -20,7 +20,7 @@
 
         <ion-list *ngSwitchCase="'admins'">
             <span *ngFor="let admin of admins | async">
-                <a ion-item (click)="openChat(admin.$key)">
+                <a ion-item (click)="openChat(admin.$key,admin.first_name+' '+admin.last_name)">
                     <ion-avatar item-left>
                         <img *ngIf="!admin.picture" src="assets/images/default.jpg">
                         <img *ngIf="admin.picture" src="{{admin.picture}}">
@@ -32,7 +32,7 @@
 
         <ion-list *ngSwitchCase="'contributors'">
             <span *ngFor="let user of users | async">
-                <a ion-item (click)="openChat(user.$key)" *ngIf="user.$key !== uid">
+                <a ion-item (click)="openChat(user.$key,user.first_name+' '+user.last_name)" *ngIf="user.$key !== uid">
                     <ion-avatar item-left>
                         <img *ngIf="!user.picture" src="assets/images/default.jpg">
                         <img *ngIf="user.picture" src="{{user.picture}}">

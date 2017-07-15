@@ -3,14 +3,17 @@ import { NavController, NavParams, Content,AlertController } from 'ionic-angular
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { ChatsProvider } from '../../providers/chats-provider/chats-provider';
 import { UserProvider } from '../../providers/user-provider/user-provider';
+import firebase from 'firebase';
 
 @Component({
     templateUrl: 'chat-view.html',
 })
 export class ChatViewPage {
+
     message: string;
     uid:string;
     interlocutor:string;
+    name:string;
     chats:FirebaseListObservable<any>;
     @ViewChild(Content) content: Content;
 
@@ -23,6 +26,7 @@ export class ChatViewPage {
 
             this.uid = params.data.uid;
             this.interlocutor = params.data.interlocutor;
+            this.name=params.data.name;
 
             // Get Chat Reference
             chatsProvider.getChatRef(this.uid, this.interlocutor)
@@ -47,37 +51,30 @@ export class ChatViewPage {
             }
         };
 
-        selectOption(){
-
-            let alert = this.alertCtrl.create();
-            //alert.setTitle('Select');
-
-            alert.addInput({
-                type: 'radio',
-                label: 'Use Camera',
-                value: '1',
-                checked: true
-            });
-
-            alert.addInput({
-                type: 'radio',
-                label: 'Select Image',
-                value: '2',
-                checked: false
-            });
-
-            alert.addButton('Cancel');
-            alert.addButton({
-                text: 'OK',
-                handler: option => {
-                    this.setPicture(option);
-                }
-            });
-            alert.present();
+        sendPicture(picture){
+            let chat = {
+                from: this.uid,
+                picture: picture,
+                type: 'picture'
+            };
+            this.chats.push(chat);
         }
 
         setPicture(option){
-            this.userProvider.takePicture(option);
+            this.userProvider.takePicture(option).then(picture => {
+                this.savePicture(picture);
+            });
+        }
+
+        savePicture(picture){
+            if (picture != null) {
+                firebase.storage().ref('chats')
+                .child(firebase.database.ServerValue.TIMESTAMP+'.jpg')
+                .putString(picture, 'base64', {contentType: 'image/jpg'})
+                .then((savedPicture) => {
+                    this.sendPicture(savedPicture.downloadURL);
+                });
+            }
         }
 
     }

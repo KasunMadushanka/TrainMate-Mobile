@@ -66,24 +66,11 @@ export class UserProvider {
         }).then(imageData => {
             this.picture = imageData;
             let base64Image = 'data:image/jpeg;base64,' + imageData;
-            return base64Image;
+            return imageData;
         }, error => {
             console.log("ERROR -> " + JSON.stringify(error));
         });
 
-    }
-
-    savePicture(){
-        if (this.picture != null) {
-            return this.getUid().then(uid => {
-                firebase.storage().ref('profiles/users/')
-                .child(uid+'.png')
-                .putString(this.picture, 'base64', {contentType: 'image/png'})
-                .then((savedPicture) => {
-                    firebase.database().ref('users/${uid}/').child('image_url').set(savedPicture.downloadURL);
-                });
-            });
-        }
     }
 
 }

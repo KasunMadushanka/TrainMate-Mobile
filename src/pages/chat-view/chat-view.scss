@@ -4,19 +4,18 @@
     position: absolute;
     .message {
       width: 70%;
-      padding: 5px 10px;
-      background: #3F51B5;
-      color: #fff;
+      padding: 5px;
+      background: #0000FF;
       border-radius: 5px;
       margin: 5px;
       float: left;
     }
     .message.me {
       float: right;
-      background: #fff;
+      background: #0000FF;
       border: 1px solid #3F51B5;
-      color: #222;
       text-align: right;
     }
   }
 }
+ion-icon{font-size:25px;}

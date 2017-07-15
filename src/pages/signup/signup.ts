@@ -19,6 +19,7 @@ export class SignupPage {
 
     signupForm:any;
     picture:any = "assets/images/default-user.png";
+    pictureData:any;
     pictureSelected:boolean;
 
     constructor(public nav:NavController,
@@ -47,7 +48,7 @@ export class SignupPage {
             this.auth.createAccount(credentials)
             .then((data) => {
                 if(this.pictureSelected){
-                    this.userProvider.savePicture();
+                    this.savePicture();
                 }
                 this.storage.set('uid', data.uid);
                 this.userProvider.createUser(credentials, data.uid);
@@ -87,9 +88,23 @@ export class SignupPage {
             alert.present();
         }
 
+        savePicture(){
+            if (this.picture != null) {
+                return this.userProvider.getUid().then(uid => {
+                    firebase.storage().ref('profiles/users/')
+                    .child(uid+'.jpg')
+                    .putString(this.picture, 'base64', {contentType: 'image/jpg'})
+                    .then((savedPicture) => {
+                        firebase.database().ref('users/${uid}/').child('image_url').set(savedPicture.downloadURL);
+                    });
+                });
+            }
+        }
+
         setPicture(option){
             this.userProvider.takePicture(option).then(data => {
-                this.picture=data;
+                this.pictureData=data;
+                this.picture='data:image/jpeg;base64,'+data;
                 this.pictureSelected=true;
 
             });
