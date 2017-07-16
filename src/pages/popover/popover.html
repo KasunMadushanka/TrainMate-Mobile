@@ -1,0 +1,34 @@
+<ion-list radio-group [(ngModel)]="fontFamily" (ionChange)="changeFontFamily()" class="popover-page">
+    <ion-row>
+        <ion-col>
+            <button (click)="changeFontSize('smaller')" ion-item detail-none class="text-button text-smaller">Theme</button>
+        </ion-col>
+        <ion-col>
+            <button (click)="changeFontSize('larger')" ion-item detail-none class="text-button text-larger">Background</button>
+        </ion-col>
+    </ion-row>
+    <ion-item class="text-athelas">
+        <ion-label>Blue</ion-label>
+        <ion-radio value="Athelas"></ion-radio>
+    </ion-item>
+    <ion-item class="text-charter">
+        <ion-label>Green</ion-label>
+        <ion-radio value="Charter"></ion-radio>
+    </ion-item>
+    <ion-item class="text-iowan">
+        <ion-label>White</ion-label>
+        <ion-radio value="Iowan"></ion-radio>
+    </ion-item>
+    <ion-item class="text-palatino">
+        <ion-label>Orange</ion-label>
+        <ion-radio value="Palatino"></ion-radio>
+    </ion-item>
+    <ion-item class="text-san-francisco">
+        <ion-label>Purple</ion-label>
+        <ion-radio value="San Francisco"></ion-radio>
+    </ion-item>
+    <ion-item class="text-seravek">
+        <ion-label>Black</ion-label>
+        <ion-radio value="Seravek"></ion-radio>
+    </ion-item>
+</ion-list>

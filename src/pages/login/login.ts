@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController,NavParams } from 'ionic-angular';
+import { NavController,NavParams,ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { TabsPage } from '../tabs/tabs';
 import { TutorialPage } from '../tutorial/tutorial';
@@ -27,7 +27,8 @@ export class LoginPage {
         public util: UtilProvider,
         public navParams:NavParams,
         public navCtrl:NavController,
-        public storage:Storage) {
+        public storage:Storage,
+        public toastCtrl: ToastController) {
             this.next=navParams.get('next');
             this.status=0;
         }
@@ -45,16 +46,19 @@ export class LoginPage {
                 this.storage.set('uid', data.uid);
                 if(this.next==null){
                     if(this.status==1){
-                    this.nav.push(ContributionPage);
-                }else{
-                    this.nav.push(TutorialPage);
-                }
+                        this.nav.push(ContributionPage);
+                    }else{
+                        this.nav.push(TutorialPage);
+                    }
                 }else if(this.next=="post"){
                     this.nav.push(PostPage);
                 }
             }, (error) => {
-                let alert = this.util.doAlert("Error",error.message,"Ok");
-                alert.present();
+                let toast = this.toastCtrl.create({
+                    message: 'An error occured. Please try again!',
+                    duration: 3000
+                });
+                toast.present();
             });
         };
 
@@ -69,8 +73,11 @@ export class LoginPage {
                 this.storage.set('uid', data.uid);
                 this.userProvider.createUser(credentials, data.uid);
             }, (error) => {
-                let alert = this.util.doAlert("Error",error.message,"Ok");
-                alert.present();
+                let toast = this.toastCtrl.create({
+                    message: 'An error occured. Please try again!',
+                    duration: 3000
+                });
+                toast.present();
             });
         };
     }

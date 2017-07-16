@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component,ViewChild,ElementRef } from '@angular/core';
+import { NavController, NavParams,PopoverController } from 'ionic-angular';
 import 'rxjs/add/operator/take';
 import {TrainsPage} from '../trains/trains';
+import {PopoverPage} from '../popover/popover';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import {Http} from '@angular/http';
 
@@ -13,6 +14,9 @@ export class HomePage {
 
     start_station:string;
     end_station:string;
+
+    @ViewChild('popoverContent', { read: ElementRef }) content: ElementRef;
+    @ViewChild('popoverText', { read: ElementRef }) text: ElementRef;
 
     graph = {
         '001': ['002'],
@@ -54,7 +58,7 @@ export class HomePage {
         '037': ['036']
     }
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire, public http: Http) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, public af: AngularFire, public http: Http,private popoverCtrl: PopoverController) {
 
     }
 
@@ -195,6 +199,18 @@ export class HomePage {
 
             this.navCtrl.push(TrainsPage, { trains: data,start:this.start_station,end:this.end_station });
 
+        }
+
+        presentPopover(ev) {
+
+            let popover = this.popoverCtrl.create(PopoverPage, {
+                //contentEle: this.content.nativeElement,
+                //textEle: this.text.nativeElement
+            });
+
+            popover.present({
+                ev: ev
+            });
         }
 
     }

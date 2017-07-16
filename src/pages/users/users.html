@@ -6,10 +6,10 @@
     <ion-toolbar no-border-top color="primary">
         <ion-segment [(ngModel)]="contacts">
             <ion-segment-button value="admins">
-            <h6>Administrators</h6>
+                <h6>Administrators</h6>
             </ion-segment-button>
             <ion-segment-button value="contributors">
-            <h6>Contributors</h6>
+                <h6>Contributors</h6>
             </ion-segment-button>
         </ion-segment>
     </ion-toolbar>
@@ -20,28 +20,57 @@
 
         <ion-list *ngSwitchCase="'admins'">
             <span *ngFor="let admin of admins | async">
-                <a ion-item (click)="openChat(admin.$key,admin.first_name+' '+admin.last_name)">
-                    <ion-avatar item-left>
-                        <img *ngIf="!admin.picture" src="assets/images/default.jpg">
-                        <img *ngIf="admin.picture" src="{{admin.picture}}">
-                    </ion-avatar>
-                    <h2>{{admin.first_name}} {{admin.last_name}}</h2>
-                </a>
+                <ion-item-sliding>
+                    <ion-item>
+                        <ion-avatar item-left>
+                            <img *ngIf="!admin.picture" src="assets/images/default-user.png">
+                            <img *ngIf="admin.picture" src="{{admin.picture}}">
+                        </ion-avatar>
+                        <h2>{{admin.first_name}} {{admin.last_name}}</h2>
+                    </ion-item>
+                    <ion-item-options side="right">
+                        <button ion-button color="primary" (click)="openChat(user.$key,user.first_name+' '+user.last_name)" icon-start>
+                            <ion-icon name="text"></ion-icon>
+                            Text
+                        </button>
+                        <button ion-button color="secondary" (click)="call(0714344706)" icon-start>
+                            <ion-icon name="call"></ion-icon>
+                            Call
+                        </button>
+                    </ion-item-options>
+                </ion-item-sliding>
             </span>
         </ion-list>
 
         <ion-list *ngSwitchCase="'contributors'">
             <span *ngFor="let user of users | async">
-                <a ion-item (click)="openChat(user.$key,user.first_name+' '+user.last_name)" *ngIf="user.$key !== uid">
-                    <ion-avatar item-left>
-                        <img *ngIf="!user.picture" src="assets/images/default.jpg">
-                        <img *ngIf="user.picture" src="{{user.picture}}">
-                    </ion-avatar>
-                    <h2>{{user.first_name}} {{user.last_name}}</h2>
-                    <rating [(ngModel)]="rates" readOnly="true" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star" nullable="false" (ngOnInit)="rate(3)">
-                    </rating>
-                </a>
-
+                <ion-item-sliding>
+                    <ion-item *ngIf="user.$key !== uid">
+                        <ion-avatar item-left>
+                            <img *ngIf="!user.picture" src="assets/images/default-user.png">
+                            <img *ngIf="user.picture" src="{{user.picture}}">
+                        </ion-avatar>
+                        <h2>{{user.first_name}} {{user.last_name}}</h2>
+                        <rating [(ngModel)]="rates" readOnly="true" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star" nullable="false" (ngOnInit)="rate(3)">
+                        </rating>
+                    </ion-item>
+                    <ion-item-options side="right">
+                        <button ion-button color="primary" (click)="openChat(user.$key,user.first_name+' '+user.last_name)" icon-start>
+                            <ion-icon name="text"></ion-icon>
+                            Text
+                        </button>
+                        <button ion-button color="secondary" (click)="call(0714344706)" icon-start>
+                            <ion-icon name="call"></ion-icon>
+                            Call
+                        </button>
+                    </ion-item-options>
+                    <ion-item-options side="left">
+                        <button ion-button color="danger" (click)="remove(user.$key)">
+                            <ion-icon name="delete"></ion-icon>
+                            Remove
+                        </button>
+                    </ion-item-options>
+                </ion-item-sliding>
             </span>
         </ion-list>
     </div>

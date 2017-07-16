@@ -4,16 +4,31 @@
             <ion-icon name='menu'></ion-icon>
         </button>
         <ion-title>TrainMate</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="presentPopover($event)">
+                <ion-icon name="notifications"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="presentPopover($event)">
+                <ion-icon name="chatboxes"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="presentPopover($event)">
+                <ion-icon name="more"></ion-icon>
+            </button>
+        </ion-buttons>
         <ion-nav id="nav" #content [root]="rootPage"></ion-nav>
     </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
     <h1 style="text-align: center">Search Trains</h1>
     <hr>
     <ion-list>
         <ion-item>
-            <ion-label>Start</ion-label>
+            <ion-label style="color:black">Start</ion-label>
             <ion-select [(ngModel)]="start">
                 <ion-option value="001">Maradana</ion-option>
                 <ion-option value="002">Colombo Fort</ion-option>
@@ -58,7 +73,7 @@
     <hr>
     <ion-list>
         <ion-item>
-            <ion-label>Destination</ion-label>
+            <ion-label style="color:black">Destination</ion-label>
             <ion-select [(ngModel)]="end">
                 <ion-option value="001">Maradana</ion-option>
                 <ion-option value="002">Colombo Fort</ion-option>
@@ -106,6 +121,14 @@
 
     <ion-row center>
         <button ion-button primary block round color="primary" style="text-align: center" (click)="findRoutes(start,end)">Get Time Table</button>
-    
+
     </ion-row>
 </ion-content>
+
+<ion-menu [content]="mycontent">
+  <ion-content>
+    <ion-list>
+      <ion-item menuClose detail-none>Close Menu</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
