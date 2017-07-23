@@ -33,6 +33,8 @@ import { NotificationsPage } from '../pages/notifications/notifications';
 import { ProfilePage } from '../pages/profile/profile';
 import {PopoverPage} from '../pages/popover/popover';
 
+import {NavbarComponent} from '../components/navbar/navbar';
+
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
 import { LocationTracker } from '../providers/location-tracker';
@@ -42,6 +44,7 @@ import { AuthProvider } from '../providers/auth-provider/auth-provider';
 import { ChatsProvider } from '../providers/chats-provider/chats-provider';
 import { UserProvider } from '../providers/user-provider/user-provider';
 import { UtilProvider } from '../providers/utils';
+import { NotificationProvider } from '../providers/notification-provider';
 
 import { Ionic2RatingModule } from 'ionic2-rating';
 
@@ -86,7 +89,8 @@ const myFirebaseAuthConfig = {
         MapPage,
         NotificationsPage,
         ProfilePage,
-        PopoverPage
+        PopoverPage,
+        NavbarComponent
 
     ],
     imports: [
@@ -125,6 +129,6 @@ const myFirebaseAuthConfig = {
         PopoverPage
 
     ],
-    providers: [LocationTracker,AuthService,BackgroundMode,Badge,AuthProvider, ChatsProvider, UserProvider, UtilProvider, Storage,Push,Camera,CallNumber]
+    providers: [LocationTracker,AuthService,BackgroundMode,Badge,AuthProvider, ChatsProvider, UserProvider, UtilProvider,NotificationProvider, Storage,Push,Camera,CallNumber]
 })
 export class AppModule {}

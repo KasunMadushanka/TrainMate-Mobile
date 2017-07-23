@@ -1,10 +1,8 @@
 <ion-header>
-    <ion-navbar color="primary">
-        <ion-title>{{name}}</ion-title>
-    </ion-navbar>
+    <navbar></navbar>
 </ion-header>
 
-<ion-content padding class="chat-view" id="chat-view">
+<ion-content padding class="chat-view background" id="chat-view">
     <div padding class="messages">
         <div class="message" *ngFor="let chat of chats | async" [ngClass]="{'me': uid === chat.from}">
             <span *ngIf="chat.message" style="color:white;">{{chat.message}}</span>

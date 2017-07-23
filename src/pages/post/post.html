@@ -1,13 +1,9 @@
 <ion-header>
-
-    <ion-navbar color="primary">
-        <ion-title>post</ion-title>
-    </ion-navbar>
-
+<ion-navbar></ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="background">
     <button ion-button (click)="sendPicture()"><ion-icon name="image" ></ion-icon> Send Image</button>
     <form [formGroup]="postForm">
         <ion-item>

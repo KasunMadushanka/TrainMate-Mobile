@@ -1,13 +1,14 @@
 <ion-header>
     <ion-navbar>
         <ion-title>{{stationName}}</ion-title>
+
         <ion-buttons end>
             <button ion-button (click)="showOnMap()">View On Map</button>
         </ion-buttons>
     </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="background">
     <img src="assets/images/stations/{{stationId}}.jpg">
     <div text-center>
         <h3>{{trainName}}</h3>
@@ -31,7 +32,7 @@
         <h4>Delay:</h4>
         {{delay}}
         <br>
-        
+
     </div>
 
 </ion-content>

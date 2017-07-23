@@ -1,8 +1,5 @@
 <ion-header>
-    <ion-navbar color="primary">
-        <ion-title>Users</ion-title>
-
-    </ion-navbar>
+    <ion-navbar></ion-navbar>
     <ion-toolbar no-border-top color="primary">
         <ion-segment [(ngModel)]="contacts">
             <ion-segment-button value="admins">
@@ -15,7 +12,7 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="background">
     <div [ngSwitch]="contacts">
 
         <ion-list *ngSwitchCase="'admins'">

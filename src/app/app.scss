@@ -15,21 +15,37 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 ion-content{
+
+}
+
+.background{
     background-image: url('img/background.png');
     background-size: cover;
     background-position: fixed;
-
 }
 
 .item{
     background-color: transparent;
 }
 
+ion-badge{
+    border-radius: 10px;
+}
+
 h1, h2, h3,h4,h5,h6{
-    color: #ffffff ;
+    color: #ffffff;
 }
 .item.active, .item.activated, .item-complex.active, .item-complex.activated {
     border-color: #1A53A7;
     background-color: #1A53A7;
     opacity:0.5;
+}
+
+.circle-pic{
+    width:150px;
+    height:150px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    margin: auto;
+    display: block;
 }

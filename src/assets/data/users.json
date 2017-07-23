@@ -7,7 +7,40 @@
         "mobile":"0712323563",
         "picture":"https://firebasestorage.googleapis.com/v0/b/trainmate07.appspot.com/o/users%2F1.jpg?alt=media&token=dcce3c1a-2809-468d-9d6d-e7e2c55dc7da",
         "points":350,
-        "rating":85
+        "rating":85,
+        "notifications":{
+            "1":{
+                "sender_id":"1",
+                "sender_name":"Kasun Madushanka",
+                "sender_picture":"https://firebasestorage.googleapis.com/v0/b/trainmate07.appspot.com/o/profiles%2Fusers%2Fdefault-user.png?alt=media&token=b38eea3a-de77-405b-90c6-0a07e92a4ef0"
+                ,"message":"eegegs"
+            },
+            "2":{
+                "sender_id":"2",
+                "sender_name":"Kasun Madushanka",
+                "sender_picture":"https://firebasestorage.googleapis.com/v0/b/trainmate07.appspot.com/o/profiles%2Fusers%2Fdefault-user.png?alt=media&token=b38eea3a-de77-405b-90c6-0a07e92a4ef0"
+                ,"message":"eegegs"
+            },
+            "3":{
+                "sender_id":"1",
+                "sender_name":"Kasun Madushanka",
+                "sender_picture":"https://firebasestorage.googleapis.com/v0/b/trainmate07.appspot.com/o/profiles%2Fusers%2Fdefault-user.png?alt=media&token=b38eea3a-de77-405b-90c6-0a07e92a4ef0"
+                ,"message":"eegegs"
+            },
+            "4":{
+                "sender_id":"1",
+                "sender_name":"Kasun Madushanka",
+                "sender_picture":"https://firebasestorage.googleapis.com/v0/b/trainmate07.appspot.com/o/profiles%2Fusers%2Fdefault-user.png?alt=media&token=b38eea3a-de77-405b-90c6-0a07e92a4ef0"
+                ,"message":"eegegs"
+            },
+            "5":{
+                "sender_id":"3",
+                "sender_name":"Kasun Madushanka",
+                "sender_picture":"https://firebasestorage.googleapis.com/v0/b/trainmate07.appspot.com/o/profiles%2Fusers%2Fdefault-user.png?alt=media&token=b38eea3a-de77-405b-90c6-0a07e92a4ef0"
+                ,"message":"eegegs"
+            }
+
+        }
 
     },
     "2":{

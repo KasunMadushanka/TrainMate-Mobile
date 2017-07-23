@@ -8,6 +8,7 @@ import { LeaderboardPage } from '../pages/leaderboard/leaderboard';
 import { ProfilePage } from '../pages/profile/profile';
 import { SettingsPage } from '../pages/settings/settings';
 import { Push, PushObject,PushOptions } from '@ionic-native/push';
+import { AngularFire, FirebaseListObservable} from 'angularfire2';
 
 @Component({
     templateUrl: 'app.html'
@@ -17,9 +18,9 @@ export class MyApp {
     rootPage = TabsPage;
     pages: Array<{title: string, component: any}>;
 
- i=0;
+    i=0;
 
-    constructor(platform: Platform,public push:Push,public alertCtrl:AlertController) {
+    constructor(platform: Platform,public push:Push,public alertCtrl:AlertController,public af:AngularFire) {
 
         this.pages = [
             { title: 'Home', component: HomePage },
@@ -57,14 +58,24 @@ export class MyApp {
 
         const pushObject: PushObject = this.push.init(options);
 
+        let badge_count;
+
         pushObject.on('notification').subscribe((notification: any) => {
             this.i++;
-            pushObject.setApplicationIconBadgeNumber(this.i);
+            badge_count=pushObject.getApplicationIconBadgeNumber();
+            pushObject.setApplicationIconBadgeNumber(badge_count);
+
 
         });
 
         pushObject.on('registration').subscribe((registration: any) => {
+
             console.log("device token ->", registration.registrationId);
+            this.af.database.list('/devices').push(
+                {
+                    id:registration.registrationId
+                }
+            );
         });
 
         pushObject.on('error').subscribe(error => alert('Error with Push plugin' + error));

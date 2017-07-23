@@ -1,17 +1,18 @@
 <ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-header>
+        <ion-toolbar color="primary">
+            <ion-title>My Account</ion-title>
+        </ion-toolbar>
+    </ion-header>
 
-  <ion-content>
-    <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
-    </ion-list>
-  </ion-content>
+    <ion-content>
+        <img padding class="circle-pic" src="assets/images/default-user.png">
+        <ion-list>
+            <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+                <span style="color:white;">{{p.title}}</span>
+            </button>
+        </ion-list>
+    </ion-content>
 
 </ion-menu>
 

@@ -201,11 +201,21 @@ export class HomePage {
 
         }
 
-        presentPopover(ev) {
+        showNotifications(ev) {
 
             let popover = this.popoverCtrl.create(PopoverPage, {
-                //contentEle: this.content.nativeElement,
-                //textEle: this.text.nativeElement
+                type:1
+            });
+
+            popover.present({
+                ev: ev
+            });
+        }
+
+        openSettings(ev) {
+
+            let popover = this.popoverCtrl.create(PopoverPage, {
+                type:1
             });
 
             popover.present({
