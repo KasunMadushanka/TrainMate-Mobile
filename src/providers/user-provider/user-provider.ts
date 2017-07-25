@@ -20,6 +20,10 @@ export class UserProvider {
         return this.local.get('device_token');
     }
 
+    getBadge() {
+        return this.local.get('badge');
+    }
+
     // Create User in Firebase
     createUser(userCredentails, uid) {
         let currentUserRef = this.af.database.object(`/users/${uid}`);
@@ -31,6 +35,7 @@ export class UserProvider {
             email:userCredentails.email,
             picture:"",
             device_token:"",
+            Notification_badge:"",
             status:0
         });
     }

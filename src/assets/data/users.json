@@ -13,31 +13,31 @@
                 "sender_id":"1",
                 "sender_name":"Kasun Madushanka",
                 "sender_picture":"https://firebasestorage.googleapis.com/v0/b/trainmate07.appspot.com/o/profiles%2Fusers%2Fdefault-user.png?alt=media&token=b38eea3a-de77-405b-90c6-0a07e92a4ef0"
-                ,"message":"eegegs"
+                ,"message":"Message1"
             },
             "2":{
                 "sender_id":"2",
                 "sender_name":"Kasun Madushanka",
                 "sender_picture":"https://firebasestorage.googleapis.com/v0/b/trainmate07.appspot.com/o/profiles%2Fusers%2Fdefault-user.png?alt=media&token=b38eea3a-de77-405b-90c6-0a07e92a4ef0"
-                ,"message":"eegegs"
+                ,"message":"Message2"
             },
             "3":{
                 "sender_id":"1",
                 "sender_name":"Kasun Madushanka",
                 "sender_picture":"https://firebasestorage.googleapis.com/v0/b/trainmate07.appspot.com/o/profiles%2Fusers%2Fdefault-user.png?alt=media&token=b38eea3a-de77-405b-90c6-0a07e92a4ef0"
-                ,"message":"eegegs"
+                ,"message":"Message3"
             },
             "4":{
                 "sender_id":"1",
                 "sender_name":"Kasun Madushanka",
                 "sender_picture":"https://firebasestorage.googleapis.com/v0/b/trainmate07.appspot.com/o/profiles%2Fusers%2Fdefault-user.png?alt=media&token=b38eea3a-de77-405b-90c6-0a07e92a4ef0"
-                ,"message":"eegegs"
+                ,"message":"Message4"
             },
             "5":{
                 "sender_id":"3",
                 "sender_name":"Kasun Madushanka",
                 "sender_picture":"https://firebasestorage.googleapis.com/v0/b/trainmate07.appspot.com/o/profiles%2Fusers%2Fdefault-user.png?alt=media&token=b38eea3a-de77-405b-90c6-0a07e92a4ef0"
-                ,"message":"eegegs"
+                ,"message":"Message5"
             }
 
         }

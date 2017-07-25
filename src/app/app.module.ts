@@ -122,6 +122,7 @@ const myFirebaseAuthConfig = {
         UsersPage,
         ChatsPage,
         AccountPage,
+        OptionsPage,
         SettingsPage,
         ChatViewPage,
         SettingsPage,

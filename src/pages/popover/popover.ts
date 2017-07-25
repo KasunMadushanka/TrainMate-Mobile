@@ -21,7 +21,7 @@ export class PopoverPage {
         let type=navParams.get('type');
         this.userProvider.getUid().then(uid=> {
             if(type==1){
-                this.notifications=af.database.list('/users/'+uid+'/notifications');
+                this.notifications=af.database.list('/users/1/notifications');
             }else{
                 this.notifications=af.database.list('/users/1/notifications');
             }

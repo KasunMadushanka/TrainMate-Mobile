@@ -1,18 +1,41 @@
-<!--
-  Generated template for the Settings page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>settings</ion-title>
-  </ion-navbar>
-
+    <navbar title="Settings" back="true"></navbar>
 </ion-header>
 
+<ion-content padding class="background">
+    <ion-list>
+        <ion-item-divider color="light" style="font-size:18px;"><h2><b>Visibility</b></h2></ion-item-divider>
+        <ion-item>
+            <ion-icon name='call' item-start style="color:white"></ion-icon>
+            <ion-toggle checked="false"></ion-toggle>
+            <ion-label>
+                <span style="color:white">Phone Number</span>
+            </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-icon name='mail' item-start style="color:white"></ion-icon>
+            <ion-toggle checked="false"></ion-toggle>
+            <ion-label>
+                <span style="color:white">Email</span>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-item-divider color="light" style="font-size:18px;"><h2><b>Notifications</b></h2></ion-item-divider>
+        <ion-item>
+            <ion-icon name='notifications' item-start style="color:white"></ion-icon>
+            <ion-toggle checked="false"></ion-toggle>
+            <ion-label>
+                <span style="color:white">Alerts</span>
+            </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-icon name='sound' item-start style="color:white"></ion-icon>
+            <ion-toggle checked="false"></ion-toggle>
+            <ion-label>
+                <span style="color:white">Sound</span>
+            </ion-label>
+        </ion-item>
 
-<ion-content padding>
-
+    </ion-list>
 </ion-content>

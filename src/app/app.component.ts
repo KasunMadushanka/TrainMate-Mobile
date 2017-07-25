@@ -21,6 +21,7 @@ export class MyApp {
     rootPage = TabsPage;
     pages: Array<{title: string, component: any}>;
     picture:any = "assets/images/default-user.png";
+    devices:any;
 
     i=0;
 
@@ -39,12 +40,15 @@ export class MyApp {
             StatusBar.styleDefault();
             Splashscreen.hide();
             this.pushSetup();
+            this.storage.clear();
         });
+
+        this.devices=firebase.database().ref('devices/');
 
     }
 
     openPage(page) {
-            console.log("scscscs")
+        console.log("scscscs")
         this.userProvider.getUid().then(uid => {
             console.log(uid)
             let f=firebase.database().ref('users/'+uid).child('image');
@@ -72,23 +76,23 @@ export class MyApp {
         let badge_count;
 
         pushObject.on('notification').subscribe((notification: any) => {
-            this.i++;
-            badge_count=pushObject.getApplicationIconBadgeNumber();
-            pushObject.setApplicationIconBadgeNumber(badge_count);
-
-
+            this.userProvider.getBadge().then(badge=>{
+                let new_badge=badge+1;
+                pushObject.setApplicationIconBadgeNumber(new_badge);
+                this.storage.set('badge',new_badge);
+                this.userProvider.getDeviceToken().then(device_token=>{
+                    this.devices.child(device_token).child("badge").set(new_badge);
+                });
+            });
         });
 
         pushObject.on('registration').subscribe((registration: any) => {
 
+            this.devices.child(registration.registrationId).child("badge").set(0);
+
             this.storage.set('device_token', registration.registrationId);
-            console.log("device token ->", registration.registrationId);
-            this.af.database.list('/devices').push(
-                {
-                    id:registration.registrationId,
-                    badge_count:0
-                }
-            );
+            this.storage.set('badge',0);
+
         });
 
         pushObject.on('error').subscribe(error => alert('Error with Push plugin' + error));

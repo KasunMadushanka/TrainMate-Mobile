@@ -27,5 +27,4 @@ export class OptionsPage {
         this.navCtrl.push(SettingsPage);
     }
 
-
 }

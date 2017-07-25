@@ -1,5 +1,5 @@
 <ion-header>
-    <navbar title="Trains"></navbar>
+    <navbar title="Trains" back="true"></navbar>
 </ion-header>
 
 <ion-content class="background">
@@ -11,7 +11,7 @@
     </ion-item>
         <ion-item *ngFor="let direct_train of direct_trains" (click)="getDetails(direct_train[0])">
             <ion-avatar item-left>
-              <img src="assets/images/train.png">
+              <img src="assets/images/train1.png">
             </ion-avatar>
             <h2>{{direct_train[3]}}</h2>
             <h4>arriving at: {{direct_train[1]}}&nbsp;&nbsp;/&nbsp;&nbsp;departing at: {{direct_train[2]}}</h4>

@@ -3,7 +3,7 @@ import { NavController, NavParams,PopoverController } from 'ionic-angular';
 import {OptionsPage} from '../../pages/options/options';
 import {PopoverPage} from '../../pages/popover/popover';
 import { SettingsPage } from '../settings/settings';
-import { NotificationProvider } from '../../providers/notification-provider';
+import { UserProvider } from '../../providers/user-provider/user-provider';
 
 @Component({
     selector: 'navbar',
@@ -14,9 +14,28 @@ export class NavbarComponent {
     text: string;
     @Input() title: string;
     @Input() toggle: boolean;
+    @Input() back: boolean;
 
-    constructor(public popoverCtrl:PopoverController,public notificationProvider:NotificationProvider) {
+    badge:number=0;
+    logged:boolean;
 
+    constructor(public popoverCtrl:PopoverController,public userProvider:UserProvider) {
+        this.userProvider.getUid().then(uid=>{
+            if(uid!=null){
+                this.logged=true;
+                console.log(uid)
+            }
+        });
+    }
+
+    getUid(){
+
+    }
+
+    setBadge(){
+        this.userProvider.getBadge().then(badge=>{
+
+        });
     }
 
     showPopup(ev,type){

@@ -1,4 +1,7 @@
-<ion-navbar color="primary">
+<ion-navbar hideBackButton color="primary">
+    <ion-buttons left *ngIf="back">
+    <button ion-button icon-only navPop><ion-icon name="arrow-back"></ion-icon></button>
+    </ion-buttons>
     <button *ngIf="toggle" ion-button menuToggle icon-only>
         <ion-icon name='menu'></ion-icon>
     </button>
@@ -6,10 +9,10 @@
     <ion-buttons end>
         <button ion-button icon-only (click)="showPopup($event,1)">
             <ion-icon name="notifications" style="position:relative;left:10px;z-index: -1"></ion-icon>
-            <ion-badge color="danger"style="border-radius: 20px;">5</ion-badge>
+            <ion-badge color="danger"style="border-radius: 20px;">{{badge}}</ion-badge>
         </button>
     </ion-buttons>
-    <ion-buttons end>
+    <ion-buttons end *ngIf="logged">
         <button ion-button icon-only (click)="showPopup($event,2)">
             <ion-icon name="chatbubbles" style="position:relative;left:8px;z-index: -1"></ion-icon>
             <ion-badge color="danger"style="border-radius: 20px;">2</ion-badge>
