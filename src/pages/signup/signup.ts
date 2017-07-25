@@ -48,9 +48,8 @@ export class SignupPage {
             this.auth.createAccount(credentials)
             .then((data) => {
                 if(this.pictureSelected){
-                    this.savePicture();
+                    this.savePicture(data.uid);
                 }
-                this.storage.set('uid', data.uid);
                 this.userProvider.createUser(credentials, data.uid);
                 this.navCtrl.push(LoginPage)
             }, (error) => {
@@ -62,7 +61,7 @@ export class SignupPage {
         selectOption(){
 
             let alert = this.alertCtrl.create();
-            //alert.setTitle('Select');
+            alert.setTitle('Select');
 
             alert.addInput({
                 type: 'radio',
@@ -88,14 +87,14 @@ export class SignupPage {
             alert.present();
         }
 
-        savePicture(){
+        savePicture(uid){
             if (this.picture != null) {
                 return this.userProvider.getUid().then(uid => {
                     firebase.storage().ref('profiles/users/')
                     .child(uid+'.jpg')
                     .putString(this.picture, 'base64', {contentType: 'image/jpg'})
                     .then((savedPicture) => {
-                        firebase.database().ref('users/${uid}/').child('image_url').set(savedPicture.downloadURL);
+                        firebase.database().ref('users/'+uid).child('picture').set(savedPicture.downloadURL);
                     });
                 });
             }

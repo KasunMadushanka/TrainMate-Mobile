@@ -1,40 +1,43 @@
 <ion-header>
-<ion-navbar></ion-navbar>
+    <navbar title="Community"></navbar>
 </ion-header>
 
 <ion-content class="background">
+    <ion-list>
+        <ion-item-divider color="light" style="font-size:18px;"><h2><b>Forums</b></h2></ion-item-divider>
+        <ion-item (click)="gotoForum('trains')">
+            <ion-avatar item-left>
+                <img src="assets/images/forum/categories/1.jpg" />
+            </ion-avatar>
+            <h2>About Trains</h2>
+        </ion-item>
+        <ion-item (click)="gotoForum('gps')">
+            <ion-avatar item-left>
+                <img src="assets/images/forum/categories/2.png" />
+            </ion-avatar>
+            <h2>GPS Tracking</h2>
+        </ion-item>
+        <ion-item (click)="gotoForum('contribution')">
+            <ion-avatar item-left>
+                <img src="assets/images/forum/categories/3.png" />
+            </ion-avatar>
+            <h2>Contribution</h2>
+        </ion-item>
+        <ion-item (click)="gotoForum('settings')">
+            <ion-avatar item-left>
+                <img src="assets/images/forum/categories/5.png" />
+            </ion-avatar>
+            <h2>Application Settings</h2>
+        </ion-item>
+    </ion-list>
 
     <ion-list>
-        <ion-item (click)="gotoForum(trains)">
-                <ion-avatar item-left>
-                    <img src="assets/images/forum/categories/1.jpg" />
-                </ion-avatar>
-                <h2>About Trains</h2>
-        </ion-item>
-        <ion-item (click)="gotoForum(gps)">
-                <ion-avatar item-left>
-                    <img src="assets/images/forum/categories/2.png" />
-                </ion-avatar>
-                <h2>GPS Tracking</h2>
-        </ion-item>
-        <ion-item (click)="gotoForum(contribution)">
-                <ion-avatar item-left>
-                    <img src="assets/images/forum/categories/3.png" />
-                </ion-avatar>
-                <h2>Contribution</h2>
-        </ion-item>
-        <ion-item (click)="gotoForum(settings)">
-                <ion-avatar item-left>
-                    <img src="assets/images/forum/categories/5.png" />
-                </ion-avatar>
-                <h2>Application Settings</h2>
-        </ion-item>
+        <ion-item-divider color="light" style="font-size:18px;"><h2><b>Community</b></h2></ion-item-divider>
         <ion-item (click)="loadUsers()">
-                <ion-avatar item-left>
-                    <img src="assets/images/forum/categories/4.png" />
-                </ion-avatar>
-                <h2>Community</h2>
+            <ion-avatar item-left>
+                <img src="assets/images/forum/categories/4.png" />
+            </ion-avatar>
+            <h2>Contacts</h2>
         </ion-item>
-
     </ion-list>
 </ion-content>

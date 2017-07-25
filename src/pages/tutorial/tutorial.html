@@ -1,21 +1,19 @@
 <ion-header>
-  <ion-navbar color="primary">
-    <ion-title>Tutorial</ion-title>
-  </ion-navbar>
+  <navbar title="Quick Guide"></navbar>
 </ion-header>
 
 <ion-content class="tutorial-page background">
 
   <ion-slides pager>
     <ion-slide *ngFor="let slide of slides">
-      <ion-toolbar>
+      <ion-toolbar style="background-color: transparent;">
         <ion-buttons end>
-          <button ion-button color="primary" (click)="gotoContribution()">Skip</button>
+          <button ion-button (click)="gotoContribution()">Skip</button>
         </ion-buttons>
       </ion-toolbar>
       <img [src]="slide.image" class="slide-image"/>
       <h2 class="slide-title" [innerHTML]="slide.title"></h2>
-      <p [innerHTML]="slide.description"></p>
+      <span [innerHTML]="slide.description" style="color:white"></span>
     </ion-slide>
     <ion-slide>
       <ion-toolbar>

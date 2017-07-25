@@ -12,16 +12,16 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
 export class ForumPage {
 
     posts:  FirebaseListObservable<any>;
+    topic:string;
 
     constructor(public navCtrl: NavController,public af:AngularFire,public navParams:NavParams) {
-        let topic=navParams.get('topic');
-        this.posts=this.af.database.list('/forum/'+topic);
-
+        this.topic=navParams.get('topic');
+        this.posts=this.af.database.list('/forum/'+this.topic);
     }
 
     addNewPost(){
 
-        this.navCtrl.push(LoginPage,{next:"post"});
+        this.navCtrl.push(PostPage,{topic:this.topic});
     }
 
     gotoComment(){

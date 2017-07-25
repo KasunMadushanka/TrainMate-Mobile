@@ -23,6 +23,7 @@ import { DetailsPage } from '../pages/details/details';
 import { ForumPage } from '../pages/forum/forum';
 import { ForumTopicsPage } from '../pages/forum-topics/forum-topics';
 import { PostPage } from '../pages/post/post';
+import { OptionsPage } from '../pages/options/options';
 import { SettingsPage } from '../pages/settings/settings';
 import { UsersPage } from '../pages/users/users';
 import { ChatsPage } from '../pages/chats/chats';
@@ -84,6 +85,7 @@ const myFirebaseAuthConfig = {
         UsersPage,
         ChatsPage,
         AccountPage,
+        OptionsPage,
         SettingsPage,
         ChatViewPage,
         MapPage,

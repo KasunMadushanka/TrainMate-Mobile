@@ -14,6 +14,7 @@ export class ForumTopicsPage {
     }
 
     gotoForum(topic) {
+        console.log(topic+"adad")
         this.navCtrl.push(ForumPage,{topic:topic});
     }
 

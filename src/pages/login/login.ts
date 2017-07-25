@@ -11,6 +11,7 @@ import { validateEmail } from '../../validators/email';
 import { AuthProvider } from '../../providers/auth-provider/auth-provider';
 import { UserProvider } from '../../providers/user-provider/user-provider';
 import { UtilProvider } from '../../providers/utils';
+import firebase from 'firebase';
 
 @Component({
     templateUrl: 'login.html'
@@ -44,15 +45,14 @@ export class LoginPage {
             this.auth.signin(this.loginForm.value)
             .then((data) => {
                 this.storage.set('uid', data.uid);
-                if(this.next==null){
-                    if(this.status==1){
-                        this.nav.push(ContributionPage);
-                    }else{
+                this.proceed(data.uid,status=>{
+                    if(status==0){
                         this.nav.push(TutorialPage);
+                    }else{
+                        this.nav.push(ContributionPage);
                     }
-                }else if(this.next=="post"){
-                    this.nav.push(PostPage);
-                }
+                });
+
             }, (error) => {
                 let toast = this.toastCtrl.create({
                     message: 'An error occured. Please try again!',
@@ -61,6 +61,24 @@ export class LoginPage {
                 toast.present();
             });
         };
+
+        proceed(uid,callback){
+
+            let userRef = firebase.database().ref('/users/'+uid);
+            userRef.once('value', function(snapshot) {
+                let user=snapshot.val();
+                callback(user.status)
+                userRef.update({
+                    status:1
+                })
+            });
+
+            this.userProvider.getDeviceToken().then((device_token)=>{
+                userRef.update({
+                    device_token:device_token
+                })
+            });
+        }
 
         gotoSignUp(){
             this.navCtrl.push(SignupPage)

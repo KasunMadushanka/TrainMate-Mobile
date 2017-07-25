@@ -1,17 +1,18 @@
 <ion-header>
-<ion-navbar></ion-navbar>
+    <navbar title="New Post"></navbar>
 </ion-header>
 
-
 <ion-content padding class="background">
-    <button ion-button (click)="sendPicture()"><ion-icon name="image" ></ion-icon> Send Image</button>
+    <img padding style=" margin: auto;display: block;width:200px;height:200px;" (click)="selectOptions()" src="{{picture}}">
     <form [formGroup]="postForm">
         <ion-item>
             <ion-input formControlName="subject" placeholder="Subject"></ion-input>
         </ion-item>
         <ion-item>
-            <ion-textarea formControlName="content" placeholder="Content" rows="5"></ion-textarea>
+            <ion-textarea formControlName="content" placeholder="Content" rows="3"></ion-textarea>
         </ion-item>
-        <button ion-button primary block round (click)="addNewPost()">Post</button>
+        <div padding>
+            <button ion-button primary block round (click)="addNewPost()">Add Post</button>
+        </div>
     </form>
 </ion-content>

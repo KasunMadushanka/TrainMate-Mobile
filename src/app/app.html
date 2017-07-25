@@ -6,7 +6,7 @@
     </ion-header>
 
     <ion-content>
-        <img padding class="circle-pic" src="assets/images/default-user.png">
+        <img padding class="circle-pic" src="{{picture}}">
         <ion-list>
             <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
                 <span style="color:white;">{{p.title}}</span>

@@ -16,6 +16,10 @@ export class UserProvider {
         return this.local.get('uid');
     }
 
+    getDeviceToken() {
+        return this.local.get('device_token');
+    }
+
     // Create User in Firebase
     createUser(userCredentails, uid) {
         let currentUserRef = this.af.database.object(`/users/${uid}`);
@@ -24,7 +28,10 @@ export class UserProvider {
             first_name:userCredentails.first_name,
             last_name:userCredentails.last_name,
             mobile:userCredentails.mobile,
-            email:userCredentails.email
+            email:userCredentails.email,
+            picture:"",
+            device_token:"",
+            status:0
         });
     }
 

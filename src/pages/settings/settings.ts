@@ -1,6 +1,5 @@
-import { Component,ViewChild,ElementRef} from '@angular/core';
-import { NavController, NavParams,PopoverController } from 'ionic-angular';
-import {PopoverPage} from '../popover/popover';
+import { Component } from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
 
 /*
   Generated class for the Settings page.
@@ -14,26 +13,10 @@ import {PopoverPage} from '../popover/popover';
 })
 export class SettingsPage {
 
-    @ViewChild('popoverContent', { read: ElementRef }) content: ElementRef;
-    @ViewChild('popoverText', { read: ElementRef }) text: ElementRef;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams,public popoverCtrl:PopoverController) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingsPage');
-  }
-
-  presentPopover(ev) {
-
-      let popover = this.popoverCtrl.create(PopoverPage, {
-          contentEle: this.content.nativeElement,
-          textEle: this.text.nativeElement,
-          type:1
-      });
-
-      popover.present({
-          ev: ev
-      });
   }
 
 }

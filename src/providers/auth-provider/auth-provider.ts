@@ -14,7 +14,9 @@ export class AuthProvider {
     return this.af.auth.createUser(credentails);
 
   };
-  
+
+
+
   logout() {
      this.af.auth.logout();
   }

@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-navbar></ion-navbar>
+    <navbar title="Trains"></navbar>
 </ion-header>
 
 <ion-content class="background">
@@ -7,7 +7,7 @@
 
         <ion-item-divider *ngIf="direct_trains.length>0" color="light" style="font-size:18px;"><h2><b>Direct Trains</b></h2></ion-item-divider>
             <ion-item *ngIf="direct_trains.length==0">
-        <p>No Trains Available</p>
+        <h4>No Trains Available</h4>
     </ion-item>
         <ion-item *ngFor="let direct_train of direct_trains" (click)="getDetails(direct_train[0])">
             <ion-avatar item-left>
