@@ -12,9 +12,8 @@ export class NotificationsPage {
     notifications:FirebaseListObservable<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public af:AngularFire,public userProvider: UserProvider) {
-      this.userProvider.getUid()
-      .then(uid => {
-           this.notifications=af.database.list('users/'+uid+'/notifications');
+      this.userProvider.getDeviceToken().then(device_token => {
+           this.notifications=af.database.list('devices/'+device_token+'/notifications');
       });
   }
 

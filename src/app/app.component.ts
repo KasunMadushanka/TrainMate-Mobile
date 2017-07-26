@@ -5,7 +5,7 @@ import { Storage } from '@ionic/storage';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
-import { LeaderboardPage } from '../pages/leaderboard/leaderboard';
+import { NotificationsPage } from '../pages/notifications/notifications';
 import { ProfilePage } from '../pages/profile/profile';
 import { SettingsPage } from '../pages/settings/settings';
 import { Push, PushObject,PushOptions } from '@ionic-native/push';
@@ -29,7 +29,7 @@ export class MyApp {
 
         this.pages = [
             { title: 'Home', component: HomePage },
-            { title: 'Notifications', component: LeaderboardPage },
+            { title: 'Notifications', component: NotificationsPage },
             { title: 'Profile', component:ProfilePage },
             { title: 'Settings', component: SettingsPage }
         ];
@@ -76,6 +76,7 @@ export class MyApp {
         pushObject.on('notification').subscribe((notification: any) => {
             this.userProvider.getBadge().then(badge=>{
                 let new_badge=badge+1;
+
                 pushObject.setApplicationIconBadgeNumber(new_badge);
                 this.storage.set('badge',new_badge);
                 this.userProvider.getDeviceToken().then(device_token=>{

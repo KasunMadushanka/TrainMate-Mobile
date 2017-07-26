@@ -1,6 +1,12 @@
 page-tracking {
-
-}
-span{
-    color:white;
+    ion-spinner {
+        &.spinner-circles circle,
+        &.spinner-bubbles circle,
+        &.spinner-crescent circle {
+            stroke: blue;
+            fill:blue;
+            align-items: center;
+            margin:auto
+        }
+    }
 }

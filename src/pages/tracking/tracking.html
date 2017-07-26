@@ -7,7 +7,7 @@
     <br>
     <ion-list>
         <ion-item>
-            <ion-label style="color:white">Select Train</ion-label>
+            <ion-label>Select Train</ion-label>
             <ion-select [(ngModel)]="train_select" (ionChange)="loadStations(train_select)">
                 <ion-option *ngFor="let train of trains | async" value="{{train.$key}}">{{train.name}}</ion-option>
             </ion-select>
@@ -17,7 +17,9 @@
     <button ion-button full primary block round (click)="stop()"  [disabled]="stopDisabled">Stop Tracking</button>
     <div>
     </div>
-    <div>
-        <ion-spinner name="bubbles"></ion-spinner>
+    <div style="margin:auto;">
+        <ion-row center>
+            <ion-spinner style="width:150px;height:150px;margin:auto;" name="dots"></ion-spinner>
+        </ion-row>
     </div>
 </ion-content>
