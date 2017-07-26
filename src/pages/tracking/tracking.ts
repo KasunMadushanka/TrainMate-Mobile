@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController,AlertController } from 'ionic-angular';
+import { NavController,AlertController,ToastController } from 'ionic-angular';
 import { LocationTracker } from '../../providers/location-tracker';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/take';
@@ -29,7 +29,7 @@ export class TrackingPage {
     sessions:any;
     sessionId:any;
 
-    constructor(public navCtrl: NavController, public locationTracker: LocationTracker,public util:UtilProvider,public http:Http,private alertCtrl: AlertController,private backgroundMode: BackgroundMode,public af: AngularFire,public userProvider:UserProvider) {
+    constructor(public navCtrl: NavController, public locationTracker: LocationTracker,public util:UtilProvider,public http:Http,private alertCtrl: AlertController,private backgroundMode: BackgroundMode,public af: AngularFire,public userProvider:UserProvider,public toastCtrl:ToastController) {
 
         this.userProvider.getUid()
         .then(uid=> {
@@ -151,8 +151,11 @@ export class TrackingPage {
                     ).toFixed(2);
 
                     if(Number(distance)<0.2){
-                        let alert = this.util.doAlert("Confirmation","You are at "+placeLocation.name+" station","Proceed");
-                        alert.present();
+                        let toast = this.toastCtrl.create({
+                            message: 'You are at'+placeLocation.name,
+                            duration: 3000
+                        });
+                        toast.present();
                         this.start_station=placeLocation;
                         found=true;
                         callback(placeLocation);

@@ -1,0 +1,30 @@
+<ion-header>
+    <navbar title="Add Comment" back="true"></navbar>
+</ion-header>
+
+<ion-content class="background">
+
+    <ion-list>
+        <ion-item *ngFor="let comment of comments|async">
+            <ion-avatar item-left>
+                <img src="{{comment.user.picture}}">
+            </ion-avatar>
+            <span style="color:white">{{comment.content}}</span>
+        </ion-item>
+    </ion-list>
+
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-row>
+            <ion-col col-11>
+                <ion-input type="text"  placeholder="Enter Message" [(ngModel)]="content"></ion-input>
+            </ion-col>
+            <ion-col col-1>
+                <a (click)="addComment()"><ion-icon name="send"></ion-icon></a>
+            </ion-col>
+        </ion-row>
+
+    </ion-toolbar>
+</ion-footer>

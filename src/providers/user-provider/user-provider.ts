@@ -44,7 +44,7 @@ export class UserProvider {
     getUser() {
         // Getting UID of Logged In User
         return this.getUid().then(uid => {
-            return this.af.database.object('/users/${uid}', { preserveSnapshot: true });
+            return this.af.database.object('/users/'+uid, { preserveSnapshot: true });
         });
     }
 
@@ -69,7 +69,7 @@ export class UserProvider {
             destinationType : this.camera.DestinationType.DATA_URL,
             sourceType : type,
             cameraDirection:this.camera.Direction.FRONT,
-            allowEdit : true,
+            allowEdit : false,
             encodingType: this.camera.EncodingType.JPEG,
             targetWidth: 500,
             targetHeight: 500,

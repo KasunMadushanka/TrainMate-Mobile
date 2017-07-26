@@ -48,11 +48,9 @@ export class MyApp {
     }
 
     openPage(page) {
-        console.log("scscscs")
         this.userProvider.getUid().then(uid => {
             console.log(uid)
             let f=firebase.database().ref('users/'+uid).child('image');
-            console.log(f)
         });
 
         this.nav.setRoot(page.component);

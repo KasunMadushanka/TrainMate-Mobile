@@ -11,6 +11,7 @@ import { validateEmail } from '../../validators/email';
 import { AuthProvider } from '../../providers/auth-provider/auth-provider';
 import { UserProvider } from '../../providers/user-provider/user-provider';
 import { UtilProvider } from '../../providers/utils';
+import firebase from 'firebase';
 
 @Component({
     templateUrl: 'signup.html'
@@ -47,6 +48,7 @@ export class SignupPage {
             let credentials = this.signupForm.value;
             this.auth.createAccount(credentials)
             .then((data) => {
+                console.log(data.uid)
                 if(this.pictureSelected){
                     this.savePicture(data.uid);
                 }
@@ -88,16 +90,14 @@ export class SignupPage {
         }
 
         savePicture(uid){
-            if (this.picture != null) {
-                return this.userProvider.getUid().then(uid => {
-                    firebase.storage().ref('profiles/users/')
-                    .child(uid+'.jpg')
-                    .putString(this.picture, 'base64', {contentType: 'image/jpg'})
-                    .then((savedPicture) => {
-                        firebase.database().ref('users/'+uid).child('picture').set(savedPicture.downloadURL);
-                    });
-                });
-            }
+
+            firebase.storage().ref('profiles/users/')
+            .child(uid+'.jpg')
+            .putString(this.pictureData, 'base64', {contentType: 'image/jpg'})
+            .then((savedPicture) => {
+                firebase.database().ref('users/'+uid).child('picture').set(savedPicture.downloadURL);
+            });
+
         }
 
         setPicture(option){

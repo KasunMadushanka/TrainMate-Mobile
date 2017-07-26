@@ -1,29 +1,26 @@
 <ion-header>
-<navbar title="Login"></navbar>
+    <navbar title="Sign in"></navbar>
 </ion-header>
 
 <ion-content class="background">
-
-    <form [formGroup]="loginForm" padding>
-        <ion-list>
-
+    <ion-list inset>
+        <form [formGroup]="loginForm" padding>
             <ion-item>
                 <ion-label floating>Email</ion-label>
                 <ion-input type="text" formControlName="email"></ion-input>
             </ion-item>
             <ion-item>
-                <ion-label floating>Pass</ion-label>
+                <ion-label floating>Password</ion-label>
                 <ion-input type="password" formControlName="password"></ion-input>
             </ion-item>
-        </ion-list>
+            <br>
+            <div padding>
+                <button ion-button primary block round (click)="signin()" [disabled]="!loginForm.valid">Sign In</button>
 
-        <div padding>
-            <button ion-button primary block round (click)="signin()" [disabled]="!loginForm.valid">Sign In</button>
-        </div>
-        <div padding>
-            <button ion-button full clear favorite (click)="gotoSignUp()">
-                <ion-icon name="person"></ion-icon>&nbsp;
-                Create an Account</button>
-        </div>
-    </form>
+                <button ion-button full clear favorite style="color:white" (click)="gotoSignUp()">
+                    <ion-icon name="person" style="color:white"></ion-icon>&nbsp;
+                    Create Account</button>
+                </div>
+            </form>
+        </ion-list>
     </ion-content>

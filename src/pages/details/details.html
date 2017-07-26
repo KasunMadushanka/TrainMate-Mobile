@@ -10,24 +10,24 @@
     <div text-center>
         <h3>{{trainName}}</h3>
         <div *ngIf="current_station==''">
-            Running from {{prev_station}} to {{next_station}}
+            <span>Running from {{prev_station}} to {{next_station}}</span>
             <br>
-            Average Speed: {{avg_speed}}
+            <span>Average Speed: {{avg_speed}}</span>
             <br>
-            Current Speed: {{current_speed}}
+            <span>Current Speed: {{current_speed}}</span>
         </div>
         <div *ngIf="current_station!=''">
-            Stopped at {{current_station}}
+            <span>Stopped at {{current_station}}</span>
         </div>
         <br>
         <h4>Expected Arriving Time:</h4>
-        {{static_ar_time}}
+        <span>{{static_ar_time}}</span>
         <br>
         <h4>Updated Expected Time:</h4>
-        {{dynamic_ar_time}}
+        <span>{{dynamic_ar_time}}</span>
         <br>
         <h4>Delay:</h4>
-        {{delay}}
+        <span>{{delay}}</span>
         <br>
 
     </div>

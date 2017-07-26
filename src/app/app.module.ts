@@ -22,6 +22,7 @@ import { TimeTablePage } from '../pages/time-table/time-table';
 import { DetailsPage } from '../pages/details/details';
 import { ForumPage } from '../pages/forum/forum';
 import { ForumTopicsPage } from '../pages/forum-topics/forum-topics';
+import { CommentPage } from '../pages/comment/comment';
 import { PostPage } from '../pages/post/post';
 import { OptionsPage } from '../pages/options/options';
 import { SettingsPage } from '../pages/settings/settings';
@@ -81,6 +82,7 @@ const myFirebaseAuthConfig = {
         DetailsPage,
         ForumPage,
         ForumTopicsPage,
+        CommentPage,
         PostPage,
         UsersPage,
         ChatsPage,
@@ -118,6 +120,7 @@ const myFirebaseAuthConfig = {
         DetailsPage,
         ForumPage,
         ForumTopicsPage,
+        CommentPage,
         PostPage,
         UsersPage,
         ChatsPage,

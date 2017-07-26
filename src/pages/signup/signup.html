@@ -1,11 +1,11 @@
 <ion-header>
-    <navbar title="Sign Up" back="true"></navbar>
+    <navbar title="Sign up" back="true"></navbar>
 </ion-header>
 
 <ion-content padding class="background">
-    <form [formGroup]="signupForm" padding>
-        <ion-list>
-                <img padding class="circle-pic" style=" margin: auto;display: block;" (click)="selectOption()" src="{{picture}}">
+    <ion-list inset>
+        <form [formGroup]="signupForm" padding>
+            <img padding class="circle-pic" style=" margin: auto;display: block;" (click)="selectOption()" src="{{picture}}">
             <ion-item>
                 <ion-label floating>First Name</ion-label>
                 <ion-input type="text" formControlName="first_name"></ion-input>
@@ -26,11 +26,10 @@
                 <ion-label floating>Password</ion-label>
                 <ion-input type="password" formControlName="password"></ion-input>
             </ion-item>
-        </ion-list>
-
-        <div padding>
-            <button ion-button primary block round (click)="createAccount()" [disabled]="!signupForm.valid">Sign Up</button>
-        </div>
-
-    </form>
+            <br>
+            <div padding>
+                <button ion-button primary block round (click)="createAccount()" [disabled]="!signupForm.valid">Sign Up</button>
+            </div>
+        </form>
+    </ion-list>
 </ion-content>

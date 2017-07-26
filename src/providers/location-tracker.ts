@@ -4,7 +4,7 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/take';
 import * as io from "socket.io-client";
 import { BackgroundMode } from '@ionic-native/background-mode';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController,ToastController } from 'ionic-angular';
 import { Badge } from '@ionic-native/badge';
 import {AngularFire, FirebaseListObservable,FirebaseObjectObservable} from 'angularfire2';
 import { UserProvider } from './user-provider/user-provider';
@@ -25,7 +25,7 @@ export class LocationTracker {
     trains:any;
     stations:any;
 
-    constructor(public zone: NgZone, private alertCtrl: AlertController,public http:Http,public util:UtilProvider, private backgroundMode: BackgroundMode,private badge: Badge,public af: AngularFire,public up: UserProvider) {
+    constructor(public zone: NgZone, private alertCtrl: AlertController,public http:Http,public util:UtilProvider, private backgroundMode: BackgroundMode,private badge: Badge,public af: AngularFire,public up: UserProvider,public toastCtrl:ToastController) {
         this.k=0;
         this.trains=af.database.list('/trains').take(1);
         this.stations=af.database.list('/stations').take(1);
@@ -288,8 +288,11 @@ export class LocationTracker {
                 let minute_diff=this.time.getMinutes()-stat[1];
                 let delay=Math.abs(hour_diff*60+minute_diff);
 
-                let alert = this.util.doAlert("Confirmation","You departed from "+current_station.name+" station","Proceed");
-                alert.present();
+                let toast = this.toastCtrl.create({
+                    message: 'You departed from '+current_station.name,
+                    duration: 3000
+                });
+                toast.present();
 
                 for(let n=j;n<stations.length;n++){
 
@@ -322,8 +325,11 @@ export class LocationTracker {
                 let minute_diff=this.time.getMinutes()-stat[1];
                 let delay=Math.abs(hour_diff*60+minute_diff);
 
-                let alert = this.util.doAlert("Confirmation","You arrived at "+current_station.name+" station","Proceed");
-                alert.present();
+                let toast = this.toastCtrl.create({
+                    message: 'You arrived at '+current_station.name,
+                    duration: 3000
+                });
+                toast.present();
 
                 for(let n=j;n<stations.length;n++){
 

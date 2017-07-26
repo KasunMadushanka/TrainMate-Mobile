@@ -3,6 +3,7 @@ import { NavController,NavParams } from 'ionic-angular';
 import { ChatViewPage } from '../chat-view/chat-view'
 import { LoginPage } from '../login/login';
 import { PostPage } from '../post/post';
+import { CommentPage } from '../comment/comment';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 
 @Component({
@@ -24,9 +25,9 @@ export class ForumPage {
         this.navCtrl.push(PostPage,{topic:this.topic});
     }
 
-    gotoComment(){
+    gotoComment(postId){
 
-        this.navCtrl.push(ChatViewPage);
+        this.navCtrl.push(CommentPage,{topic:this.topic,postId:postId});
 
     }
 }

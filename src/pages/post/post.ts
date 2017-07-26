@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams,AlertController } from 'ionic-angular';
+import { NavController, NavParams,AlertController,ToastController } from 'ionic-angular';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { validateEmail } from '../../validators/email';
 import { UserProvider } from '../../providers/user-provider/user-provider';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import { UtilProvider } from '../../providers/utils';
+import firebase from 'firebase';
 
 @Component({
     selector: 'page-post',
@@ -14,11 +15,12 @@ export class PostPage {
 
     postForm:any;
     topic:string;
+    postId:string;
     picture:any = "assets/images/add-image.png";
     pictureData:any;
-    pictureSelected:boolean;
+    pictureSelected=false;
 
-    constructor(public navCtrl: NavController, public navParams: NavParams,public userProvider:UserProvider,public af:AngularFire,public alertCtrl:AlertController,public util: UtilProvider) {
+    constructor(public navCtrl: NavController, public navParams: NavParams,public userProvider:UserProvider,public af:AngularFire,public alertCtrl:AlertController,public util: UtilProvider,public toastCtrl:ToastController) {
         this.topic=navParams.get('topic');
     }
 
@@ -30,22 +32,43 @@ export class PostPage {
     }
 
     addNewPost(){
+       this.saveData(postId=>{
+           this.savePicture(postId);
+           let toast = this.toastCtrl.create({
+               message: 'Post Added Successfully!',
+               duration: 3000
+           });
+           toast.present();
+       });
+    }
 
-        this.userProvider.getUser()
-        .then(user=> {
+    saveData(callback){
+
+        let date=new Date();
+        let posted_date=+date.getMonth()+"/"+date.getDate()+"/"+date.getFullYear();
+        let posted_time=date.getHours()+":"+date.getMinutes();
+
+        if(date.getMinutes()<10){
+                posted_time=date.getHours()+":0"+date.getMinutes();
+        }
+
+        this.userProvider.getUser().then(user=> {
             user.subscribe(snapshot => {
-                let posts=this.af.database.list('/forum'+this.topic);
-                posts.push({
+                let posts=this.af.database.list('/forum/'+this.topic);
+                let userData=snapshot.val();
+                callback(posts.push({
                     user: {
-                        avatar: "assets/images/profiles/1.jpg",
-                        name: snapshot.val().name
+                        uid:snapshot.key,
+                        picture: userData.picture,
+                        name: userData.first_name+" "+userData.last_name
                     },
-                    date: Date(),
+                    date: posted_date,
+                    time:posted_time,
                     image:"" ,
-                    subject:this.postForm.subject,
-                    content: this.postForm.content
+                    subject:this.postForm.value.subject,
+                    content: this.postForm.value.content
 
-                });
+                }).key);
             });
         });
     }
@@ -78,14 +101,15 @@ export class PostPage {
         alert.present();
     }
 
-    savePicture(){
-        if (this.picture != null) {
+    savePicture(postId){
+
+        if (this.pictureSelected) {
             return this.userProvider.getUid().then(uid => {
-                firebase.storage().ref('forum/'+this.topic)
-                .child(1+'.jpg')
-                .putString(this.picture, 'base64', {contentType: 'image/jpg'})
+                firebase.storage().ref('/forum/'+this.topic+'/')
+                .child(postId+'.jpg')
+                .putString(this.pictureData, 'base64', {contentType: 'image/jpg'})
                 .then((savedPicture) => {
-                    firebase.database().ref('forum/'+this.topic+'/1').child('image').set(savedPicture.downloadURL);
+                    firebase.database().ref('forum/'+this.topic+'/'+postId).child('image').set(savedPicture.downloadURL);
                 });
             });
         }
@@ -99,5 +123,5 @@ export class PostPage {
 
         });
     }
-x
+
 }

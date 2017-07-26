@@ -69,7 +69,7 @@ export class ChatViewPage {
         savePicture(picture){
             if (picture != null) {
                 firebase.storage().ref('chats')
-                .child(firebase.database.ServerValue.TIMESTAMP+'.jpg')
+                .child(3+'.jpg')
                 .putString(picture, 'base64', {contentType: 'image/jpg'})
                 .then((savedPicture) => {
                     this.sendPicture(savedPicture.downloadURL);

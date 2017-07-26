@@ -7,7 +7,7 @@
     <br>
     <ion-list>
         <ion-item>
-            <ion-label>Select Train</ion-label>
+            <ion-label style="color:white">Select Train</ion-label>
             <ion-select [(ngModel)]="train_select" (ionChange)="loadStations(train_select)">
                 <ion-option *ngFor="let train of trains | async" value="{{train.$key}}">{{train.name}}</ion-option>
             </ion-select>
@@ -18,6 +18,6 @@
     <div>
     </div>
     <div>
-        <img *ngIf="imgDisplayed" src="assets/images/webview.gif">
+        <ion-spinner name="bubbles"></ion-spinner>
     </div>
 </ion-content>

@@ -3,14 +3,17 @@
 </ion-header>
 
 <ion-content padding class="background">
-    <img padding style=" margin: auto;display: block;width:200px;height:200px;" (click)="selectOptions()" src="{{picture}}">
+    <img padding style=" margin: auto;display: block;width:350px;height:200px;" (click)="selectOptions()" src="{{picture}}">
     <form [formGroup]="postForm">
         <ion-item>
-            <ion-input formControlName="subject" placeholder="Subject"></ion-input>
+            <ion-label floating>Subject</ion-label>
+            <ion-input formControlName="subject"></ion-input>
         </ion-item>
         <ion-item>
-            <ion-textarea formControlName="content" placeholder="Content" rows="3"></ion-textarea>
+            <ion-label floating>Content</ion-label>
+            <ion-textarea formControlName="content"rows="3"></ion-textarea>
         </ion-item>
+        <br>
         <div padding>
             <button ion-button primary block round (click)="addNewPost()">Add Post</button>
         </div>
