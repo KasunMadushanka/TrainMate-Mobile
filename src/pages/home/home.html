@@ -8,7 +8,7 @@
     <ion-list>
         <ion-item>
             <ion-label style="color:white">Start</ion-label>
-            <ion-select [(ngModel)]="start">
+            <ion-select [(ngModel)]="start" style="color:white;">
                 <ion-option value="001">Maradana</ion-option>
                 <ion-option value="002">Colombo Fort</ion-option>
                 <ion-option value="003">Secretariat Halt</ion-option>
@@ -53,7 +53,7 @@
     <ion-list>
         <ion-item>
             <ion-label style="color:white">Destination</ion-label>
-            <ion-select [(ngModel)]="end">
+            <ion-select [(ngModel)]="end" style="color:white;">
                 <ion-option value="001">Maradana</ion-option>
                 <ion-option value="002">Colombo Fort</ion-option>
                 <ion-option value="003">Secretariat Halt</ion-option>
@@ -99,7 +99,7 @@
     <br>
 
     <ion-row center>
-        <button ion-button primary block round color="primary" style="text-align: center" (click)="findRoutes(start,end)">Get Time Table</button>
+        <button ion-button primary block round color="primary" style="text-align: center" (click)="findRoutes(start,end)" [disabled]="!start">Get Time Table</button>
 
     </ion-row>
 </ion-content>

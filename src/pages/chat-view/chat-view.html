@@ -15,7 +15,7 @@
     <ion-toolbar>
         <ion-row>
             <ion-col col-8 [hidden]="!chats">
-                <ion-input type="text"  placeholder="Enter Message" [(ngModel)]="message"></ion-input>
+                <ion-input type="text" style="color:black;" placeholder="Enter Message" [(ngModel)]="message"></ion-input>
             </ion-col>
             <ion-col col-2 [hidden]="!chats">
                 <a (click)="sendMessage()"><ion-icon name="send"></ion-icon></a>

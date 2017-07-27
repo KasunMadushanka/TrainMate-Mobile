@@ -9,6 +9,7 @@ import { NotificationsPage } from '../pages/notifications/notifications';
 import { ProfilePage } from '../pages/profile/profile';
 import { SettingsPage } from '../pages/settings/settings';
 import { Push, PushObject,PushOptions } from '@ionic-native/push';
+import { Badge } from '@ionic-native/badge';
 import { AngularFire, FirebaseListObservable} from 'angularfire2';
 import firebase from 'firebase';
 import { UserProvider } from '../providers/user-provider/user-provider';
@@ -25,7 +26,7 @@ export class MyApp {
 
     i=0;
 
-    constructor(platform: Platform,public push:Push,public alertCtrl:AlertController,public af:AngularFire,public storage:Storage,public userProvider:UserProvider) {
+    constructor(platform: Platform,public push:Push,public alertCtrl:AlertController,public af:AngularFire,public storage:Storage,public userProvider:UserProvider,public badge:Badge) {
 
         this.pages = [
             { title: 'Home', component: HomePage },
@@ -41,6 +42,7 @@ export class MyApp {
             Splashscreen.hide();
             this.pushSetup();
             this.storage.clear();
+            this.badge.set(0);
         });
 
         this.devices=firebase.database().ref('devices/');

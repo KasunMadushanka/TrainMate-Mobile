@@ -1,3 +1,7 @@
+page-chat-view{
+
+}
+
 .chat-view {
   .messages {
     width: 100%;
@@ -5,14 +9,14 @@
     .message {
       width: 70%;
       padding: 5px;
-      background: #0000FF;
+      background: #1A53A7;
       border-radius: 5px;
       margin: 5px;
       float: left;
     }
     .message.me {
       float: right;
-      background: #0000FF;
+      background: #1A53A7;
       border: 1px solid #3F51B5;
       text-align: right;
     }

@@ -1,5 +1,5 @@
 <ion-header>
-    <navbar title="Add Comment" back="true"></navbar>
+    <navbar title="Comment" back="true"></navbar>
 </ion-header>
 
 <ion-content class="background">
@@ -19,7 +19,7 @@
     <ion-toolbar>
         <ion-row>
             <ion-col col-11>
-                <ion-input type="text"  placeholder="Enter Message" [(ngModel)]="content"></ion-input>
+                <ion-input type="text" style="color:black;"  placeholder="Enter Message" [(ngModel)]="content"></ion-input>
             </ion-col>
             <ion-col col-1>
                 <a (click)="addComment()"><ion-icon name="send"></ion-icon></a>

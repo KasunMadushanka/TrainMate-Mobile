@@ -152,8 +152,8 @@ export class TrackingPage {
 
                     if(Number(distance)<0.2){
                         let toast = this.toastCtrl.create({
-                            message: 'You are at'+placeLocation.name,
-                            duration: 3000
+                            message: 'You are at '+placeLocation.name+' station',
+                            duration: 5000
                         });
                         toast.present();
                         this.start_station=placeLocation;
@@ -170,29 +170,10 @@ export class TrackingPage {
         }
 
         presentConfirm() {
-
-            let alert = this.alertCtrl.create({
-                title: 'Error',
-                message: 'The system cannot detect what station you are at. Please make sure you are at a station before start contributing...',
-                buttons: [
-                    {
-                        text: 'Retry',
-                        role:'cancel',
-                        handler: () => {
-                            this.checkLocation();
-                        }
-                    },
-                    {
-                        text: 'Cancel',
-                        role: 'cancel',
-                        handler: () => {
-                            console.log('Cancel clicked');
-                        }
-                    },
-
-                ]
+            let toast = this.toastCtrl.create({
+                message: 'The system cannot detect what station you are at. Please make sure you are at a station before start contributing.',
+                duration: 5000
             });
-            alert.present();
         }
 
         startSession(){

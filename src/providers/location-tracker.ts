@@ -227,7 +227,7 @@ export class LocationTracker {
                 con_id:con_id,
                 current_station:current_station.name,
                 total_distance:current_station.distance,
-                avg_speed:current_station.avg_speed,
+                avg_speed:current_station.avg_speed+'kph',
                 status:1
             });
 
@@ -289,7 +289,7 @@ export class LocationTracker {
                 let delay=Math.abs(hour_diff*60+minute_diff);
 
                 let toast = this.toastCtrl.create({
-                    message: 'You departed from '+current_station.name,
+                    message: 'You departed from '+current_station.name+' station',
                     duration: 3000
                 });
                 toast.present();
@@ -326,7 +326,7 @@ export class LocationTracker {
                 let delay=Math.abs(hour_diff*60+minute_diff);
 
                 let toast = this.toastCtrl.create({
-                    message: 'You arrived at '+current_station.name,
+                    message: 'You arrived at '+current_station.name+' station',
                     duration: 3000
                 });
                 toast.present();
@@ -344,7 +344,7 @@ export class LocationTracker {
                     current_station:current_station.name,
                     next_station:stations[j+1].name,
                     total_distance:current_station.distance,
-                    avg_speed:current_station.avg_speed
+                    avg_speed:current_station.avg_speed+'kph'
                 });
 
                 arrived=true;
@@ -376,14 +376,14 @@ export class LocationTracker {
             let eventEndTime = new Date(usersLocation.time);
             var duration = (eventEndTime.valueOf() - eventStartTime.valueOf())/(1000*60*60);
 
-            let current_speed=distance/duration;
+            let current_speed=(distance/duration).toFixed(0);
 
             this.trains.update(trainId, {
                 con_id: con_id,
                 latitude:pathCoordinates[i][0],
                 longitude:pathCoordinates[i][1],
                 distance:total_distance,
-                current_speed:current_speed
+                current_speed:current_speed+'kph'
             });
             total_distance+=distance;
 

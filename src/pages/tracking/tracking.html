@@ -8,7 +8,7 @@
     <ion-list>
         <ion-item>
             <ion-label>Select Train</ion-label>
-            <ion-select [(ngModel)]="train_select" (ionChange)="loadStations(train_select)">
+            <ion-select [(ngModel)]="train_select" (ionChange)="loadStations(train_select)" style="color:white;">
                 <ion-option *ngFor="let train of trains | async" value="{{train.$key}}">{{train.name}}</ion-option>
             </ion-select>
         </ion-item>
@@ -19,7 +19,7 @@
     </div>
     <div style="margin:auto;">
         <ion-row center>
-            <ion-spinner style="width:150px;height:150px;margin:auto;" name="dots"></ion-spinner>
+            <ion-spinner style="width:100px;height:100px;margin:auto;" name="crescent"></ion-spinner>
         </ion-row>
     </div>
 </ion-content>
