@@ -15,6 +15,9 @@ export class HomePage {
     start_station:string;
     end_station:string;
 
+    start:any;
+    end:any;
+
     @ViewChild('popoverContent', { read: ElementRef }) content: ElementRef;
     @ViewChild('popoverText', { read: ElementRef }) text: ElementRef;
 

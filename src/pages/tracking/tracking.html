@@ -7,7 +7,7 @@
     <br>
     <ion-list>
         <ion-item>
-            <ion-label>Select Train</ion-label>
+            <ion-label style="color:white;">Select Train</ion-label>
             <ion-select [(ngModel)]="train_select" (ionChange)="loadStations(train_select)" style="color:white;">
                 <ion-option *ngFor="let train of trains | async" value="{{train.$key}}">{{train.name}}</ion-option>
             </ion-select>
@@ -17,9 +17,24 @@
     <button ion-button full primary block round (click)="stop()"  [disabled]="stopDisabled">Stop Tracking</button>
     <div>
     </div>
-    <div style="margin:auto;">
+    <br>
+    <br>
+
+    <div *ngIf="imgDisplayed" style="margin:auto;">
+
         <ion-row center>
-            <ion-spinner style="width:100px;height:100px;margin:auto;" name="crescent"></ion-spinner>
+            <ion-col col-3>
+                <ion-spinner style="width:100px;height:100px;margin:auto;" name="dots"></ion-spinner>
+            </ion-col>
+            <ion-col col-3>
+            <ion-spinner style="width:100px;height:100px;margin:auto;" name="dots"></ion-spinner>
+            </ion-col>
+            <ion-col col-3>
+                <ion-spinner style="width:100px;height:100px;margin:auto;" name="dots"></ion-spinner>
+            </ion-col>
+            <ion-col col-3>
+                <ion-spinner style="width:100px;height:100px;margin:auto;" name="dots"></ion-spinner>
+            </ion-col>
         </ion-row>
     </div>
 </ion-content>

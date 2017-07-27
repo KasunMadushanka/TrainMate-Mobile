@@ -2,9 +2,9 @@ page-tracking {
     ion-spinner {
         &.spinner-circles circle,
         &.spinner-bubbles circle,
-        &.spinner-crescent circle {
-            stroke: white;
-            fill:white;
+        &.spinner-dots circle {
+            stroke: #1A53A7;
+            fill: #1A53A7;
             align-items: center;
             margin:auto
         }

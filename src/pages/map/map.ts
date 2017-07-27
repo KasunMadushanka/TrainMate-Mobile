@@ -196,7 +196,7 @@ export class MapPage {
                 let marker:GoogleMapsMarker=this.train_markers[i];
                 marker.setPosition(loc);
                 //this.map.setCenter(loc)
-                marker.setTitle(coords[i].name+"\npassed: "+(coords[i].distance).toFixed(0)+" m\nto go: "+((coords[i].total_distance-coords[i].distance).toFixed(0)+" m"));
+                marker.setTitle(coords[i].name);
             }
 
             for(let i=0;i<this.station_markers.length;i++){

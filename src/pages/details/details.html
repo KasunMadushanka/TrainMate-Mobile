@@ -1,7 +1,7 @@
 <ion-header>
     <navbar title="Train Details" back="true"></navbar>
         <ion-buttons end>
-            <button ion-button (click)="showOnMap()">View On Map</button>
+            <button ion-button clear small icon-left (click)="showOnMap()">View On Map</button>
         </ion-buttons>
 </ion-header>
 
@@ -12,6 +12,7 @@
         <div *ngIf="current_station==''">
             <span>Running from {{prev_station}} to {{next_station}}</span>
             <br>
+            <br>
             <span>Average Speed: {{avg_speed}}</span>
             <br>
             <span>Current Speed: {{current_speed}}</span>
@@ -20,13 +21,13 @@
             <span>Stopped at {{current_station}}</span>
         </div>
         <br>
-        <h4>Expected Arriving Time:</h4>
+        <h5>Expected Arriving Time:</h5>
         <span>{{static_ar_time}}</span>
         <br>
-        <h4>Updated Expected Time:</h4>
+        <h5>Updated Arriving Time:</h5>
         <span>{{dynamic_ar_time}}</span>
         <br>
-        <h4>Delay:</h4>
+        <h5>Delay:</h5>
         <span>{{delay}}</span>
         <br>
 

@@ -16,7 +16,7 @@ export class NavbarComponent {
     @Input() toggle: boolean;
     @Input() back: boolean;
 
-    badge:number=0;
+    badge:number=5;
     logged:boolean;
 
     constructor(public popoverCtrl:PopoverController,public userProvider:UserProvider) {
